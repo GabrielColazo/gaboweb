@@ -141,6 +141,8 @@ section {
   color: #A0A0B0;
   margin-bottom: 40px;
   max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 #hero .hero-botones {
   display: flex;
