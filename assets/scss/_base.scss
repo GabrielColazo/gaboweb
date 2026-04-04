@@ -1,0 +1,83 @@
+// ================================
+// GABOWEB - Base
+// ================================
+
+@use 'variables' as *;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-regular;
+    background-color: $color-bg-primary;
+    color: $color-text-primary;
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $font-bold;
+    color: $color-text-primary;
+}
+
+p {
+    color: $color-text-muted;
+}
+
+a {
+    color: $color-accent;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        
+        color: #5B8AF5;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 80px 0;
+}
+
+// Separador
+.separador {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px;
+    background-color: $color-bg-primary;
+
+    span {
+        color: $color-accent;
+        font-size: $font-size-lg;
+        font-weight: $font-semibold;
+        white-space: nowrap;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, $color-accent);
+    }
+
+    &::after {
+        background: linear-gradient(90deg, $color-accent, transparent);
+    }
+}

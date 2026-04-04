@@ -1,0 +1,43 @@
+@use 'variables' as *;
+
+// ================================
+// GABOWEB - Navbar
+// ================================
+
+#navbar {
+    background-color: $color-bg-secondary;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 0;
+    transition: all 0.3s ease;
+
+    .navbar-brand {
+        font-size: 22px;
+        font-weight: $font-bold;
+        color: $color-text-primary;
+        letter-spacing: 1px;
+
+        span {
+            color: $color-accent;
+        }
+    }
+
+    .nav-link {
+        color: $color-text-primary;
+        font-size: $font-size-sm;
+        font-weight: $font-regular;
+        padding: 8px 16px;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
+
+    .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.2);
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+    }
+}

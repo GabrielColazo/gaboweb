@@ -1,0 +1,21 @@
+// ================================
+// GABOWEB - Main SCSS
+// ================================
+
+// Variables
+@use 'variables';
+
+// Base
+@use 'base';
+
+// Componentes
+@use 'navbar';
+@use 'hero';
+@use 'servicios';
+@use 'proyectos';
+@use 'sobremi';
+@use 'faq';
+@use 'contacto';
+@use 'footer';
+@use 'modal';
+@use 'whatsapp';

@@ -1,0 +1,53 @@
+@use 'variables' as *;
+
+// ================================
+// GABOWEB - Footer
+// ================================
+
+#footer {
+    background-color: $color-bg-secondary;
+    padding: 32px 0;
+    border-top: 1px solid rgba(234, 88, 12, 0.2);
+
+    .footer-logo {
+        font-size: 20px;
+        font-weight: $font-bold;
+        color: $color-text-primary;
+        letter-spacing: 1px;
+        text-decoration: none;
+
+        span {
+            color: $color-accent;
+        }
+    }
+
+    .footer-copy {
+        font-size: $font-size-sm;
+        color: $color-text-muted;
+        margin: 0;
+    }
+
+    .footer-redes {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+
+        a {
+            color: $color-text-muted;
+            font-size: 20px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: $color-accent;
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    .footer-web {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    margin-top: 6px;
+    margin-bottom: 0;
+}
+}
