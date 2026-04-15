@@ -4,133 +4,102 @@
 // GABOWEB - Proyectos
 // ================================
 
+
 #proyectos {
     background-color: $color-bg-primary;
 
-    .section-titulo {
-        font-size: $font-size-xl;
-        font-weight: $font-bold;
-        color: $color-text-primary;
-        margin-bottom: 12px;
+    .section-titulo, .section-subtitulo {
+        text-align: center; // Mantenemos esto aquí para no ensuciar el HTML de los títulos
     }
 
-    .section-subtitulo {
-        font-size: $font-size-base;
-        color: $color-text-muted;
-        max-width: 480px;
-        margin: 0 auto;
+    // Contenedor flip - Mantiene la lógica 3D
+    .proyecto-flip {
+        height: 280px;
+        perspective: 1000px;
+        position: relative;
+        margin-bottom: 30px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: $color-accent;
+            border-radius: 0 0 12px 12px;
+            transition: width 0.4s ease;
+        }
+
+        &:hover::after { width: 100%; }
+        &:hover .proyecto-flip-inner { transform: rotateY(180deg); }
     }
 
-    // Contenedor flip
-.proyecto-flip {
-    height: 280px;
-    perspective: 1000px;
-    position: relative;
-
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 3px;
-        background-color: $color-accent;
-        border-radius: 0 0 12px 12px;
-        transition: width 0.4s ease;
-    }
-
-    &:hover::after {
+    .proyecto-flip-inner {
+        position: relative;
         width: 100%;
+        height: 100%;
+        transition: transform 0.6s ease;
+        transform-style: preserve-3d;
     }
 
-    &:hover .proyecto-flip-inner {
-        transform: rotateY(180deg);
-    }
-}
-
-// Inner que rota
-.proyecto-flip-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s ease;
-    transform-style: preserve-3d;
-}
-    // Frente y dorso base
-    .proyecto-frente,
-    .proyecto-dorso {
+    .proyecto-frente, .proyecto-dorso {
         position: absolute;
         width: 100%;
         height: 100%;
         border-radius: 12px;
-        overflow: hidden;
         backface-visibility: hidden;
+        overflow: hidden; 
     }
 
-    // Frente
+    // Frente - Aquí solo queda lo visual, el centrado va al HTML
     .proyecto-frente {
         background-color: $color-bg-card;
+        display: flex;
+        flex-direction: column;
 
         img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            display: block;
         }
 
         .proyecto-info {
-            padding: 16px 20px;
+            flex-grow: 1; 
+            padding: 10px;
 
             h3 {
                 font-size: $font-size-base;
                 font-weight: $font-semibold;
                 color: $color-text-primary;
-                margin: 0;
             }
         }
     }
 
-    // Dorso
+    // Dorso - Mantenemos el Flex porque el dorso suele ser más complejo
     .proyecto-dorso {
-        background-color:$color-accent-dark;
+        background-color: $color-accent-dark;
         transform: rotateY(180deg);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 32px 24px;
+        padding: 24px;
         text-align: center;
-        gap: 16px;
-        transition: box-shadow 0.3s ease;
+        gap: 12px;
 
-        &:hover {
-              box-shadow: 0 12px 40px rgba(234, 88, 12, 0.4);
-        }
-
-        h3 {
-            font-size: $font-size-lg;
-            font-weight: $font-bold;
-            color: $color-text-primary;
-            margin: 0;
-        }
-
-        p {
-            font-size: $font-size-sm;
-            color: rgba(255, 255, 255, 0.85);
-            margin: 0;
-        }
+        h3 { color: $color-text-primary; margin: 0; }
+        p { font-size: $font-size-sm; color: rgba(255, 255, 255, 0.85); }
     }
 
-    // Botón del dorso
     .btn-proyecto {
-        color: $color-text-primary;
         border: 2px solid $color-text-primary;
-        padding: 10px 24px;
+        padding: 8px 20px;
         border-radius: 6px;
-        font-weight: $font-semibold;
-        font-size: $font-size-sm;
-        transition: all 0.3s ease;
+        color: $color-text-primary;
+        text-decoration: none;
+        transition: 0.3s;
 
         &:hover {
             background-color: $color-text-primary;
