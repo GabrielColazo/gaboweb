@@ -433,44 +433,44 @@
                         <p class="contacto-texto">Completá el formulario y te respondo a la brevedad. También podés
                             escribirme directo por WhatsApp.</p>
 
-                        <form name="contacto" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-                            <input type="hidden" name="form-name" value="contacto">
-                            <input type="hidden" name="bot-field">
-                            <div class="row g-3">
+                        <form name="contacto" method="POST" data-netlify="true" data-netlify-honeypot="bot-field"
+                            action="/gracias.html"></form>
+                        <input type="hidden" name="form-name" value="contacto">
+                        <input type="hidden" name="bot-field">
+                        <div class="row g-3">
 
-                                <div class="col-12 col-md-6">
-                                    <label class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" name="nombre" placeholder="Tu nombre"
-                                        required>
-                                </div>
-
-                                <div class="col-12 col-md-6">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" name="email" placeholder="tu@email.com"
-                                        required>
-                                </div>
-
-                                <div class="col-12">
-                                    <label class="form-label">Asunto</label>
-                                    <select class="form-select" name="asunto" required>
-                                        <option value="" disabled selected>Seleccioná una opción</option>
-                                        <option value="presupuesto">Solicitar presupuesto</option>
-                                        <option value="consulta">Consulta general</option>
-                                        <option value="otro">Otro</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-12">
-                                    <label class="form-label">Mensaje</label>
-                                    <textarea class="form-control" name="mensaje" rows="3"
-                                        placeholder="Contame sobre tu proyecto..." required></textarea>
-                                </div>
-
-                                <div class="col-12">
-                                    <button type="submit" class="btn-enviar">Enviar mensaje</button>
-                                </div>
-
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" class="form-control" name="nombre" placeholder="Tu nombre" required>
                             </div>
+
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" name="email" placeholder="tu@email.com"
+                                    required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Asunto</label>
+                                <select class="form-select" name="asunto" required>
+                                    <option value="" disabled selected>Seleccioná una opción</option>
+                                    <option value="presupuesto">Solicitar presupuesto</option>
+                                    <option value="consulta">Consulta general</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Mensaje</label>
+                                <textarea class="form-control" name="mensaje" rows="3"
+                                    placeholder="Contame sobre tu proyecto..." required></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                            </div>
+
+                        </div>
                         </form>
                     </div>
 
