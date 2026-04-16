@@ -10,7 +10,7 @@
     .contacto-card {
         background-color: $color-bg-card;
         border-radius: 12px;
-        padding: 48px;
+        padding: 32px;               // antes 48px
         border-left: 3px solid $color-accent;
         transition: box-shadow 0.3s ease;
 
@@ -25,14 +25,14 @@
         font-weight: $font-semibold;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        margin-bottom: 12px;
+        margin-bottom: 8px;          // antes 12px
     }
 
     .contacto-titulo {
         font-size: $font-size-xl;
         font-weight: $font-bold;
         color: $color-text-primary;
-        margin-bottom: 16px;
+        margin-bottom: 10px;         // antes 16px
 
         span {
             color: $color-accent;
@@ -42,14 +42,14 @@
     .contacto-texto {
         font-size: $font-size-base;
         color: $color-text-muted;
-        margin-bottom: 32px;
+        margin-bottom: 20px;         // antes 32px
     }
 
     .form-label {
         color: $color-text-muted;
         font-size: $font-size-sm;
         font-weight: $font-semibold;
-        margin-bottom: 6px;
+        margin-bottom: 4px;          // antes 6px
     }
 
     .form-control,
@@ -60,7 +60,7 @@
         color: $color-text-primary;
         font-family: $font-primary;
         font-size: $font-size-base;
-        padding: 12px 16px;
+        padding: 10px 14px;          // antes 12px 16px
         transition: all 0.3s ease;
 
         &:focus {
@@ -75,6 +75,14 @@
         }
     }
 
+    // Textarea más compacto
+    textarea.form-control {
+        
+        min-height: 90px;            // antes era rows="5" → ~120px
+        height: 90px;
+        resize: vertical;
+    }
+
     .form-select option {
         background-color: $color-bg-secondary;
         color: $color-text-primary;
@@ -84,7 +92,7 @@
         background-color: $color-accent;
         color: $color-text-primary;
         border: none;
-        padding: 14px 40px;
+        padding: 12px 40px;          // antes 14px 40px
         border-radius: 8px;
         font-family: $font-primary;
         font-size: $font-size-base;

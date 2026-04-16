@@ -12,7 +12,6 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -22,503 +21,504 @@
 
 <body>
 
-    <body>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
 
-        <!-- ========== NAVBAR ========== -->
-        <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
-            <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#hero"><span>&lt;</span>GABO<span>WEB/&gt;</span></a>
 
-                <!-- Logo -->
-                <a class="navbar-brand" href="#hero"><span>&lt;</span>GABO<span>WEB/&gt;</span></a>
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar"
+                aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <!-- Botón hamburguesa -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar"
-                    aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Links -->
-                <div class="collapse navbar-collapse" id="menuNavbar">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#sobremi">Sobre mí</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobremi">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
             </div>
-        </nav>
 
-        <!-- ========== HERO ========== -->
-        <section id="hero">
-            <canvas id="matrix"></canvas>
-            <div class="container">
-                <div class="row align-items-center py-5">
-                    <div class="col-12 col-lg-6 text-center text-lg-start mx-auto mx-lg-0">
-                        <p class="hero-saludo">Hola, soy Gabriel 👋</p>
-                        <h1 class="hero-titulo">Diseño web <span>moderno</span> y minimalista</h1>
-                        <p class="hero-descripcion text-center text-lg-start">Creo sitios web profesionales, rápidos y
-                            adaptados a cualquier
-                            dispositivo para potenciar tu presencia online.</p>
-                        <div class="hero-botones d-flex flex-wrap justify-content-center justify-content-lg-start">
-                            <a href="#proyectos" class="btn btn-primary-custom">Ver proyectos</a>
-                            <a href="#contacto" class="btn btn-outline-custom">Contactame</a>
-                            <a href="https://wa.me/5493329574543?text=Hola%20Gabriel%2C%20vi%20tu%20página%20y%20quiero%20consultarte"
-                                class="btn btn-whatsapp" target="_blank">
-                                <i class="bi bi-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section id="hero">
+        <canvas id="matrix"></canvas>
+        <div class="container">
+            <div class="row align-items-center py-5">
+                <div class="col-12 col-lg-6 text-center text-lg-start mx-auto mx-lg-0">
+                    <p class="hero-saludo">Hola, soy Gabriel 👋</p>
+                    <h1 class="hero-titulo">Diseño web <span>moderno</span> y minimalista</h1>
+                    <p class="hero-descripcion text-center text-lg-start">Creo sitios web profesionales, rápidos y
+                        adaptados a cualquier dispositivo para potenciar tu presencia online.</p>
+                    <div class="hero-botones d-flex flex-wrap justify-content-center justify-content-lg-start">
+                        <a href="#proyectos" class="btn btn-primary-custom">Ver proyectos</a>
+                        <a href="#contacto" class="btn btn-outline-custom">Contactame</a>
+                        <a href="https://wa.me/5493329574543?text=Hola%20Gabriel%2C%20vi%20tu%20página%20y%20quiero%20consultarte"
+                            class="btn btn-whatsapp" target="_blank">
+                            <i class="bi bi-whatsapp"></i> WhatsApp
+                        </a>
                     </div>
-                    <div class="col-12 col-lg-6 text-center mt-5 mt-lg-0">
-                        <div class="hero-code">
-                            <div class="hero-code-header">
-                                <span class="hero-code-dot dot-red"></span>
-                                <span class="hero-code-dot dot-yellow"></span>
-                                <span class="hero-code-dot dot-green"></span>
-                            </div>
-                            <pre class="hero-code-body">
+                </div>
+                <div class="col-12 col-lg-6 text-center mt-5 mt-lg-0">
+                    <div class="hero-code">
+                        <div class="hero-code-header">
+                            <span class="hero-code-dot dot-red"></span>
+                            <span class="hero-code-dot dot-yellow"></span>
+                            <span class="hero-code-dot dot-green"></span>
+                        </div>
+                        <pre class="hero-code-body">
 <span class="code-keyword">const</span> <span class="code-var">gaboweb</span> = {
   nombre:      <span class="code-string">'Gabriel'</span>,
   rol:         <span class="code-string">'Web Developer'</span>,
   stack:       <span class="code-array">['HTML', 'CSS', 'JS']</span>,
   disponible:  <span class="code-bool">true</span>
 }</pre>
-                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- ========== SEPARADOR ========== -->
-        <div class="separador">
-            <span>Servicios</span>
         </div>
+    </section>
 
-        <!-- ========== SERVICIOS ========== -->
-        <section id="servicios">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center mb-5">
+    <!-- ========== SEPARADOR ========== -->
+    <div class="separador">
+        <span>Servicios</span>
+    </div>
 
-                        <p class="section-subtitulo">Todo lo que necesitás para tener presencia online profesional</p>
+    <!-- ========== SERVICIOS ========== -->
+    <section id="servicios">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <p class="section-subtitulo">Todo lo que necesitás para tener presencia online profesional</p>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="servicio-card">
+                        <div class="servicio-icono">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <h3>Landing Page</h3>
+                        <p>Páginas de aterrizaje optimizadas para convertir visitantes en clientes.</p>
                     </div>
                 </div>
-                <div class="row g-4 justify-content-center">
 
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="servicio-card">
-                            <div class="servicio-icono">
-                                <i class="bi bi-laptop"></i>
-                            </div>
-                            <h3>Landing Page</h3>
-                            <p>Páginas de aterrizaje optimizadas para convertir visitantes en clientes.</p>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="servicio-card">
+                        <div class="servicio-icono">
+                            <i class="bi bi-phone"></i>
                         </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="servicio-card">
-                            <div class="servicio-icono">
-                                <i class="bi bi-phone"></i>
-                            </div>
-                            <h3>Diseño Responsive</h3>
-                            <p>Sitios adaptados a cualquier dispositivo, celular, tablet y desktop.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="servicio-card">
-                            <div class="servicio-icono">
-                                <i class="bi bi-palette"></i>
-                            </div>
-                            <h3>Portfolio Web</h3>
-                            <p>Tu presencia online profesional para mostrar tu trabajo al mundo.</p>
-                        </div>
-
-        </section>
-
-        <!-- ========== SEPARADOR ========== -->
-        <div class="separador">
-            <span>Proyectos</span>
-        </div>
-
-        <!-- ========== PROYECTOS ========== -->
-        <section id="proyectos">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center mb-5">
-
-                        <p class="section-subtitulo">Algunos trabajos que reflejan mi estilo y enfoque</p>
+                        <h3>Diseño Responsive</h3>
+                        <p>Sitios adaptados a cualquier dispositivo, celular, tablet y desktop.</p>
                     </div>
                 </div>
-                <div class="row g-4">
 
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="proyecto-flip">
-                            <div class="proyecto-flip-inner">
-                                <div class="proyecto-frente">
-                                    <img src="assets/img/proyecto1.webp" alt="Proyecto 1">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="servicio-card">
+                        <div class="servicio-icono">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <h3>Portfolio Web</h3>
+                        <p>Tu presencia online profesional para mostrar tu trabajo al mundo.</p>
+                    </div>
+                </div>
 
-                                    <div class="proyecto-info">
-                                        <h3 class="m-0">IRQcomputación</h3>
-                                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SEPARADOR ========== -->
+    <div class="separador">
+        <span>Proyectos</span>
+    </div>
+
+    <!-- ========== PROYECTOS ========== -->
+    <section id="proyectos">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <p class="section-subtitulo">Algunos trabajos que reflejan mi estilo y enfoque</p>
+                </div>
+            </div>
+            <div class="row g-4">
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="proyecto-flip">
+                        <div class="proyecto-flip-inner">
+                            <div class="proyecto-frente">
+                                <img src="assets/img/proyecto1.webp" alt="Proyecto 1">
+                                <div class="proyecto-info">
+                                    <h3 class="m-0">IRQcomputación</h3>
                                 </div>
-                                <div class="proyecto-dorso">
-                                    <h3>IRQ computación - Servicio Técnico</h3>
-                                    <p>Servicio técnico informático profesional.
-                                        Reparación, mantenimiento y optimización de computadoras.</p>
-                                    <a href="https://irqcomputacion.netlify.app" class="btn-proyecto">Ver proyecto</a>
-                                </div>
+                            </div>
+                            <div class="proyecto-dorso">
+                                <h3>IRQ computación - Servicio Técnico</h3>
+                                <p>Servicio técnico informático profesional.
+                                    Reparación, mantenimiento y optimización de computadoras.</p>
+                                <a href="https://irqcomputacion.netlify.app" class="btn-proyecto">Ver proyecto</a>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="proyecto-flip">
-                            <div class="proyecto-flip-inner">
-                                <div class="proyecto-frente">
-                                    <img src="assets/img/proyecto2.webp" alt="Proyecto 2">
-                                    <div class="proyecto-info">
-                                        <h3>My House</h3>
-                                    </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="proyecto-flip">
+                        <div class="proyecto-flip-inner">
+                            <div class="proyecto-frente">
+                                <img src="assets/img/proyecto2.webp" alt="Proyecto 2">
+                                <div class="proyecto-info">
+                                    <h3>My House</h3>
                                 </div>
-                                <div class="proyecto-dorso">
-                                    <h3>My House - Inmobiliaria</h3>
-                                    <p>Servicios inmobiliarios profesionales.
-                                        Compra, venta y alquiler de propiedades con asesoramiento experto.</p>
-                                    <a href="https://myhouse-inmobiliaria.netlify.app/" class="btn-proyecto">Ver proyecto</a>
-                                </div>
+                            </div>
+                            <div class="proyecto-dorso">
+                                <h3>My House - Inmobiliaria</h3>
+                                <p>Servicios inmobiliarios profesionales.
+                                    Compra, venta y alquiler de propiedades con asesoramiento experto.</p>
+                                <a href="https://myhouse-inmobiliaria.netlify.app/" class="btn-proyecto">Ver
+                                    proyecto</a>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="proyecto-flip">
-                            <div class="proyecto-flip-inner">
-                                <div class="proyecto-frente">
-                                    <img src="assets/img/proyecto3.webp" alt="Proyecto 3">
-                                    <div class="proyecto-info">
-                                        <h3>Estudio Jurídico</h3>
-                                    </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="proyecto-flip">
+                        <div class="proyecto-flip-inner">
+                            <div class="proyecto-frente">
+                                <img src="assets/img/proyecto3.webp" alt="Proyecto 3">
+                                <div class="proyecto-info">
+                                    <h3>Estudio Jurídico</h3>
                                 </div>
-                                <div class="proyecto-dorso">
-                                    <h3>Estudio Jurídico - Asesoría Legal</h3>
-                                    <p>Estudio jurídico profesional.
-                                        Asesoramiento legal y representación en diversas áreas del derecho.</p>
-                                    <a href="https://estudiojuridicodrmartinez.netlify.app" class="btn-proyecto">Ver proyecto</a>
-                                </div>
+                            </div>
+                            <div class="proyecto-dorso">
+                                <h3>Estudio Jurídico - Asesoría Legal</h3>
+                                <p>Estudio jurídico profesional.
+                                    Asesoramiento legal y representación en diversas áreas del derecho.</p>
+                                <a href="https://estudiojuridicodrmartinez.netlify.app" class="btn-proyecto">Ver
+                                    proyecto</a>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="proyecto-flip">
-                            <div class="proyecto-flip-inner">
-                                <div class="proyecto-frente">
-                                    <img src="assets/img/proyecto4.webp" alt="Proyecto 4">
-                                    <div class="proyecto-info">
-                                        <h3>Café Aroma</h3>
-                                    </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="proyecto-flip">
+                        <div class="proyecto-flip-inner">
+                            <div class="proyecto-frente">
+                                <img src="assets/img/proyecto4.webp" alt="Proyecto 4">
+                                <div class="proyecto-info">
+                                    <h3>Café Aroma</h3>
                                 </div>
-                                <div class="proyecto-dorso">
-                                    <h3>Café Aroma - Cafetería</h3>
-                                    <p>Cafetería artesanal.
-                                        Café de especialidad y sabores únicos para cada momento.</p>
-                                    <a href="https://cafearomabsas.netlify.app/" class="btn-proyecto">Ver proyecto</a>
-                                </div>
+                            </div>
+                            <div class="proyecto-dorso">
+                                <h3>Café Aroma - Cafetería</h3>
+                                <p>Cafetería artesanal.
+                                    Café de especialidad y sabores únicos para cada momento.</p>
+                                <a href="https://cafearomabsas.netlify.app/" class="btn-proyecto">Ver proyecto</a>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="proyecto-flip">
-                            <div class="proyecto-flip-inner">
-                                <div class="proyecto-frente">
-                                    <img src="assets/img/proyecto5.webp" alt="Proyecto 5">
-                                    <div class="proyecto-info">
-                                        <h3>Pulse Gym</h3>
-                                    </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="proyecto-flip">
+                        <div class="proyecto-flip-inner">
+                            <div class="proyecto-frente">
+                                <img src="assets/img/proyecto5.webp" alt="Proyecto 5">
+                                <div class="proyecto-info">
+                                    <h3>Pulse Gym</h3>
                                 </div>
-                                <div class="proyecto-dorso">
-                                    <h3>Pulse Gym - Centro de Entrenamiento</h3>
-                                    <p>Centro de entrenamiento Pulse Gym.
-                                        Rendimiento, fuerza y transformación física guiada.</p>
-                                    <a href="https://pulsegym-centroentrenamiento.netlify.app/" class="btn-proyecto">Ver proyecto</a>
-                                </div>
+                            </div>
+                            <div class="proyecto-dorso">
+                                <h3>Pulse Gym - Centro de Entrenamiento</h3>
+                                <p>Centro de entrenamiento Pulse Gym.
+                                    Rendimiento, fuerza y transformación física guiada.</p>
+                                <a href="https://pulsegym-centroentrenamiento.netlify.app/" class="btn-proyecto">Ver
+                                    proyecto</a>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="proyecto-flip">
-                            <div class="proyecto-flip-inner">
-                                <div class="proyecto-frente">
-                                    <img src="assets/img/proyecto6.webp" alt="Proyecto 6">
-                                    <div class="proyecto-info">
-                                        <h3>Traductor</h3>
-                                    </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="proyecto-flip">
+                        <div class="proyecto-flip-inner">
+                            <div class="proyecto-frente">
+                                <img src="assets/img/proyecto6.webp" alt="Proyecto 6">
+                                <div class="proyecto-info">
+                                    <h3>Traductor</h3>
                                 </div>
-                                <div class="proyecto-dorso">
-                                    <h3>Traductor - Servicio de Traducción</h3>
-                                    <p>Servicio de traducción profesional.
+                            </div>
+                            <div class="proyecto-dorso">
+                                <h3>Traductor - Servicio de Traducción</h3>
+                                <p>Servicio de traducción profesional.
                                     Traducción de documentos, interpretación y adaptación cultural.</p>
-                                    <a href="https://ricardofernandez-traductor.netlify.app/" class="btn-proyecto">Ver proyecto</a>
-                                </div>
+                                <a href="https://ricardofernandez-traductor.netlify.app/" class="btn-proyecto">Ver
+                                    proyecto</a>
                             </div>
                         </div>
                     </div>
-
                 </div>
-            </div>
-        </section>
 
-        <!-- ========== SEPARADOR ========== -->
-        <div class="separador">
-            <span>Sobre mí</span>
+            </div>
         </div>
+    </section>
 
-        <!-- ========== SOBRE MÍ ========== -->
-        <section id="sobremi">
-            <div class="container">
-                <div class="row align-items-center g-5">
+    <!-- ========== SEPARADOR ========== -->
+    <div class="separador">
+        <span>Sobre mí</span>
+    </div>
 
-                    <!-- Imagen -->
-                    <div class="col-12 col-lg-5 text-center">
-                        <div class="sobremi-img-wrapper">
-                            <img src="assets/img/perfil.webp" alt="Gabriel - GABOWEB" class="sobremi-img">
-                        </div>
+    <!-- ========== SOBRE MÍ ========== -->
+    <section id="sobremi">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <!-- Imagen -->
+                <div class="col-12 col-lg-5 text-center">
+                    <div class="sobremi-img-wrapper">
+                        <img src="assets/img/perfil.webp" alt="Gabriel - GABOWEB" class="sobremi-img">
                     </div>
-
-                    <!-- Texto -->
-                    <div class="col-12 col-lg-7">
-                        <div class="sobremi-card">
-                            <p class="sobremi-saludo">Un poco sobre mí</p>
-                            <h2 class="sobremi-titulo">Hola, soy <span>Gabriel</span></h2>
-                            <p class="sobremi-texto">Soy diseñador web freelance de Baradero, Buenos Aires. Me
-                                especializo en crear sitios web modernos, minimalistas y adaptados a cualquier
-                                dispositivo para potenciar la presencia online de pequeños negocios y emprendedores.</p>
-                            <p class="sobremi-texto">Me apasiona el diseño limpio y funcional, donde cada detalle tiene
-                                un propósito. Actualmente sigo formándome para ofrecer cada vez mejores soluciones
-                                digitales a mis clientes.</p>
-                            <div class="sobremi-stack">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>SASS</span>
-                                <span>Bootstrap</span>
-                                <span>JavaScript</span>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
-        </section>
 
-        <!-- ========== SEPARADOR ========== -->
-        <div class="separador">
-            <span>Preguntas frecuentes</span>
+                <!-- Texto -->
+                <div class="col-12 col-lg-7">
+                    <div class="sobremi-card">
+                        <p class="sobremi-saludo">Un poco sobre mí</p>
+                        <h2 class="sobremi-titulo">Hola, soy <span>Gabriel</span></h2>
+                        <p class="sobremi-texto">Soy diseñador web freelance de Baradero, Buenos Aires. Me
+                            especializo en crear sitios web modernos, minimalistas y adaptados a cualquier
+                            dispositivo para potenciar la presencia online de pequeños negocios y emprendedores.</p>
+                        <p class="sobremi-texto">Me apasiona el diseño limpio y funcional, donde cada detalle tiene
+                            un propósito. Actualmente sigo formándome para ofrecer cada vez mejores soluciones
+                            digitales a mis clientes.</p>
+                        <div class="sobremi-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>SASS</span>
+                            <span>Bootstrap</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-        <!-- ========== FAQ ========== -->
-        <section id="faq">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-8">
+    <!-- ========== SEPARADOR ========== -->
+    <div class="separador">
+        <span>Preguntas frecuentes</span>
+    </div>
 
-                        <div class="accordion" id="accordionFAQ">
+    <!-- ========== FAQ ========== -->
+    <section id="faq">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
 
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#faq1">
-                                        ¿Qué incluye una página web profesional?
-                                    </button>
-                                </h2>
-                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
-                                    <div class="accordion-body">
-                                        Una página web profesional incluye diseño moderno y personalizado, adaptación a
-                                        celular, tablet y desktop, optimización de velocidad de carga, formulario de
-                                        contacto funcional y configuración básica de SEO para que tu negocio aparezca en
-                                        Google.
-                                    </div>
+                    <div class="accordion" id="accordionFAQ">
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                    ¿Qué incluye una página web profesional?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body">
+                                    Una página web profesional incluye diseño moderno y personalizado, adaptación a
+                                    celular, tablet y desktop, optimización de velocidad de carga, formulario de
+                                    contacto funcional y configuración básica de SEO para que tu negocio aparezca en
+                                    Google.
                                 </div>
                             </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#faq2">
-                                        ¿Qué es el SEO y por qué es importante?
-                                    </button>
-                                </h2>
-                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-                                    <div class="accordion-body">
-                                        El SEO es el conjunto de técnicas que permiten que tu sitio web aparezca en los
-                                        primeros resultados de Google. Una buena configuración SEO significa más visitas
-                                        orgánicas, más consultas y más clientes sin pagar publicidad.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#faq3">
-                                        ¿Cuánto tiempo lleva hacer una página web?
-                                    </button>
-                                </h2>
-                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-                                    <div class="accordion-body">
-                                        Una landing page o sitio web profesional tiene un tiempo estimado de entrega de
-                                        7 a 15 días hábiles, dependiendo de la complejidad y la información que el
-                                        cliente provea. Trabajo con etapas claras y te mantengo informado en todo
-                                        momento.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#faq4">
-                                        ¿Trabajás de forma remota o presencial?
-                                    </button>
-                                </h2>
-                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-                                    <div class="accordion-body">
-                                        Trabajo de forma remota para cualquier parte de Argentina, aunque también puedo
-                                        atender clientes de forma presencial en Baradero y zonas cercanas. Toda la
-                                        comunicación se puede hacer por WhatsApp o email.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#faq5">
-                                        ¿Hacés mantenimiento del sitio después de entregarlo?
-                                    </button>
-                                </h2>
-                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-                                    <div class="accordion-body">
-                                        Sí, ofrezco soporte y mantenimiento post entrega. Podemos acordar
-                                        actualizaciones de contenido, cambios de diseño o mejoras técnicas según las
-                                        necesidades de tu negocio.
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+                                    ¿Qué es el SEO y por qué es importante?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body">
+                                    El SEO es el conjunto de técnicas que permiten que tu sitio web aparezca en los
+                                    primeros resultados de Google. Una buena configuración SEO significa más visitas
+                                    orgánicas, más consultas y más clientes sin pagar publicidad.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+                                    ¿Cuánto tiempo lleva hacer una página web?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body">
+                                    Una landing page o sitio web profesional tiene un tiempo estimado de entrega de
+                                    7 a 15 días hábiles, dependiendo de la complejidad y la información que el
+                                    cliente provea. Trabajo con etapas claras y te mantengo informado en todo
+                                    momento.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4">
+                                    ¿Trabajás de forma remota o presencial?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body">
+                                    Trabajo de forma remota para cualquier parte de Argentina, aunque también puedo
+                                    atender clientes de forma presencial en Baradero y zonas cercanas. Toda la
+                                    comunicación se puede hacer por WhatsApp o email.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq5">
+                                    ¿Hacés mantenimiento del sitio después de entregarlo?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body">
+                                    Sí, ofrezco soporte y mantenimiento post entrega. Podemos acordar
+                                    actualizaciones de contenido, cambios de diseño o mejoras técnicas según las
+                                    necesidades de tu negocio.
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- ========== SEPARADOR ========== -->
-        <div class="separador">
-            <span>Contacto</span>
         </div>
+    </section>
 
-        <!-- ========== CONTACTO ========== -->
-        <section id="contacto">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-8">
+    <!-- ========== SEPARADOR ========== -->
+    <div class="separador">
+        <span>Contacto</span>
+    </div>
 
-                        <div class="contacto-card">
-                            <p class="contacto-saludo">¿Tenés un proyecto en mente?</p>
-                            <h2 class="contacto-titulo">Hablemos <span>hoy</span></h2>
-                            <p class="contacto-texto">Completá el formulario y te respondo a la brevedad. También podés
-                                escribirme directo por WhatsApp.</p>
+    <!-- ========== CONTACTO ========== -->
+    <section id="contacto">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
 
-                            <form action="https://formspree.io/f/TU_ID" method="POST">
+                    <div class="contacto-card">
+                        <p class="contacto-saludo">¿Tenés un proyecto en mente?</p>
+                        <h2 class="contacto-titulo">Hablemos <span>hoy</span></h2>
+                        <p class="contacto-texto">Completá el formulario y te respondo a la brevedad. También podés
+                            escribirme directo por WhatsApp.</p>
 
-                                <div class="row g-3">
+                        <form name="contacto" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="contacto">
+                            <input type="hidden" name="bot-field">
+                            <div class="row g-3">
 
-                                    <div class="col-12 col-md-6">
-                                        <label class="form-label">Nombre</label>
-                                        <input type="text" class="form-control" name="nombre" placeholder="Tu nombre"
-                                            required>
-                                    </div>
-
-                                    <div class="col-12 col-md-6">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" class="form-control" name="email" placeholder="tu@email.com"
-                                            required>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label class="form-label">Asunto</label>
-                                        <select class="form-select" name="asunto" required>
-                                            <option value="" disabled selected>Seleccioná una opción</option>
-                                            <option value="presupuesto">Solicitar presupuesto</option>
-                                            <option value="consulta">Consulta general</option>
-                                            <option value="otro">Otro</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label class="form-label">Mensaje</label>
-                                        <textarea class="form-control" name="mensaje" rows="5"
-                                            placeholder="Contame sobre tu proyecto..." required></textarea>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <button type="submit" class="btn-enviar">Enviar mensaje</button>
-                                    </div>
-
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" placeholder="Tu nombre"
+                                        required>
                                 </div>
 
-                            </form>
-                        </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" placeholder="tu@email.com"
+                                        required>
+                                </div>
 
-                    </div>
-                </div>
-            </div>
-        </section>
+                                <div class="col-12">
+                                    <label class="form-label">Asunto</label>
+                                    <select class="form-select" name="asunto" required>
+                                        <option value="" disabled selected>Seleccioná una opción</option>
+                                        <option value="presupuesto">Solicitar presupuesto</option>
+                                        <option value="consulta">Consulta general</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </div>
 
-        <!-- ========== FOOTER ========== -->
-        <footer id="footer">
-            <div class="container">
-                <div class="row align-items-center">
+                                <div class="col-12">
+                                    <label class="form-label">Mensaje</label>
+                                    <textarea class="form-control" name="mensaje" rows="3"
+                                        placeholder="Contame sobre tu proyecto..." required></textarea>
+                                </div>
 
-                    <!-- Logo -->
-                    <div class="col-12 col-md-4 text-center text-md-start mb-3 mb-md-0">
-                        <a href="#hero" class="footer-logo"><span>&lt;</span>GABO<span>WEB/&gt;</span></a>
-                        <p class="footer-web">www.gaboweb.com.ar</p>
-                    </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                                </div>
 
-                    <!-- Copy -->
-                    <div class="col-12 col-md-4 text-center mb-3 mb-md-0">
-                        <p class="footer-copy">© 2026 GABOWEB. Todos los derechos reservados.</p>
-                    </div>
-
-                    <!-- Redes -->
-                    <div class="col-12 col-md-4 text-center text-md-end">
-                        <div class="footer-redes">
-                            <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
-                            <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
-                            <a href="#" target="_blank"><i class="bi bi-github"></i></a>
-                        </div>
+                            </div>
+                        </form>
                     </div>
 
                 </div>
             </div>
-        </footer>
+        </div>
+    </section>
 
-        <!-- ========== WHATSAPP FLOTANTE ========== -->
-        <a href="https://wa.me/5493329574543?text=Hola%20Gabriel%2C%20vi%20tu%20página%20y%20quiero%20consultarte"
-            class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
-            <i class="bi bi-whatsapp"></i>
-        </a>
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row align-items-center">
 
-        <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Main JS -->
-        <script src="assets/js/main.js"></script>
+                <!-- Logo -->
+                <div class="col-12 col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <a href="#hero" class="footer-logo"><span>&lt;</span>GABO<span>WEB/&gt;</span></a>
+                    <p class="footer-web">www.gaboweb.com.ar</p>
+                </div>
 
-    </body>
+                <!-- Copy -->
+                <div class="col-12 col-md-4 text-center mb-3 mb-md-0">
+                    <p class="footer-copy">© 2026 GABOWEB. Todos los derechos reservados.</p>
+                </div>
+
+                <!-- Redes -->
+                <div class="col-12 col-md-4 text-center text-md-end">
+                    <div class="footer-redes">
+                        <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== WHATSAPP FLOTANTE ========== -->
+    <a href="https://wa.me/5493329574543?text=Hola%20Gabriel%2C%20vi%20tu%20página%20y%20quiero%20consultarte"
+        class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+
+</body>
 
 </html>

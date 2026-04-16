@@ -16,11 +16,11 @@ $font-size-lg:    18px;
 $font-size-xl:    24px;
 $font-size-xxl:   48px;
 
-// Colores
-$color-bg-primary:    #0A0A0F;
-$color-bg-secondary:  #111118;
-$color-bg-card:       #1E1E2E;
+// Colores — versión más clara
+$color-bg-primary:    #12121C;   // antes #0A0A0F
+$color-bg-secondary:  #1A1A28;   // antes #111118
+$color-bg-card:       #252538;   // antes #1E1E2E
 $color-accent:        #EA580C;
 $color-text-primary:  #FFFFFF;
-$color-text-muted:    #A0A0B0;
-$color-accent-dark: #C05621;
+$color-text-muted:    #B8B8CC;   // antes #A0A0B0 — un poco más visible
+$color-accent-dark:   #C05621;
