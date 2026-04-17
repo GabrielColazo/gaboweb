@@ -260,54 +260,99 @@ section {
 }
 
 #servicios {
-  background-color: #1A1A28;
+  background-color: #12121C;
+  padding: 100px 0;
+}
+#servicios .titulo-wrapper {
+  position: relative;
+  padding: 10px 0;
+}
+#servicios .header-decor {
+  color: rgba(184, 184, 204, 0.4);
+}
+#servicios .header-decor i {
+  font-size: 1.5rem;
+  color: #EA580C;
+  opacity: 0.7;
+}
+#servicios .header-decor .linea-finita {
+  width: 100px;
+  height: 1px;
+  background-color: rgba(184, 184, 204, 0.2);
 }
 #servicios .section-titulo {
-  font-size: 24px;
+  font-family: "Inter", sans-serif;
+  font-size: 48px;
   font-weight: 700;
   color: #FFFFFF;
-  margin-bottom: 12px;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+}
+#servicios .section-titulo span {
+  color: #EA580C;
+  font-weight: 300;
+  display: block;
 }
 #servicios .section-subtitulo {
-  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
   color: #B8B8CC;
-  max-width: 480px;
+  max-width: 650px;
   margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.8;
+}
+#servicios .section-subtitulo strong {
+  color: #FFFFFF;
+  font-weight: 600;
 }
 #servicios .servicio-card {
   background-color: #252538;
-  border-radius: 12px;
-  padding: 32px 24px;
+  border-radius: 16px;
+  padding: 45px 30px;
   text-align: center;
   height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(184, 184, 204, 0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 #servicios .servicio-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 32px rgba(234, 88, 12, 0.15);
+  transform: translateY(-12px);
+  border-color: rgba(234, 88, 12, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+#servicios .servicio-card:hover .servicio-icono {
+  transform: scale(1.1) rotate(5deg);
 }
 #servicios .servicio-card h3 {
   font-size: 18px;
   font-weight: 600;
   color: #FFFFFF;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 #servicios .servicio-card p {
   font-size: 14px;
   color: #B8B8CC;
-  margin: 0;
+  line-height: 1.6;
 }
 #servicios .servicio-icono {
-  font-size: 40px;
+  font-size: 45px;
   color: #EA580C;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
 }
 #servicios .servicio-icono i {
   line-height: 1;
+  filter: drop-shadow(0 5px 15px rgba(234, 88, 12, 0.2));
 }
 
+@media (max-width: 768px) {
+  #servicios .section-titulo {
+    font-size: 32px;
+  }
+}
 #proyectos {
   background-color: #12121C;
+  padding: 60px 0;
 }
 #proyectos .section-titulo, #proyectos .section-subtitulo {
   text-align: center;
@@ -401,6 +446,53 @@ section {
 #proyectos .btn-proyecto:hover {
   background-color: #FFFFFF;
   color: #EA580C;
+}
+
+#proyectosMobile {
+  padding: 20px 0;
+}
+#proyectosMobile .carousel-item {
+  padding: 0 10px;
+}
+#proyectosMobile .carousel-control-prev-icon,
+#proyectosMobile .carousel-control-next-icon {
+  background-color: #EA580C;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-size: 60%;
+  filter: invert(1) brightness(100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+#proyectosMobile .carousel-control-prev, #proyectosMobile .carousel-control-next {
+  width: 50px;
+  opacity: 1;
+}
+#proyectosMobile .carousel-indicators {
+  bottom: -30px;
+}
+#proyectosMobile .carousel-indicators button {
+  background-color: #EA580C;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+#proyectosMobile .carousel-indicators button.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+#proyectosMobile .proyecto-card-mobile {
+  background-color: #252538;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(234, 88, 12, 0.2);
+}
+#proyectosMobile .proyecto-card-mobile img {
+  width: 100%;
+  height: 220px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #sobremi {
@@ -632,11 +724,53 @@ section {
 
 #footer {
   background-color: #1A1A28;
-  padding: 32px 0;
+  padding: 60px 0 32px;
   border-top: 1px solid rgba(234, 88, 12, 0.2);
 }
+#footer .footer-identidad {
+  margin-bottom: 50px;
+}
+#footer .footer-identidad .footer-line {
+  height: 1px;
+  flex-grow: 1;
+  max-width: 150px;
+  background: linear-gradient(to right, transparent, rgba(234, 88, 12, 0.4));
+}
+#footer .footer-identidad .footer-line:last-child {
+  background: linear-gradient(to left, transparent, rgba(234, 88, 12, 0.4));
+}
+#footer .footer-identidad .location-box .location-tag {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: #EA580C;
+  font-weight: 700;
+  margin-bottom: -2px;
+  text-transform: uppercase;
+}
+#footer .footer-identidad .location-box .location-title {
+  font-family: "Inter", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+#footer .footer-identidad .location-box .location-title span {
+  font-weight: 700;
+}
+#footer .footer-identidad .location-box .location-province {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 6px;
+  color: rgba(184, 184, 204, 0.6);
+  font-weight: 400;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
 #footer .footer-logo {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: #FFFFFF;
   letter-spacing: 1px;
@@ -645,32 +779,37 @@ section {
 #footer .footer-logo span {
   color: #EA580C;
 }
+#footer .footer-web {
+  font-size: 14px;
+  color: rgba(184, 184, 204, 0.7);
+  margin-top: 4px;
+}
 #footer .footer-copy {
   font-size: 14px;
   color: #B8B8CC;
   margin: 0;
+  font-weight: 300;
 }
 #footer .footer-redes {
   display: flex;
-  gap: 16px;
+  gap: 20px;
   justify-content: center;
 }
 #footer .footer-redes a {
   color: #B8B8CC;
-  font-size: 20px;
-  transition: all 0.3s ease;
+  font-size: 22px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 #footer .footer-redes a:hover {
   color: #EA580C;
-  transform: translateY(-3px);
-}
-#footer .footer-web {
-  font-size: 14px;
-  color: #B8B8CC;
-  margin-top: 6px;
-  margin-bottom: 0;
+  transform: translateY(-5px);
 }
 
+@media (max-width: 768px) {
+  #footer .location-box .location-title {
+    font-size: 2rem;
+  }
+}
 .whatsapp-float {
   position: fixed;
   bottom: 32px;
