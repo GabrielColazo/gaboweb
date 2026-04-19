@@ -1,0 +1,97 @@
+@use 'variables' as *;
+
+// ================================
+// GABOWEB - Proceso de trabajo
+// ================================
+
+#proceso {
+    background-color: $color-bg-secondary;
+    padding: 100px 0;
+
+    .proceso-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 35px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(180deg, transparent, $color-accent, transparent);
+
+            @media (min-width: 768px) {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    .proceso-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 32px 0;
+        position: relative;
+
+        @media (min-width: 768px) {
+            width: 50%;
+            padding: 32px 48px;
+
+            &:nth-child(even) {
+                align-self: flex-end;
+                flex-direction: row-reverse;
+                text-align: right;
+            }
+        }
+    }
+
+    .proceso-numero {
+        min-width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: $color-bg-card;
+        border: 2px solid $color-accent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        font-weight: $font-bold;
+        color: $color-accent;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+
+        i {
+            font-size: 1.5rem;
+        }
+    }
+
+    .proceso-contenido {
+        padding-top: 12px;
+
+        h3 {
+            font-size: $font-size-lg;
+            font-weight: $font-semibold;
+            color: $color-text-primary;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: $font-size-sm;
+            color: $color-text-muted;
+            line-height: 1.7;
+            margin: 0;
+        }
+    }
+
+    .proceso-step:hover .proceso-numero {
+        background-color: $color-accent;
+        color: $color-text-primary;
+        box-shadow: 0 0 20px rgba($color-accent, 0.4);
+    }
+}

@@ -1,80 +1,43 @@
 @use 'variables' as *;
 
 // ================================
-// GABOWEB - Servicios (Versión Pro)
+// GABOWEB - Servicios
 // ================================
 
 #servicios {
     background-color: $color-bg-primary;
-    padding: 100px 0; // Más aire para un look premium
+    padding: 100px 0;
 
-    .titulo-wrapper {
-        position: relative;
-        padding: 10px 0;
-    }
-
-    // Decoración de los costados para llenar el vacío
     .header-decor {
-        color: rgba($color-text-muted, 0.4); 
-        
-        i { 
-            font-size: 1.5rem; 
+        color: rgba($color-text-muted, 0.4);
+
+        i {
+            font-size: 1.5rem;
             color: $color-accent;
             opacity: 0.7;
         }
 
         .linea-finita {
-            width: 100px; // Largo de la línea lateral
+            width: 100px;
             height: 1px;
             background-color: rgba($color-text-muted, 0.2);
         }
     }
 
-    .section-titulo {
-        font-family: $font-primary;
-        font-size: $font-size-xxl; // 48px o más según tus variables
-        font-weight: $font-bold;
-        color: $color-text-primary;
-        line-height: 1.1;
-        letter-spacing: -1.5px; // Letras más juntas = look más moderno
-
-        span {
-            color: $color-accent;
-            font-weight: $font-light; 
-            display: block; // Salto de línea para el efecto de diseño
-        }
-    }
-
-    .section-subtitulo {
-        font-family: $font-primary;
-        font-size: $font-size-lg;
-        color: $color-text-muted;
-        max-width: 650px;
-        margin: 0 auto;
-        font-weight: $font-light;
-        line-height: 1.8;
-
-        strong {
-            color: $color-text-primary;
-            font-weight: $font-semibold;
-        }
-    }
-
-    // --- Cards de Servicios ---
     .servicio-card {
         background-color: $color-bg-card;
-        border-radius: 16px; // Un poco más redondeadas
+        border-radius: 16px;
         padding: 45px 30px;
         text-align: center;
         height: 100%;
         border: 1px solid rgba($color-text-muted, 0.05);
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); // Animación suave
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 
         &:hover {
             transform: translateY(-12px);
             border-color: rgba($color-accent, 0.4);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            
+
             .servicio-icono {
                 transform: scale(1.1) rotate(5deg);
             }
@@ -104,12 +67,5 @@
             line-height: 1;
             filter: drop-shadow(0 5px 15px rgba($color-accent, 0.2));
         }
-    }
-}
-
-// Ajuste para tablets: achicamos un poco el título si la pantalla no es tan grande
-@media (max-width: 768px) {
-    #servicios .section-titulo {
-        font-size: 32px;
     }
 }

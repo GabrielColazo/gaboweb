@@ -6,13 +6,133 @@
 
 #contacto {
     background-color: $color-bg-secondary;
+    padding: 60px 0;
 
+    // --- Sobre mí (izquierda) ---
+    .sobremi-saludo {
+        font-size: $font-size-sm;
+        color: $color-accent;
+        font-weight: $font-semibold;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    .sobremi-titulo {
+        font-size: $font-size-lg;
+        font-weight: $font-bold;
+        color: $color-text-primary;
+        margin-bottom: 12px;
+
+        span {
+            color: $color-accent;
+        }
+    }
+
+    .sobremi-texto {
+        font-size: $font-size-sm;
+        color: $color-text-muted;
+        line-height: 1.8;
+        margin-bottom: 12px;
+    }
+
+    .sobremi-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+
+        span {
+            background-color: $color-bg-card;
+            color: $color-accent;
+            font-size: $font-size-sm;
+            font-weight: $font-semibold;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid $color-accent;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: $color-accent;
+                color: $color-text-primary;
+            }
+        }
+    }
+
+    .sobremi-card {
+        background-color: $color-bg-card;
+        border-radius: 12px;
+        padding: 24px;
+        border-left: 3px solid $color-accent;
+        transition: box-shadow 0.3s ease;
+
+        &:hover {
+            box-shadow: 0 8px 32px rgba(234, 88, 12, 0.15);
+        }
+    }
+
+    .sobremi-img-wrapper {
+        position: relative;
+        display: inline-block;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid $color-accent;
+            border-radius: 12px;
+            z-index: 0;
+            transition: all 0.3s ease;
+        }
+
+        &:hover::after {
+            top: 4px;
+            left: 4px;
+        }
+    }
+
+    .sobremi-img {
+        width: 100%;
+        max-width: 150px;
+        border-radius: 12px;
+        position: relative;
+        z-index: 1;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    .sobremi-cert {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 16px;
+
+        i {
+            color: $color-accent;
+            font-size: 1.2rem;
+        }
+
+        span {
+            font-size: $font-size-sm;
+            color: $color-text-muted;
+            font-weight: $font-semibold;
+        }
+    }
+
+    // --- Formulario (derecha) ---
     .contacto-card {
         background-color: $color-bg-card;
         border-radius: 12px;
-        padding: 32px;               // antes 48px
+        padding: 24px;
         border-left: 3px solid $color-accent;
         transition: box-shadow 0.3s ease;
+         height: 100%;
 
         &:hover {
             box-shadow: 0 8px 32px rgba(234, 88, 12, 0.15);
@@ -25,14 +145,16 @@
         font-weight: $font-semibold;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        margin-bottom: 8px;          // antes 12px
+        margin-bottom: 6px;
+        text-align: center;
     }
 
     .contacto-titulo {
-        font-size: $font-size-xl;
+        font-size: $font-size-lg;
         font-weight: $font-bold;
         color: $color-text-primary;
-        margin-bottom: 10px;         // antes 16px
+        margin-bottom: 8px;
+        text-align: center;
 
         span {
             color: $color-accent;
@@ -40,16 +162,17 @@
     }
 
     .contacto-texto {
-        font-size: $font-size-base;
+        font-size: $font-size-sm;
         color: $color-text-muted;
-        margin-bottom: 20px;         // antes 32px
+        margin-bottom: 16px;
+        text-align: center;
     }
 
     .form-label {
         color: $color-text-muted;
         font-size: $font-size-sm;
         font-weight: $font-semibold;
-        margin-bottom: 4px;          // antes 6px
+        margin-bottom: 4px;
     }
 
     .form-control,
@@ -59,8 +182,8 @@
         border-radius: 8px;
         color: $color-text-primary;
         font-family: $font-primary;
-        font-size: $font-size-base;
-        padding: 10px 14px;          // antes 12px 16px
+        font-size: $font-size-sm;
+        padding: 8px 12px;
         transition: all 0.3s ease;
 
         &:focus {
@@ -75,11 +198,9 @@
         }
     }
 
-    // Textarea más compacto
     textarea.form-control {
-        
-        min-height: 90px;            // antes era rows="5" → ~120px
-        height: 90px;
+        min-height: 70px;
+        height: 70px;
         resize: vertical;
     }
 
@@ -92,18 +213,56 @@
         background-color: $color-accent;
         color: $color-text-primary;
         border: none;
-        padding: 12px 40px;          // antes 14px 40px
+        padding: 10px 40px;
         border-radius: 8px;
         font-family: $font-primary;
-        font-size: $font-size-base;
+        font-size: $font-size-sm;
         font-weight: $font-semibold;
-        width: 100%;
+        width: auto;
         transition: all 0.3s ease;
         cursor: pointer;
+        margin: 32px auto 0;
 
         &:hover {
             background-color: $color-accent-dark;
             box-shadow: 0 8px 32px rgba(234, 88, 12, 0.3);
         }
     }
+}
+
+.sobremi-disponible {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+
+}
+
+.sobremi-ilustracion {
+    width: 100px;
+    opacity: 0.85;
+    
+}
+
+.footer-disponible {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: $font-size-sm;
+    font-weight: $font-semibold;
+    color: $color-text-muted;
+}
+
+.footer-disponible-punto {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #25D366;
+    display: inline-block;
+    animation: pulso-verde 2s ease-in-out infinite;
+}
+
+@keyframes pulso-verde {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+    50%       { box-shadow: 0 0 0 6px rgba(37, 211, 102, 0); }
 }

@@ -11,10 +11,11 @@
 // Componentes
 @use 'navbar';
 @use 'hero';
+@use 'global';
 @use 'servicios';
+@use 'proceso';
 @use 'proyectos';
-@use 'sobremi';
-@use 'faq';
+@use 'cta';
 @use 'contacto';
 @use 'footer';
 @use 'modal';

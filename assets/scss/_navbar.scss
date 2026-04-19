@@ -4,11 +4,36 @@
 // GABOWEB - Navbar
 // ================================
 
+#promo-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1031;
+    background-color: $color-accent-dark;
+    padding: 8px 0;
+    text-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    p {
+        margin: 0;
+        font-size: $font-size-sm;
+        font-weight: $font-semibold;
+        color: $color-text-primary;
+        letter-spacing: 0.03em;
+    }
+
+    &.oculta {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
 #navbar {
+    transition: top 0.3s ease, all 0.3s ease;
     background-color: $color-bg-secondary;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding: 16px 0;
-    transition: all 0.3s ease;
 
     .navbar-brand {
         font-size: 22px;

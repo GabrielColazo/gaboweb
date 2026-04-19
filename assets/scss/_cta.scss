@@ -1,0 +1,119 @@
+@use 'variables' as *;
+
+// ================================
+// GABOWEB - CTA
+// ================================
+
+@keyframes pulso {
+    0%, 100% { border-color: rgba($color-accent, 0.3); }
+    50%       { border-color: rgba($color-accent, 1); }
+}
+
+@keyframes rebote {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-6px); }
+}
+
+@keyframes brillo {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+#cta {
+    background-color: $color-bg-secondary;
+    padding: 60px 0 30px;
+    text-align: center;
+
+    .cta-saludo {
+        font-size: $font-size-xl;
+        color: $color-accent;
+        font-weight: $font-semibold;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        background: linear-gradient(
+            90deg,
+            $color-accent 0%,
+            #ff9a5c 50%,
+            $color-accent 100%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: brillo 3s linear infinite;
+    }
+
+    .cta-titulo {
+        font-family: $font-primary;
+        font-size: $font-size-xxl;
+        font-weight: $font-bold;
+        color: $color-text-primary;
+        line-height: 1.1;
+        letter-spacing: -1.5px;
+        margin-bottom: 16px;
+
+        span {
+            color: $color-accent;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 32px;
+        }
+    }
+
+    .cta-subtitulo {
+        font-size: $font-size-lg;
+        color: $color-text-muted;
+        font-weight: $font-light;
+        max-width: 500px;
+        margin: 0 auto 40px;
+        line-height: 1.8;
+    }
+
+    .promo-card {
+        background-color: rgba($color-accent, 0.08);
+        border: 1px solid rgba($color-accent, 0.3);
+        border-radius: 12px;
+        padding: 20px 32px;
+        max-width: 650px;
+        margin: 40px auto 0;
+        animation: pulso 2s ease-in-out infinite;
+
+        p {
+            margin: 0;
+            font-size: $font-size-lg;
+            font-weight: $font-semibold;
+            color: $color-accent;
+            letter-spacing: 0.03em;
+        }
+    }
+
+    .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #25D366;
+        color: $color-text-primary;
+        font-family: $font-primary;
+        font-size: $font-size-lg;
+        font-weight: $font-semibold;
+        padding: 16px 40px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+        animation: rebote 2s ease-in-out infinite;
+
+        i {
+            font-size: 1.4rem;
+        }
+
+        &:hover {
+            background-color: #128C7E;
+            color: $color-text-primary;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+        }
+    }
+}

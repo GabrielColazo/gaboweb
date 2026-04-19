@@ -30,24 +30,45 @@ function draw() {
 setInterval(draw, 40);
 
 document.addEventListener('click', function (event) {
-    const menu = document.getElementById('navbarNav'); // Asegúrate que este sea el ID de tu menú
-    const boton = document.querySelector('.navbar-toggler');
-    const isClickInside = menu.contains(event.target) || boton.contains(event.target);
-
-  
-});
-
-document.addEventListener('click', function (event) {
-    // 1. Identificamos los elementos con TUS IDs actuales
     const menu = document.getElementById('menuNavbar'); 
     const boton = document.querySelector('.navbar-toggler');
-    
-    // 2. Verificamos si el clic fue fuera del menú y fuera del botón
     const clickAfuera = !menu.contains(event.target) && !boton.contains(event.target);
-
-    // 3. Si el menú está abierto (tiene la clase 'show') y clickeaste afuera, lo cerramos
     if (clickAfuera && menu.classList.contains('show')) {
         const instanciaBootstrap = bootstrap.Collapse.getOrCreateInstance(menu);
         instanciaBootstrap.hide();
+    }
+});
+
+// ================================
+// SCROLL - Progress bar + Promo bar
+// ================================
+const progressBar = document.createElement('div');
+progressBar.id = 'scroll-progress';
+document.body.appendChild(progressBar);
+
+const promoBar = document.getElementById('promo-bar');
+const navbar = document.getElementById('navbar');
+const promoHeight = promoBar.offsetHeight;
+
+// Inicializar al cargar
+navbar.style.top = promoHeight + 'px';
+document.body.style.paddingTop = promoHeight + 'px';
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    // Progress bar
+    progressBar.style.width = (scrollTop / docHeight * 100) + '%';
+
+    // Promo bar + navbar + body
+    if (scrollTop > 80) {
+        promoBar.classList.add('oculta');
+        navbar.style.top = '0px';
+        document.body.style.paddingTop = '0px';
+    } else {
+        promoBar.classList.remove('oculta');
+        navbar.style.top = promoHeight + 'px';
+        document.body.style.paddingTop = promoHeight + 'px';
     }
 });
