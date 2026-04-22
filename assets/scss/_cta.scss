@@ -4,11 +4,6 @@
 // GABOWEB - CTA
 // ================================
 
-@keyframes pulso {
-    0%, 100% { border-color: rgba($color-accent, 0.3); }
-    50%       { border-color: rgba($color-accent, 1); }
-}
-
 @keyframes rebote {
     0%, 100% { transform: translateY(0); }
     50%       { transform: translateY(-6px); }
@@ -69,24 +64,6 @@
         max-width: 500px;
         margin: 0 auto 40px;
         line-height: 1.8;
-    }
-
-    .promo-card {
-        background-color: rgba($color-accent, 0.08);
-        border: 1px solid rgba($color-accent, 0.3);
-        border-radius: 12px;
-        padding: 20px 32px;
-        max-width: 650px;
-        margin: 40px auto 0;
-        animation: pulso 2s ease-in-out infinite;
-
-        p {
-            margin: 0;
-            font-size: $font-size-lg;
-            font-weight: $font-semibold;
-            color: $color-accent;
-            letter-spacing: 0.03em;
-        }
     }
 
     .cta-btn {

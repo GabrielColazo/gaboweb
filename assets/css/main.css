@@ -75,7 +75,7 @@ section {
   left: 0;
   right: 0;
   z-index: 1031;
-  background-color: #C05621;
+  background-color: rgba(234, 88, 12, 0.08);
   padding: 8px 0;
   text-align: center;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -631,14 +631,6 @@ section {
      object-fit: cover;
 }
 
-@keyframes pulso {
-  0%, 100% {
-    border-color: rgba(234, 88, 12, 0.3);
-  }
-  50% {
-    border-color: #ea580c;
-  }
-}
 @keyframes rebote {
   0%, 100% {
     transform: translateY(0);
@@ -698,22 +690,6 @@ section {
   max-width: 500px;
   margin: 0 auto 40px;
   line-height: 1.8;
-}
-#cta .promo-card {
-  background-color: rgba(234, 88, 12, 0.08);
-  border: 1px solid rgba(234, 88, 12, 0.3);
-  border-radius: 12px;
-  padding: 20px 32px;
-  max-width: 650px;
-  margin: 40px auto 0;
-  animation: pulso 2s ease-in-out infinite;
-}
-#cta .promo-card p {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-  color: #EA580C;
-  letter-spacing: 0.03em;
 }
 #cta .cta-btn {
   display: inline-flex;
