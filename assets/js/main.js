@@ -1,4 +1,6 @@
-// Matrix Hero
+// ================================
+// MATRIX HERO
+// ================================
 const canvas = document.getElementById('matrix');
 const ctx = canvas.getContext('2d');
 
@@ -17,7 +19,6 @@ function draw() {
     ctx.fillStyle = 'rgba(10,10,15,0.07)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.font = fontSize + 'px monospace';
-
     drops.forEach((y, i) => {
         const char = chars[Math.floor(Math.random() * chars.length)];
         ctx.fillStyle = Math.random() > 0.5 ? 'rgba(234,88,12,0.7)' : 'rgba(234,88,12,0.2)';
@@ -26,16 +27,16 @@ function draw() {
         drops[i]++;
     });
 }
-
 setInterval(draw, 40);
 
-document.addEventListener('click', function (event) {
-    const menu = document.getElementById('menuNavbar'); 
+// ================================
+// NAVBAR - Cerrar al click afuera
+// ================================
+document.addEventListener('click', (event) => {
+    const menu = document.getElementById('menuNavbar');
     const boton = document.querySelector('.navbar-toggler');
-    const clickAfuera = !menu.contains(event.target) && !boton.contains(event.target);
-    if (clickAfuera && menu.classList.contains('show')) {
-        const instanciaBootstrap = bootstrap.Collapse.getOrCreateInstance(menu);
-        instanciaBootstrap.hide();
+    if (!menu.contains(event.target) && !boton.contains(event.target) && menu.classList.contains('show')) {
+        bootstrap.Collapse.getOrCreateInstance(menu).hide();
     }
 });
 
@@ -50,18 +51,14 @@ const promoBar = document.getElementById('promo-bar');
 const navbar = document.getElementById('navbar');
 const promoHeight = promoBar.offsetHeight;
 
-// Inicializar al cargar
 navbar.style.top = promoHeight + 'px';
 document.body.style.paddingTop = promoHeight + 'px';
 
 window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-
-    // Progress bar
     progressBar.style.width = (scrollTop / docHeight * 100) + '%';
 
-    // Promo bar + navbar + body
     if (scrollTop > 80) {
         promoBar.classList.add('oculta');
         navbar.style.top = '0px';
@@ -76,16 +73,17 @@ window.addEventListener('scroll', () => {
 // ================================
 // SCROLL REVEAL - Servicios
 // ================================
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('visible')
-      }, index * 150)
-    }
-  })
-}, { threshold: 0.1 })
+const isMobile = window.innerWidth <= 768;
 
-document.querySelectorAll('.servicio-card').forEach(card => {
-  observer.observe(card)
-})
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+                if (isMobile) entry.target.classList.add('activo-movil');
+            }, index * 150);
+        }
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.servicio-card').forEach(card => observer.observe(card));
