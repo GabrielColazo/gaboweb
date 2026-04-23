@@ -72,3 +72,20 @@ window.addEventListener('scroll', () => {
         document.body.style.paddingTop = promoHeight + 'px';
     }
 });
+
+// ================================
+// SCROLL REVEAL - Servicios
+// ================================
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible')
+      }, index * 150)
+    }
+  })
+}, { threshold: 0.1 })
+
+document.querySelectorAll('.servicio-card').forEach(card => {
+  observer.observe(card)
+})
