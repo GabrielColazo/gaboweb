@@ -73,14 +73,11 @@ window.addEventListener('scroll', () => {
 // ================================
 // SCROLL REVEAL - Servicios
 // ================================
-const isMobile = window.innerWidth <= 768;
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
             setTimeout(() => {
                 entry.target.classList.add('visible');
-                if (isMobile) entry.target.classList.add('activo-movil');
             }, index * 150);
         }
     });
