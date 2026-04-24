@@ -10,7 +10,7 @@
     left: 0;
     right: 0;
     z-index: 1031;
-   background-color: rgba(234, 88, 12, 0.08);
+    background-color: rgba(234, 88, 12, 0.08);
     padding: 8px 0;
     text-align: center;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -43,9 +43,7 @@
         display: inline-block;
         transition: transform 0.3s ease, filter 0.3s ease;
 
-        span {
-            color: $color-accent;
-        }
+        span { color: $color-accent; }
 
         &:hover {
             transform: scale(1.08);
@@ -58,18 +56,33 @@
         font-size: $font-size-sm;
         font-weight: $font-regular;
         padding: 8px 16px;
+        position: relative;
         transition: color 0.3s ease;
+        @media (max-width: 991px) {
+    &::after { display: none; }
+}
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 16px;
+            width: 0;
+            height: 1.5px;
+            background-color: $color-accent;
+            transition: width 0.3s ease;
+        }
 
         &:hover {
             color: $color-accent;
+
+            &::after { width: calc(100% - 32px); }
         }
     }
 
     .navbar-toggler {
         border-color: rgba(255, 255, 255, 0.2);
 
-        .navbar-toggler-icon {
-            filter: invert(1);
-        }
+        .navbar-toggler-icon { filter: invert(1); }
     }
 }

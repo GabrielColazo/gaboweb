@@ -118,10 +118,29 @@ section {
   font-size: 14px;
   font-weight: 400;
   padding: 8px 16px;
+  position: relative;
   transition: color 0.3s ease;
+}
+@media (max-width: 991px) {
+  #navbar .nav-link::after {
+    display: none;
+  }
+}
+#navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  width: 0;
+  height: 1.5px;
+  background-color: #EA580C;
+  transition: width 0.3s ease;
 }
 #navbar .nav-link:hover {
   color: #EA580C;
+}
+#navbar .nav-link:hover::after {
+  width: calc(100% - 32px);
 }
 #navbar .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.2);
@@ -830,32 +849,22 @@ section {
   position: relative;
   display: inline-block;
 }
-#contacto .sobremi-img-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  width: 100%;
-  height: 100%;
-  border: 2px solid #EA580C;
-  border-radius: 12px;
-  z-index: 0;
-  transition: all 0.3s ease;
-}
-#contacto .sobremi-img-wrapper:hover::after {
-  top: 4px;
-  left: 4px;
-}
 #contacto .sobremi-img {
   width: 100%;
   max-width: 150px;
   border-radius: 12px;
   position: relative;
   z-index: 1;
+  border: 2px solid #EA580C;
   transition: transform 0.3s ease;
+  animation: latido 2.5s ease-in-out infinite;
+  filter: grayscale(100%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  animation: latido 2.5s ease-in-out infinite, colorear 4s ease-in-out infinite alternate;
 }
 #contacto .sobremi-img:hover {
   transform: scale(1.02);
+  filter: grayscale(0%);
 }
 #contacto .sobremi-cert {
   display: flex;
@@ -1003,6 +1012,25 @@ section {
   }
   50% {
     box-shadow: 0 0 0 6px rgba(37, 211, 102, 0);
+  }
+}
+@keyframes latido {
+  0% {
+    box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(234, 88, 12, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(234, 88, 12, 0);
+  }
+}
+@keyframes colorear {
+  0% {
+    filter: grayscale(100%);
+  }
+  100% {
+    filter: grayscale(0%);
   }
 }
 #footer {
