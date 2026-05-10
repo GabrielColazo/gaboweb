@@ -84,3 +84,57 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 document.querySelectorAll('.servicio-card').forEach(card => observer.observe(card));
+
+// ================================
+// GABOWEB - Reviews Carousel
+// ================================
+
+(function () {
+
+  const track   = document.getElementById('gr-track');
+  const dotsWrap = document.getElementById('gr-dots');
+  const btnPrev  = document.getElementById('gr-prev');
+  const btnNext  = document.getElementById('gr-next');
+
+  if (!track) return; // Si no existe la sección, no hacer nada
+
+  const cards = Array.from(track.querySelectorAll('.gr-card'));
+  let currentIndex = 0;
+
+  const calcVisible = () =>
+    window.innerWidth < 576 ? 1 : window.innerWidth < 992 ? 2 : 3;
+
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    const pages = Math.ceil(cards.length / calcVisible());
+    for (let i = 0; i < pages; i++) {
+      const dot = document.createElement('button');
+      dot.className = `gr-dot${i === 0 ? ' active' : ''}`;
+      dot.setAttribute('aria-label', `Página ${i + 1}`);
+      dot.dataset.i = i;
+      dot.addEventListener('click', function () { goTo(parseInt(this.dataset.i)); });
+      dotsWrap.appendChild(dot);
+    }
+  }
+
+  function goTo(index) {
+    const vis = calcVisible();
+    const max = Math.max(0, Math.ceil(cards.length / vis) - 1);
+    currentIndex = Math.min(Math.max(index, 0), max);
+    const w = cards[0] ? cards[0].offsetWidth + 18 : 328;
+    track.style.transform = `translateX(-${currentIndex * vis * w}px)`;
+    dotsWrap.querySelectorAll('.gr-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === currentIndex)
+    );
+    btnPrev.disabled = currentIndex === 0;
+    btnNext.disabled = currentIndex >= max;
+  }
+
+  btnPrev.addEventListener('click', () => goTo(currentIndex - 1));
+  btnNext.addEventListener('click', () => goTo(currentIndex + 1));
+  window.addEventListener('resize', () => { buildDots(); goTo(currentIndex); });
+
+  buildDots();
+  goTo(0);
+
+})();
