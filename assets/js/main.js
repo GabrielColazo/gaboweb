@@ -1,5 +1,5 @@
 // ================================
-// MATRIX HERO
+// MATRIX HERO — con pausa por rendimiento
 // ================================
 const canvas = document.getElementById('matrix');
 const ctx = canvas.getContext('2d');
@@ -27,7 +27,24 @@ function draw() {
         drops[i]++;
     });
 }
-setInterval(draw, 40);
+
+let matrixInterval;
+const heroEl = document.getElementById('hero');
+const isMobile = window.innerWidth < 768;
+const fpsInterval = isMobile ? 60 : 40;
+
+const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            if (!matrixInterval) matrixInterval = setInterval(draw, fpsInterval);
+        } else {
+            clearInterval(matrixInterval);
+            matrixInterval = null;
+        }
+    });
+}, { threshold: 0.1 });
+
+if (heroEl) heroObserver.observe(heroEl);
 
 // ================================
 // NAVBAR - Cerrar al click afuera
@@ -209,4 +226,26 @@ document.querySelectorAll('.servicio-card').forEach(card => observer.observe(car
             }, 400);
         }
     }, 90);
+})();
+
+// ================================
+// PARTÍCULAS FLOTANTES - HERO
+// ================================
+(function() {
+    const hero = document.getElementById('hero');
+    if (!hero) return;
+
+    for (let i = 0; i < 8; i++) {
+        const p = document.createElement('div');
+        p.className = 'hero-particle';
+        p.style.cssText = `
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            width: ${4 + Math.random() * 4}px;
+            height: ${4 + Math.random() * 4}px;
+            animation-delay: ${Math.random() * 5}s;
+            animation-duration: ${6 + Math.random() * 4}s;
+        `;
+        hero.appendChild(p);
+    }
 })();
