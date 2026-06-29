@@ -359,6 +359,11 @@ section {
   font-weight: 600;
   margin-bottom: 16px;
 }
+#hero .hero-wave {
+  display: inline-block;
+  animation: wave 2.5s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
 #hero .hero-titulo {
   font-size: 48px;
   font-weight: 700;
@@ -373,6 +378,11 @@ section {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 3s ease-in-out infinite;
+}
+#hero .hero-titulo-light {
+  font-weight: 300;
+  color: #B8B8CC;
+  letter-spacing: 0.02em;
 }
 #hero .hero-descripcion {
   font-size: 18px;
@@ -541,6 +551,29 @@ section {
   100% {
     transform: translateY(0) translateX(0) scale(1);
     opacity: 0.2;
+  }
+}
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60%, 100% {
+    transform: rotate(0deg);
   }
 }
 .hero-particle {
