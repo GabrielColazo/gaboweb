@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Reseteo y variables se inyectan desde PHP, aquí los defaults */
+:root {
+    --font-stack: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --color-bg-body: #111827;
+    --color-form-bg: #ffffff;
+    --color-primary: #0f4c81;
+    --color-primary-rgb: 15, 76, 129;
+    --color-text-title: #1f2937;
+    --color-text-label: #4b5563;
+    --color-border: #d1d5db;
+    --radius-card: 12px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: var(--font-stack);
+    background-color: var(--color-body-bg);
+    color: var(--color-text-label);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tarjeta del formulario */
+.form-container {
+    width: 100%;
+    max-width: 480px; /* Ancho de la tarjeta */
+    background: var(--color-form-bg);
+    padding: 2.5rem;
+    border-radius: var(--radius-card);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.form-header h2 {
+    margin: 0;
+    color: var(--color-text-title);
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: -0.5px;
+}
+.form-header p {
+    margin-top: 8px;
+    color: var(--color-text-label);
+    font-size: 0.95rem;
+}
+
+/* Grupos de formulario */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-label);
+}
+
+/* Wrapper para inputs con icono */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%; /* <--- ESTA ES LA LÍNEA CORREGIDA */
+}
+
+/* Iconos SVG */
+.input-icon {
+    position: absolute;
+    left: 12px;
+    width: 20px;
+    height: 20px;
+    fill: #9ca3af; /* Gris claro por defecto */
+    pointer-events: none;
+    transition: fill 0.3s ease;
+    z-index: 2;
+}
+
+/* Estilos base para todos los inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 12px 12px 42px; /* Espacio a la izquierda para el icono */
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background-color: #f9fafb; /* Fondo gris muy claro */
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--color-text-title);
+    transition: all 0.3s ease;
+    appearance: none; /* Elimina estilos nativos del SO */
+}
+
+/* El textarea no lleva icono, ajustamos su padding */
+textarea {
+    padding-left: 12px;
+    resize: vertical;
+}
+
+/* Estados Focus (al hacer clic) */
+input:focus, select:focus, textarea:focus {
+    border-color: var(--color-primary);
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.15);
+}
+
+/* Cambiar color del icono al hacer foco en el input */
+.input-wrapper:focus-within .input-icon {
+    fill: var(--color-primary);
+}
+
+/* --- INPUT DE ARCHIVO (Drag & Drop Style) --- */
+.file-upload-zone {
+    position: relative;
+    width: 100%;
+    border: 2px dashed var(--color-border);
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    background-color: #f9fafb;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.file-upload-zone:hover {
+    border-color: var(--color-primary);
+    background-color: #f0f9ff; /* Un azul muy clarito al pasar el mouse */
+}
+
+/* El input real invisible debe estar ENCIMA para recibir el clic */
+.file-upload-native {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Contenido visual del área de carga */
+.file-upload-content {
+    pointer-events: none; /* El clic lo recibe el input invisible */
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.file-icon {
+    width: 32px;
+    height: 32px;
+    fill: var(--color-primary);
+    opacity: 0.8;
+    margin-bottom: 8px;
+}
+
+#fileText { font-size: 0.9rem; color: var(--color-text-label); }
+.file-name { 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+    color: var(--color-primary); 
+    margin-top: 5px;
+    word-break: break-all;
+}
+
+/* Botón de envío */
+.btn-submit {
+    /* El color de fondo se define en el HTML vía variables CSS */
+    color: #ffffff;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: filter 0.2s, transform 0.1s;
+    margin-top: 1rem;
+}
+
+.btn-submit:hover { filter: brightness(110%); /* Efecto de brillo simple */ }
+.btn-submit:active { transform: translateY(1px); }
+.btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
+/* Mensajes de Feedback */
+.form-feedback {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-align: center;
+    display: none;
+}
+.success { background-color: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+.error { background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+
+/* Ajuste para móviles */
+@media (max-width: 480px) {
+    .form-container { padding: 1.5rem; }
+    body { padding: 15px; }
+}

@@ -249,3 +249,49 @@ document.querySelectorAll('.servicio-card').forEach(card => observer.observe(car
         hero.appendChild(p);
     }
 })();
+
+// ================================
+// FORMULARIO - Token CSRF + Envío AJAX
+// ================================
+(function() {
+    const form = document.querySelector('form[name="contacto"]');
+    if (!form) return;
+
+    const csrfInput = document.getElementById('csrf_token');
+
+    // Obtener token CSRF
+    fetch('contacto/token.php')
+        .then(r => r.json())
+        .then(d => { if (csrfInput) csrfInput.value = d.token; })
+        .catch(() => {});
+
+    // Interceptar envío
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const btn = this.querySelector('.btn-enviar');
+        const originalText = btn.textContent;
+        btn.textContent = 'Enviando...';
+        btn.disabled = true;
+
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this)
+        })
+        .then(r => r.json())
+        .then(d => {
+            if (d.success) {
+                window.location.href = 'gracias.html';
+            } else {
+                alert(d.message || 'Error al enviar el mensaje.');
+            }
+        })
+        .catch(() => {
+            alert('Error de conexión. Intentalo de nuevo.');
+        })
+        .finally(() => {
+            btn.textContent = originalText;
+            btn.disabled = false;
+        });
+    });
+})();
