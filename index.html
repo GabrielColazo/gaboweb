@@ -67,26 +67,46 @@
             <div class="container">
 
                 <!-- Logo -->
-                <a class="navbar-brand" href="#hero"><span>&lt;</span>GABO<span>WEB/&gt;</span></a>
+                <a class="navbar-brand" href="#hero"
+                   data-html='<span>&lt;</span>GABO<span>WEB/&gt;</span>'>
+                   <span class="typing-cursor">|</span>
+                </a>
 
-                <!-- Botón hamburguesa -->
+                <!-- Botón hamburguesa animada -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar"
                     aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <div class="hamburger-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </button>
 
                 <!-- Links -->
                 <div class="collapse navbar-collapse" id="menuNavbar">
+
+                    <!-- Header del menú mobile -->
+                    <div class="menu-header">
+                        <span class="menu-logo"><span>&lt;</span>GABO<span>WEB/&gt;</span></span>
+                        <button class="menu-close" id="menuClose" aria-label="Cerrar menú">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#proceso">Proceso</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#servicios"><i class="bi bi-gear-wide-connected"></i> Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#proceso"><i class="bi bi-diagram-3"></i> Proceso</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#proyectos"><i class="bi bi-briefcase"></i> Proyectos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto"><i class="bi bi-chat-dots"></i> Contacto</a></li>
                     </ul>
                 </div>
 
             </div>
         </nav>
+
+        <!-- Overlay del menú mobile -->
+        <div class="navbar-overlay" id="navbarOverlay"></div>
+
     </header>
 
     <main>

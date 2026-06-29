@@ -93,10 +93,18 @@ section {
 }
 
 #navbar {
-  transition: top 0.3s ease, all 0.3s ease;
+  z-index: 1055;
+  transition: top 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   background-color: #1A1A28;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 16px 0;
+}
+#navbar.scrolled {
+  background-color: rgba(26, 26, 40, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
 }
 #navbar .navbar-brand {
   font-size: 22px;
@@ -121,11 +129,6 @@ section {
   position: relative;
   transition: color 0.3s ease;
 }
-@media (max-width: 991px) {
-  #navbar .nav-link::after {
-    display: none;
-  }
-}
 #navbar .nav-link::after {
   content: "";
   position: absolute;
@@ -136,17 +139,199 @@ section {
   background-color: #EA580C;
   transition: width 0.3s ease;
 }
+#navbar .nav-link i {
+  color: #EA580C;
+  margin-right: 6px;
+  font-size: 0.9em;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
 #navbar .nav-link:hover {
   color: #EA580C;
+}
+#navbar .nav-link:hover i {
+  transform: translateX(2px) scale(1.1);
 }
 #navbar .nav-link:hover::after {
   width: calc(100% - 32px);
 }
 #navbar .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px 12px;
 }
-#navbar .navbar-toggler .navbar-toggler-icon {
-  filter: invert(1);
+
+.hamburger-lines {
+  width: 22px;
+  height: 16px;
+  position: relative;
+  display: block;
+}
+.hamburger-lines span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+}
+.hamburger-lines span:nth-child(1) {
+  top: 0;
+}
+.hamburger-lines span:nth-child(2) {
+  top: 7px;
+}
+.hamburger-lines span:nth-child(3) {
+  top: 14px;
+}
+
+.navbar-toggler.active .hamburger-lines span:nth-child(1) {
+  top: 7px;
+  transform: rotate(45deg);
+}
+.navbar-toggler.active .hamburger-lines span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggler.active .hamburger-lines span:nth-child(3) {
+  top: 7px;
+  transform: rotate(-45deg);
+}
+
+.typing-cursor {
+  animation: blink 0.7s step-end infinite;
+  color: #EA580C;
+  font-weight: 700;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(300px, 80vw);
+    height: 100vh;
+    background-color: #1A1A28;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex !important;
+    flex-direction: column;
+    padding: 0;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+  }
+  .navbar-collapse.show {
+    right: 0;
+  }
+  .navbar-collapse.collapsing {
+    display: flex !important;
+    height: auto !important;
+    transition: none !important;
+  }
+  .navbar-nav {
+    flex-direction: column;
+    padding: 0 16px 24px;
+    width: 100%;
+  }
+  .nav-item {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .navbar-collapse.show .nav-item {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .navbar-collapse.show .nav-item:nth-child(1) {
+    transition-delay: 0.07s;
+  }
+  .navbar-collapse.show .nav-item:nth-child(2) {
+    transition-delay: 0.14s;
+  }
+  .navbar-collapse.show .nav-item:nth-child(3) {
+    transition-delay: 0.21s;
+  }
+  .navbar-collapse.show .nav-item:nth-child(4) {
+    transition-delay: 0.28s;
+  }
+  .nav-link {
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  .nav-link i {
+    font-size: 1.1em;
+    margin-right: 10px;
+  }
+  .nav-link:hover {
+    background-color: rgba(234, 88, 12, 0.1);
+    color: #EA580C;
+  }
+  .nav-link::after {
+    display: none;
+  }
+}
+.menu-header {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 8px;
+}
+@media (max-width: 991px) {
+  .menu-header {
+    display: flex;
+  }
+}
+.menu-header .menu-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+.menu-header .menu-logo span {
+  color: #EA580C;
+}
+.menu-header .menu-close {
+  background: none;
+  border: none;
+  color: #B8B8CC;
+  font-size: 20px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.menu-header .menu-close:hover {
+  background-color: rgba(234, 88, 12, 0.12);
+  color: #EA580C;
+}
+
+.navbar-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1049;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.navbar-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #hero {
@@ -617,10 +802,8 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center top;
-     object-position: center top;
+  object-fit: cover;
+  object-position: center top;
 }
 #proyectos .proyecto-frente .proyecto-info {
   display: none;
@@ -700,8 +883,7 @@ section {
 #proyectosMobile .proyecto-card-mobile img {
   width: 100%;
   height: 220px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .proyecto-destacado {
@@ -719,8 +901,7 @@ section {
 }
 .proyecto-destacado .proyecto-frente img {
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .badge-nuevo {
@@ -977,9 +1158,6 @@ section {
   border-color: #EA580C;
   box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
   color: #FFFFFF;
-}
-#contacto .form-control::-moz-placeholder, #contacto .form-select::-moz-placeholder {
-  color: #B8B8CC;
 }
 #contacto .form-control::placeholder,
 #contacto .form-select::placeholder {
@@ -1449,4 +1627,6 @@ section {
   color: #FFFFFF;
   transform: scale(1.1);
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */

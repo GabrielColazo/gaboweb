@@ -41,6 +41,50 @@ document.addEventListener('click', (event) => {
 });
 
 // ================================
+// HAMBURGUESA → X + MOBILE MENU
+// ================================
+const navbarToggler = document.querySelector('.navbar-toggler');
+const navbarCollapse = document.getElementById('menuNavbar');
+const navbarOverlay = document.getElementById('navbarOverlay');
+
+navbarCollapse.addEventListener('show.bs.collapse', () => {
+    navbarToggler.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (navbarOverlay) navbarOverlay.classList.add('active');
+});
+
+navbarCollapse.addEventListener('hide.bs.collapse', () => {
+    navbarToggler.classList.remove('active');
+    document.body.style.overflow = '';
+    if (navbarOverlay) navbarOverlay.classList.remove('active');
+});
+
+// Cerrar menú al tocar overlay
+if (navbarOverlay) {
+    navbarOverlay.addEventListener('click', () => {
+        const inst = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (inst) inst.hide();
+    });
+}
+
+// Cerrar menú al tocar botón X
+const menuClose = document.getElementById('menuClose');
+if (menuClose) {
+    menuClose.addEventListener('click', () => {
+        const inst = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (inst) inst.hide();
+    });
+}
+
+// Cerrar menú al tocar cualquier link
+document.querySelectorAll('#menuNavbar .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        const inst = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (inst) inst.hide();
+    });
+});
+
+// ================================
 // SCROLL - Progress bar + Promo bar
 // ================================
 const progressBar = document.createElement('div');
@@ -63,10 +107,12 @@ window.addEventListener('scroll', () => {
         promoBar.classList.add('oculta');
         navbar.style.top = '0px';
         document.body.style.paddingTop = '0px';
+        navbar.classList.add('scrolled');
     } else {
         promoBar.classList.remove('oculta');
         navbar.style.top = promoHeight + 'px';
         document.body.style.paddingTop = promoHeight + 'px';
+        navbar.classList.remove('scrolled');
     }
 });
 
@@ -137,4 +183,30 @@ document.querySelectorAll('.servicio-card').forEach(card => observer.observe(car
   buildDots();
   goTo(0);
 
+})();
+
+// ================================
+// TYPING EFFECT - LOGO
+// ================================
+(function() {
+    const brand = document.querySelector('.navbar-brand');
+    if (!brand || !brand.dataset.html) return;
+
+    const finalHTML = brand.dataset.html;
+    const text = '<GABOWEB/>';
+    let i = 0;
+
+    brand.innerHTML = '<span class="typing-cursor">|</span>';
+
+    const interval = setInterval(() => {
+        if (i < text.length) {
+            brand.innerHTML = text.substring(0, i + 1) + '<span class="typing-cursor">|</span>';
+            i++;
+        } else {
+            clearInterval(interval);
+            setTimeout(() => {
+                brand.innerHTML = finalHTML;
+            }, 400);
+        }
+    }, 90);
 })();
