@@ -9,7 +9,7 @@ $config = [
         'password'   => 'REEMPLAZAR_EN_SERVIDOR',
         'secure'     => 'ssl',
         'port'       => 465,
-        'debug'      => 0,
+        'debug'      => 1,
         'from_name'  => 'GaboWeb - Formulario Web',
         'recipient'  => 'contacto@gaboweb.com.ar'
     ],
