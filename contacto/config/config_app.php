@@ -1,12 +1,12 @@
 <?php
 defined('ACCESO_SEGURO') or die('Acceso denegado');
 
-return [
+$config = [
     'smtp' => [
         'host'       => 'a0130306.ferozo.com',
         'auth'       => true,
         'username'   => 'contacto@gaboweb.com.ar',
-        'password'   => 'TU_CONTRASEÑA_SMTP_AQUI',
+        'password'   => 'REEMPLAZAR_EN_SERVIDOR',
         'secure'     => 'ssl',
         'port'       => 465,
         'debug'      => 0,
@@ -40,3 +40,14 @@ return [
         'honey_pot_field'   => 'website_check'
     ]
 ];
+
+// Cargar configuración sensible desde archivo fuera del repo (no en git)
+$sensitiveFile = __DIR__ . '/config_sensitive.php';
+if (file_exists($sensitiveFile)) {
+    $sensitive = require $sensitiveFile;
+    if (isset($sensitive['password'])) {
+        $config['smtp']['password'] = $sensitive['password'];
+    }
+}
+
+return $config;

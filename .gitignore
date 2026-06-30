@@ -16,3 +16,6 @@ node_modules/
 
 # Archivos de configuración de despliegue
 .netlify/
+
+# Configuración sensible (contraseñas, API keys) — subir manualmente al servidor
+/contacto/config/config_sensitive.php
