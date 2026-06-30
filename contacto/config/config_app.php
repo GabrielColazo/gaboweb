@@ -6,7 +6,7 @@ return [
         'host'       => 'a0130306.ferozo.com',
         'auth'       => true,
         'username'   => 'contacto@gaboweb.com.ar',
-        'password'   => '7jdggfwe@K5U',
+        'password'   => 'TU_CONTRASEÑA_SMTP_AQUI',
         'secure'     => 'ssl',
         'port'       => 465,
         'debug'      => 0,
