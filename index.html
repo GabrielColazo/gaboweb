@@ -720,18 +720,18 @@
                                 <input type="hidden" name="website_check" value="" style="display:none">
                                 <div class="row g-3">
                                     <div class="col-12 col-md-6">
-                                        <label class="form-label">Nombre</label>
-                                        <input type="text" class="form-control" name="nombre" placeholder="Tu nombre"
-                                            required>
+                                        <label class="form-label" for="nombre">Nombre</label>
+                                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Tu nombre"
+                                            required autocomplete="name">
                                     </div>
                                     <div class="col-12 col-md-6">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" class="form-control" name="email" placeholder="tu@email.com"
-                                            required>
+                                        <label class="form-label" for="email">Email</label>
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="tu@email.com"
+                                            required autocomplete="email">
                                     </div>
                                     <div class="col-12">
-                                        <label class="form-label">Asunto</label>
-                                        <select class="form-select" name="asunto" required>
+                                        <label class="form-label" for="asunto">Asunto</label>
+                                        <select class="form-select" name="asunto" id="asunto" required>
                                             <option value="" disabled selected>Seleccioná una opción</option>
                                             <option value="presupuesto">Solicitar presupuesto</option>
                                             <option value="consulta">Consulta general</option>
@@ -739,9 +739,9 @@
                                         </select>
                                     </div>
                                     <div class="col-12">
-                                        <label class="form-label">Mensaje</label>
-                                        <textarea class="form-control" name="mensaje" rows="3"
-                                            placeholder="Contame sobre tu proyecto..." required></textarea>
+                                        <label class="form-label" for="mensaje">Mensaje</label>
+                                        <textarea class="form-control" name="mensaje" id="mensaje" rows="3"
+                                            placeholder="Contame sobre tu proyecto..." required autocomplete="off"></textarea>
                                     </div>
                                     <div class="col-12 d-flex justify-content-center">
                                         <button type="submit" class="btn-enviar">Enviar mensaje</button>
