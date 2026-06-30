@@ -265,4 +265,7 @@ try {
     }
 }
 
+// Log para debug
+error_log("[GaboWeb Formulario] Resultado: " . json_encode($response));
+
 echo json_encode($response);

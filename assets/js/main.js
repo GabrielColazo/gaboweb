@@ -263,7 +263,7 @@ document.querySelectorAll('.servicio-card').forEach(card => observer.observe(car
     fetch('contacto/token.php')
         .then(r => r.json())
         .then(d => { if (csrfInput) csrfInput.value = d.token; })
-        .catch(() => {});
+        .catch(err => console.error('Error al obtener token CSRF:', err));
 
     // Interceptar envío
     form.addEventListener('submit', function(e) {
@@ -286,7 +286,8 @@ document.querySelectorAll('.servicio-card').forEach(card => observer.observe(car
                 alert(d.message || 'Error al enviar el mensaje.');
             }
         })
-        .catch(() => {
+        .catch(err => {
+            console.error('Error en envío del formulario:', err);
             alert('Error de conexión. Intentalo de nuevo.');
         })
         .finally(() => {
