@@ -254,6 +254,7 @@ try {
 
 } catch (Exception $e) {
     $msg = $e->getMessage();
+    error_log("[GaboWeb SMTP Error] " . $msg . " | " . ($mail->ErrorInfo ?? 'sin detalle'));
     if (!empty($conf['smtp']['debug']) && $conf['smtp']['debug'] > 0) {
         $response['message'] = "DEBUG: " . $msg . " | " . ($mail->ErrorInfo ?? '');
     } else {
