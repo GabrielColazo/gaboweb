@@ -715,9 +715,10 @@
                             <h2 class="contacto-titulo">Hablemos <span>hoy</span></h2>
                             <p class="contacto-texto">Completá el formulario y te respondo a la brevedad.</p>
 
-                            <form name="contacto" method="POST" action="contacto/procesar.php">
-                                <input type="hidden" name="csrf_token" id="csrf_token" value="">
-                                <input type="hidden" name="website_check" value="" style="display:none">
+                            <form name="contacto" method="POST" action="https://api.web3forms.com/submit">
+                                <input type="hidden" name="access_key" value="eb1777c1-a536-430d-aec5-bb201db6b32e">
+                                <input type="hidden" name="redirect" value="https://gaboweb.com.ar/gracias.html">
+                                <input type="hidden" name="subject" value="Nuevo mensaje desde gaboweb.com.ar">
                                 <div class="row g-3">
                                     <div class="col-12 col-md-6">
                                         <label class="form-label" for="nombre">Nombre</label>
