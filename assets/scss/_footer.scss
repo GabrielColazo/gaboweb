@@ -109,9 +109,13 @@
         .footer-copy-brand {
             letter-spacing: 0.5px;
 
-            span {
-                color: $color-accent;
+            .footer-logo-mark {
                 font-weight: $font-semibold;
+                color: $color-text-primary;
+            }
+
+            .footer-logo-accent {
+                color: $color-accent;
             }
         }
 

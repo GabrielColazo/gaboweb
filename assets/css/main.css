@@ -1751,9 +1751,12 @@ section {
 #footer .footer-copy-brand {
   letter-spacing: 0.5px;
 }
-#footer .footer-copy-brand span {
-  color: #EA580C;
+#footer .footer-copy-brand .footer-logo-mark {
   font-weight: 600;
+  color: #FFFFFF;
+}
+#footer .footer-copy-brand .footer-logo-accent {
+  color: #EA580C;
 }
 #footer .footer-bottom-links {
   display: flex;
