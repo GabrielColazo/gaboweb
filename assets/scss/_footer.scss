@@ -87,10 +87,94 @@
         margin: 0;
         font-weight: $font-light;
     }
+
+    .footer-bottom {
+        padding-top: 20px;
+
+        .footer-bottom-line {
+            height: 1px;
+            max-width: 320px;
+            margin: 0 auto 20px;
+            background: linear-gradient(to right, transparent, rgba($color-accent, 0.35), transparent);
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            text-align: center;
+        }
+
+        .footer-copy-brand {
+            letter-spacing: 0.5px;
+
+            span {
+                color: $color-accent;
+                font-weight: $font-semibold;
+            }
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 13px;
+        }
+
+        .footer-link {
+            color: $color-text-muted;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.25s ease;
+            position: relative;
+
+            i {
+                color: $color-accent;
+                font-size: 14px;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -3px;
+                width: 0;
+                height: 1px;
+                background-color: $color-accent;
+                transition: width 0.25s ease;
+            }
+
+            &:hover {
+                color: $color-text-primary;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+
+        .footer-dot {
+            color: rgba($color-accent, 0.5);
+        }
+    }
 }
 
 @media (max-width: 768px) {
     #footer .location-box .location-title {
         font-size: 1.5rem;
+    }
+
+    #footer .footer-bottom-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #footer .footer-dot {
+        display: none;
     }
 }
