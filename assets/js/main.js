@@ -251,26 +251,27 @@ document.querySelectorAll('.servicio-card').forEach(card => observer.observe(car
 })();
 
 // ================================
-// Modal de detalle - Proyectos (mobile)
+// Scroll-reveal - Tarjetas de proyectos (mobile)
 // ================================
 (function () {
-    const modalEl = document.getElementById('proyectoModal');
-    if (!modalEl) return;
+    const cards = document.querySelectorAll('.proyecto-mini');
+    if (!cards.length || !('IntersectionObserver' in window)) {
+        cards.forEach(function (c) { c.classList.add('is-visible'); });
+        return;
+    }
 
-    const modalImg = document.getElementById('proyectoModalImg');
-    const modalTitle = document.getElementById('proyectoModalTitle');
-    const modalDesc = document.getElementById('proyectoModalDesc');
-    const modalLink = document.getElementById('proyectoModalLink');
-    const modalBadge = modalEl.querySelector('.proyecto-modal-badge');
-
-    document.querySelectorAll('.proyecto-mini').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            modalImg.src = btn.dataset.img;
-            modalImg.alt = btn.dataset.title;
-            modalTitle.textContent = btn.dataset.title;
-            modalDesc.textContent = btn.dataset.desc;
-            modalLink.href = btn.dataset.link;
-            modalBadge.classList.toggle('d-none', btn.dataset.nuevo !== 'true');
-        });
+    cards.forEach(function (card, i) {
+        card.style.transitionDelay = (i % 2) * 0.08 + 's';
     });
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    cards.forEach(function (card) { observer.observe(card); });
 })();

@@ -133,7 +133,7 @@
     }
 }
 
-// Grilla de miniaturas en mobile (2 columnas + modal de detalle)
+// Grilla de miniaturas en mobile (2 columnas, links directos al sitio)
 .proyectos-grid-mobile {
     padding: 10px 4px 0;
 
@@ -146,14 +146,38 @@
         border: 1px solid rgba($color-accent, 0.12);
         border-radius: 12px;
         overflow: hidden;
-        padding: 0;
         text-align: left;
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        text-decoration: none;
+        opacity: 0;
+        transform: translateY(18px);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+            opacity 0.5s ease, transform 0.5s ease;
+
+        &.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         &:active {
-            transform: scale(0.97);
-            border-color: rgba($color-accent, 0.5);
+            transform: scale(0.96);
+            border-color: rgba($color-accent, 0.6);
+            box-shadow: 0 0 0 3px rgba($color-accent, 0.15);
+
+            .proyecto-mini-media img {
+                transform: scale(1.08);
+            }
+
+            .proyecto-mini-external {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
+    }
+
+    .proyecto-mini-media {
+        position: relative;
+        display: block;
+        overflow: hidden;
 
         img {
             width: 100%;
@@ -161,7 +185,26 @@
             object-fit: cover;
             object-position: center top;
             display: block;
+            transition: transform 0.4s ease;
         }
+    }
+
+    .proyecto-mini-external {
+        position: absolute;
+        bottom: 6px;
+        right: 6px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: rgba($color-bg-primary, 0.75);
+        color: $color-accent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        opacity: 0;
+        transform: scale(0.7);
+        transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
     .proyecto-mini-title {
@@ -179,54 +222,6 @@
         top: 8px;
         left: 8px;
     }
-}
-
-// Modal de detalle de proyecto (mobile)
-.proyecto-modal-content {
-    background-color: $color-bg-secondary;
-    border: 1px solid rgba($color-accent, 0.2);
-    border-radius: 14px;
-    overflow: hidden;
-}
-
-.proyecto-modal-close {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    z-index: 3;
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 50%;
-    padding: 8px;
-}
-
-.proyecto-modal-media {
-    position: relative;
-
-    img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        object-position: center top;
-        display: block;
-    }
-}
-
-#proyectoModal .modal-body {
-    h3 {
-        color: $color-text-primary;
-        margin-bottom: 8px;
-    }
-
-    p {
-        color: rgba(255, 255, 255, 0.75);
-        font-size: $font-size-sm;
-        margin-bottom: 16px;
-    }
-}
-
-#proyectoModal .btn-proyecto {
-    align-self: center;
 }
 
 .badge-nuevo {
