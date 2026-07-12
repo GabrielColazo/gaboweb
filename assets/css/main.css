@@ -987,8 +987,8 @@ section {
   text-decoration: none;
   opacity: 0;
   transform: translateY(18px);
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
-    opacity 0.5s ease, transform 0.5s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease,
+    opacity 0.5s ease;
 }
 .proyecto-mini.is-visible {
   opacity: 1;
@@ -998,6 +998,30 @@ section {
   transform: scale(0.96);
   border-color: rgba(234, 88, 12, 0.6);
   box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
+}
+@media (hover: hover) and (pointer: fine) {
+  .proyecto-mini:hover {
+    transform: translateY(-4px);
+    border-color: rgba(234, 88, 12, 0.5);
+    box-shadow: 0 8px 24px rgba(234, 88, 12, 0.2);
+    animation: glow-pulse 1.8s ease-in-out infinite;
+  }
+  .proyecto-mini:hover .proyecto-mini-media img {
+    transform: scale(1.06);
+  }
+  .proyecto-mini:hover .proyecto-mini-external {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.proyecto-mini-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(234, 88, 12, 0.35);
+  transform: scale(0);
+  animation: ripple-expand 0.6s ease-out forwards;
+  pointer-events: none;
+  z-index: 3;
 }
 .proyecto-mini-media {
   position: relative;
@@ -1065,6 +1089,24 @@ section {
   }
   100% {
     background-position: 200% center;
+  }
+}
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(234, 88, 12, 0.2);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(234, 88, 12, 0.4), 0 0 0 2px rgba(234, 88, 12, 0.15);
+  }
+}
+@keyframes ripple-expand {
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
   }
 }
 #cta {

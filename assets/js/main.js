@@ -275,3 +275,34 @@ document.querySelectorAll('.servicio-card').forEach(card => observer.observe(car
 
     cards.forEach(function (card) { observer.observe(card); });
 })();
+
+// ================================
+// RIPPLE EFFECT — Tarjetas mobile (touch)
+// ================================
+(function () {
+    var cards = document.querySelectorAll('.proyecto-mini');
+    if (!cards.length) return;
+
+    cards.forEach(function (card) {
+        card.addEventListener('touchstart', function (e) {
+            var touch = e.touches[0];
+            var rect = card.getBoundingClientRect();
+            var x = touch.clientX - rect.left;
+            var y = touch.clientY - rect.top;
+            var size = Math.max(rect.width, rect.height) * 2;
+
+            var ripple = document.createElement('span');
+            ripple.className = 'proyecto-mini-ripple';
+            ripple.style.width = size + 'px';
+            ripple.style.height = size + 'px';
+            ripple.style.left = (x - size / 2) + 'px';
+            ripple.style.top = (y - size / 2) + 'px';
+
+            card.appendChild(ripple);
+
+            ripple.addEventListener('animationend', function () {
+                ripple.remove();
+            });
+        });
+    });
+})();

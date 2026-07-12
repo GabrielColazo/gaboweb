@@ -150,8 +150,8 @@
         text-decoration: none;
         opacity: 0;
         transform: translateY(18px);
-        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
-            opacity 0.5s ease, transform 0.5s ease;
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease,
+            opacity 0.5s ease;
 
         &.is-visible {
             opacity: 1;
@@ -172,6 +172,36 @@
                 transform: scale(1);
             }
         }
+
+        // Hover + glow pulsante — solo desktop
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                transform: translateY(-4px);
+                border-color: rgba($color-accent, 0.5);
+                box-shadow: 0 8px 24px rgba($color-accent, 0.2);
+                animation: glow-pulse 1.8s ease-in-out infinite;
+
+                .proyecto-mini-media img {
+                    transform: scale(1.06);
+                }
+
+                .proyecto-mini-external {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    // Ripple effect — mobile
+    .proyecto-mini-ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba($color-accent, 0.35);
+        transform: scale(0);
+        animation: ripple-expand 0.6s ease-out forwards;
+        pointer-events: none;
+        z-index: 3;
     }
 
     .proyecto-mini-media {
@@ -238,4 +268,28 @@
     letter-spacing: 0.05em;
     box-shadow: 0 2px 8px rgba($color-accent, 0.4);
     font-family: $font-primary;
+}
+
+// ================================
+// KEYFRAMES — Proyectos mobile
+// ================================
+
+@keyframes glow-pulse {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba($color-accent, 0.2);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba($color-accent, 0.4), 0 0 0 2px rgba($color-accent, 0.15);
+    }
+}
+
+@keyframes ripple-expand {
+    0% {
+        transform: scale(0);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
 }
