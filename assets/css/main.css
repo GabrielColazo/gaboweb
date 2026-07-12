@@ -986,15 +986,17 @@ section {
   text-align: left;
   text-decoration: none;
   opacity: 0;
-  transform: translateY(18px);
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease,
-    opacity 0.5s ease;
+  transform: translateY(24px) scale(0.95);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease, box-shadow 0.3s ease;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 .proyecto-mini.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .proyecto-mini:active {
   transform: scale(0.96);

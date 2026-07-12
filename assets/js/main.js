@@ -261,7 +261,7 @@ document.querySelectorAll('.servicio-card').forEach(card => observer.observe(car
     }
 
     cards.forEach(function (card, i) {
-        card.style.transitionDelay = (i % 2) * 0.08 + 's';
+        card.style.transitionDelay = (i % 2) * 0.12 + 's';
     });
 
     const observer = new IntersectionObserver(function (entries) {
