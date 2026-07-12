@@ -146,6 +146,7 @@
         border: 1px solid rgba($color-accent, 0.12);
         border-radius: 12px;
         overflow: hidden;
+        contain: layout paint;
         text-align: left;
         text-decoration: none;
         opacity: 0;

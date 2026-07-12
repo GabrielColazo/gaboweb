@@ -983,6 +983,7 @@ section {
   border: 1px solid rgba(234, 88, 12, 0.12);
   border-radius: 12px;
   overflow: hidden;
+  contain: layout paint;
   text-align: left;
   text-decoration: none;
   opacity: 0;
