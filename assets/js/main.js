@@ -249,3 +249,28 @@ document.querySelectorAll('.servicio-card').forEach(card => observer.observe(car
         hero.appendChild(p);
     }
 })();
+
+// ================================
+// Modal de detalle - Proyectos (mobile)
+// ================================
+(function () {
+    const modalEl = document.getElementById('proyectoModal');
+    if (!modalEl) return;
+
+    const modalImg = document.getElementById('proyectoModalImg');
+    const modalTitle = document.getElementById('proyectoModalTitle');
+    const modalDesc = document.getElementById('proyectoModalDesc');
+    const modalLink = document.getElementById('proyectoModalLink');
+    const modalBadge = modalEl.querySelector('.proyecto-modal-badge');
+
+    document.querySelectorAll('.proyecto-mini').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            modalImg.src = btn.dataset.img;
+            modalImg.alt = btn.dataset.title;
+            modalTitle.textContent = btn.dataset.title;
+            modalDesc.textContent = btn.dataset.desc;
+            modalLink.href = btn.dataset.link;
+            modalBadge.classList.toggle('d-none', btn.dataset.nuevo !== 'true');
+        });
+    });
+})();
