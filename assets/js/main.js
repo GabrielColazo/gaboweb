@@ -298,7 +298,12 @@ document.querySelectorAll('.servicio-card').forEach(card => observer.observe(car
             ripple.style.left = (x - size / 2) + 'px';
             ripple.style.top = (y - size / 2) + 'px';
 
-            card.appendChild(ripple);
+            var media = card.querySelector('.proyecto-mini-media');
+            if (media) {
+                media.appendChild(ripple);
+            } else {
+                card.appendChild(ripple);
+            }
 
             ripple.addEventListener('animationend', function () {
                 ripple.remove();
