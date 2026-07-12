@@ -1,228 +1,229 @@
-@use 'variables' as *;
-
 // ================================
-// GABOWEB - Proyectos
+// GABOWEB - Sección Proyectos
 // ================================
 
 #proyectos {
     background-color: $color-bg-primary;
     padding: 60px 0;
 
-    .section-titulo, .section-subtitulo {
+    .section-titulo,
+    .section-subtitulo {
         text-align: center;
     }
 
-    // --- LÓGICA FLIP (DESKTOP/TABLET) ---
-    .proyecto-flip {
-        height: 280px;
-        perspective: 1000px;
-        position: relative;
-        margin-bottom: 30px;
-
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 3px;
-            background-color: $color-accent;
-            border-radius: 0 0 12px 12px;
-            transition: width 0.4s ease;
-        }
-
-        &:hover::after { width: 100%; }
-        &:hover .proyecto-flip-inner { transform: rotateY(180deg); }
-    }
-
-    .proyecto-flip-inner {
-        position: relative;
-        width: 100%;
+    .proyecto-card {
+        background-color: $color-bg-card;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid rgba($color-accent, 0.12);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         height: 100%;
-        transition: transform 0.6s ease;
-        transform-style: preserve-3d;
-    }
-
-    .proyecto-frente, .proyecto-dorso {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 12px;
-        backface-visibility: hidden;
-        overflow: hidden; 
-    }
-
-    .proyecto-frente {
-      background-color: $color-bg-card;
-    position: absolute; // ← CLAVE: debe ser absolute, no relative
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-        img {
-       position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        }
-
-        .proyecto-info {
-            display: none;
-            
-        }
-    }
-
-    .proyecto-dorso {
-        background-color: $color-accent-dark;
-        transform: rotateY(180deg);
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        text-align: center;
-        gap: 12px;
-
-        h3 { color: $color-text-primary; margin: 0; }
-        p { font-size: $font-size-sm; color: rgba(255, 255, 255, 0.85); }
-    }
-
-    .btn-proyecto {
-        border: 2px solid $color-text-primary;
-        padding: 8px 20px;
-        border-radius: 6px;
-        color: $color-text-primary;
-        text-decoration: none;
-        transition: 0.3s;
+        margin-bottom: 6px;
 
         &:hover {
-            background-color: $color-text-primary;
-            color: $color-accent;
-        }
-    }
-}
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+            border-color: rgba($color-accent, 0.4);
 
-// --- LÓGICA CARRUSEL (MOBILE) ---
-#proyectosMobile {
-    padding: 20px 0;
-
-    .carousel-item {
-        padding: 0 10px;
-    }
-
-    // ARREGLO DE FLECHAS: Aquí forzamos el naranja
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        background-color: $color-accent; 
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        background-size: 60%; 
-        // Este filtro hace que el símbolo blanco de la flecha resalte
-        filter: invert(1) brightness(100%); 
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .carousel-control-prev, .carousel-control-next {
-        width: 50px; // Área de clic más cómoda
-        opacity: 1;  // Siempre visibles
-    }
-
-    // PUNTITOS NARANJAS
-    .carousel-indicators {
-        bottom: -30px; // Los bajamos para que no pisen el texto
-        button {
-            background-color: $color-accent;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            opacity: 0.5;
-            &.active {
-                opacity: 1;
-                transform: scale(1.2);
+            .proyecto-card-media img {
+                transform: scale(1.06);
             }
         }
     }
 
-    .proyecto-card-mobile,
-    .proyecto-card-premium {
-        background-color: $color-bg-card;
-        border-radius: 15px;
+    .proyecto-card-media {
+        position: relative;
+        height: 190px;
         overflow: hidden;
-        border: 1px solid rgba($color-accent, 0.2);
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        flex-shrink: 0;
 
         img {
             width: 100%;
-            height: 220px;
+            height: 100%;
             object-fit: cover;
             object-position: center top;
+            transition: transform 0.5s ease;
+            display: block;
         }
+    }
+
+    .proyecto-card-body {
+        padding: 18px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        flex: 1;
 
         h3 {
             color: $color-text-primary;
-            margin-bottom: 6px;
+            font-size: 18px;
+            margin: 0;
         }
 
         p {
+            color: rgba(255, 255, 255, 0.7);
             font-size: $font-size-sm;
-            color: rgba(255, 255, 255, 0.75);
-            min-height: 40px;
+            margin: 0 0 6px;
+            flex: 1;
         }
 
-        &:active {
-            transform: scale(0.98);
-            border-color: rgba($color-accent, 0.5);
-            box-shadow: 0 4px 12px rgba($color-accent, 0.25);
+        &.text-center {
+            align-items: center;
+
+            .btn-proyecto {
+                align-self: center;
+            }
         }
     }
 
-    .btn-proyecto-premium {
-        display: inline-block;
-        margin-top: 8px;
+    .btn-proyecto {
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
         border: 2px solid $color-accent;
-        padding: 8px 22px;
+        padding: 8px 18px;
         border-radius: 6px;
         color: $color-text-primary;
         text-decoration: none;
+        font-size: $font-size-sm;
         font-weight: $font-semibold;
         transition: 0.3s;
 
-        &:active {
+        i {
+            font-size: 13px;
+            transition: transform 0.25s ease;
+        }
+
+        &:hover {
             background-color: $color-accent;
             color: $color-text-primary;
+
+            i {
+                transform: translate(2px, -2px);
+            }
+        }
+    }
+
+    // Tarjetas destacadas (Refri-gera, Quines Biker) - solo desktop
+    .proyecto-destacado {
+        width: 100%;
+        max-width: 900px;
+
+        .proyecto-card-media {
+            height: 320px;
+        }
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+
+            .proyecto-card-media {
+                width: 55%;
+                height: auto;
+            }
+
+            .proyecto-card-body {
+                width: 45%;
+                justify-content: center;
+            }
         }
     }
 }
 
-// Tarjeta destacada
-.proyecto-destacado {
+// Grilla de miniaturas en mobile (2 columnas, links directos al sitio)
+.proyectos-grid-mobile {
+    padding: 10px 4px 0;
 
-    width: 66.66%; // equivale a 2 de 3 columnas
+    .proyecto-mini {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: $color-bg-card;
+        border: 1px solid rgba($color-accent, 0.12);
+        border-radius: 12px;
+        overflow: hidden;
+        text-align: left;
+        text-decoration: none;
+        opacity: 0;
+        transform: translateY(18px);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+            opacity 0.5s ease, transform 0.5s ease;
 
+        &.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    @media (max-width: 991px) {
-        width: 100%; // en tablet ocupa todo
+        &:active {
+            transform: scale(0.96);
+            border-color: rgba($color-accent, 0.6);
+            box-shadow: 0 0 0 3px rgba($color-accent, 0.15);
+
+            .proyecto-mini-media img {
+                transform: scale(1.08);
+            }
+
+            .proyecto-mini-external {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     }
-    .proyecto-flip-inner,
-    .proyecto-frente,
-    .proyecto-dorso {
-        height: 100%;
+
+    .proyecto-mini-media {
+        position: relative;
+        display: block;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            transition: transform 0.4s ease;
+        }
     }
 
-    .proyecto-frente img {
-        height: 100%;
-        object-fit: cover;
+    .proyecto-mini-external {
+        position: absolute;
+        bottom: 6px;
+        right: 6px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: rgba($color-bg-primary, 0.75);
+        color: $color-accent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        opacity: 0;
+        transform: scale(0.7);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .proyecto-mini-title {
+        display: block;
+        color: $color-text-primary;
+        font-size: 13px;
+        font-weight: $font-semibold;
+        padding: 10px 12px;
+        line-height: 1.3;
+    }
+
+    .proyecto-mini-badge {
+        font-size: 10px;
+        padding: 3px 9px;
+        top: 8px;
+        left: 8px;
     }
 }
 
-// Badge "Nuevo"
 .badge-nuevo {
     position: absolute;
     top: 14px;

@@ -249,3 +249,29 @@ document.querySelectorAll('.servicio-card').forEach(card => observer.observe(car
         hero.appendChild(p);
     }
 })();
+
+// ================================
+// Scroll-reveal - Tarjetas de proyectos (mobile)
+// ================================
+(function () {
+    const cards = document.querySelectorAll('.proyecto-mini');
+    if (!cards.length || !('IntersectionObserver' in window)) {
+        cards.forEach(function (c) { c.classList.add('is-visible'); });
+        return;
+    }
+
+    cards.forEach(function (card, i) {
+        card.style.transitionDelay = (i % 2) * 0.08 + 's';
+    });
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    cards.forEach(function (card) { observer.observe(card); });
+})();
