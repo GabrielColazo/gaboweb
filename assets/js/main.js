@@ -275,3 +275,25 @@ document.querySelectorAll('.servicio-card').forEach(card => observer.observe(car
 
     cards.forEach(function (card) { observer.observe(card); });
 })();
+
+// ================================
+// SCROLL REVEAL - Secciones generales
+// ================================
+(function () {
+    const reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length || !('IntersectionObserver' in window)) {
+        reveals.forEach(function (el) { el.classList.add('revealed'); });
+        return;
+    }
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(function (el) { observer.observe(el); });
+})();
