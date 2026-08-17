@@ -155,7 +155,7 @@
             <span>Servicios</span>
         </div>
 
-        <section id="servicios" class="py-5">
+        <section id="servicios" class="py-5 reveal">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center mb-5">
@@ -252,7 +252,7 @@
         </div>
 
         <!-- ========== PROCESO ========== -->
-        <section id="proceso">
+        <section id="proceso" class="reveal">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center mb-5">
@@ -337,7 +337,7 @@
             <span>Proyectos</span>
         </div>
 
-        <section id="proyectos" class="py-5">
+        <section id="proyectos" class="py-5 reveal">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center mb-5">
@@ -365,12 +365,31 @@
                     </div>
                 </div>
 
-                <div class="row g-4 d-none d-md-flex">
+                <div class="row g-4 d-none d-md-flex justify-content-center">
+                    <!-- TARJETA FLAGSHIP - Proyecto propio -->
+<div class="col-12 d-flex justify-content-center mb-4">
+    <div class="proyecto-card proyecto-destacado proyecto-flagship">
+        <div class="proyecto-card-media">
+
+            <img src="assets/img/barashop.webp" alt="BaraShop">
+        </div>
+        <div class="proyecto-card-body">
+            <span class="flagship-kicker">Aplicación web · activa</span>
+            <h3>BaraShop</h3>
+            <p>Clasificados hiperlocal de Baradero. Diseñado y desarrollado por mí, de la base de datos al frontend.</p>
+            <ul class="flagship-tech">
+                <li>PostgreSQL</li>
+                <li>PWA</li>
+                <li>Vanilla JS</li>
+            </ul>
+            <a href="https://barashop.com.ar" class="btn-proyecto btn-proyecto-flagship" target="_blank" rel="noopener noreferrer">Ver proyecto <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+    </div>
+</div>
                     <!-- TARJETA DESTACADA 1 -->
                     <div class="col-12 d-flex justify-content-center mb-3">
                         <div class="proyecto-card proyecto-destacado">
                             <div class="proyecto-card-media">
-                                <span class="badge-nuevo">✦ Nuevo</span>
                                 <img src="assets/img/proyecto7.webp" alt="Servicio Técnico Aire Acondicionado">
                             </div>
                             <div class="proyecto-card-body">
@@ -386,7 +405,6 @@
                     <div class="col-12 d-flex justify-content-center mb-4">
                         <div class="proyecto-card proyecto-destacado">
                             <div class="proyecto-card-media">
-                                <span class="badge-nuevo">✦ Nuevo</span>
                                 <img src="assets/img/quinesbikerweb.webp" alt="Quines Biker">
                             </div>
                             <div class="proyecto-card-body">
@@ -468,28 +486,26 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-4">
-                        <div class="proyecto-card">
-                            <div class="proyecto-card-media">
-                                <img src="assets/img/proyecto6.webp" alt="Traductor Profesional">
-                            </div>
-                            <div class="proyecto-card-body">
-                                <h3>Traductor Profesional</h3>
-                                <p>Servicio de traducción e interpretación.</p>
-                                <a href="https://traductor-ingles.vercel.app" class="btn-proyecto" target="_blank"
-                                    rel="noopener noreferrer">Ver proyecto <i class="bi bi-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="proyectos-grid-mobile d-block d-md-none">
                     <div class="row g-3">
 
                         <div class="col-6">
+    <a href="https://barashop.com.ar" target="_blank" rel="noopener noreferrer"
+        class="proyecto-mini proyecto-mini-flagship">
+
+        <span class="proyecto-mini-media">
+            <img src="assets/img/barashop.webp" alt="BaraShop">
+            <span class="proyecto-mini-external"><i class="bi bi-box-arrow-up-right"></i></span>
+        </span>
+        <span class="proyecto-mini-title">BaraShop</span>
+    </a>
+</div>
+
+                        <div class="col-6">
                             <a href="https://refri-gera.com.ar" target="_blank" rel="noopener noreferrer"
                                 class="proyecto-mini">
-                                <span class="badge-nuevo proyecto-mini-badge">✦ Nuevo</span>
                                 <span class="proyecto-mini-media">
                                     <img src="assets/img/proyecto7.webp" alt="Refri-gera">
                                     <span class="proyecto-mini-external"><i class="bi bi-box-arrow-up-right"></i></span>
@@ -501,7 +517,6 @@
                         <div class="col-6">
                             <a href="https://quinesbiker.com.ar" target="_blank" rel="noopener noreferrer"
                                 class="proyecto-mini">
-                                <span class="badge-nuevo proyecto-mini-badge">✦ Nuevo</span>
                                 <span class="proyecto-mini-media">
                                     <img src="assets/img/quinesbikerweb.webp" alt="Quines Biker">
                                     <span class="proyecto-mini-external"><i class="bi bi-box-arrow-up-right"></i></span>
@@ -565,17 +580,6 @@
                             </a>
                         </div>
 
-                        <div class="col-6">
-                            <a href="https://traductor-ingles.vercel.app" target="_blank" rel="noopener noreferrer"
-                                class="proyecto-mini">
-                                <span class="proyecto-mini-media">
-                                    <img src="assets/img/proyecto6.webp" alt="Traductor Profesional">
-                                    <span class="proyecto-mini-external"><i class="bi bi-box-arrow-up-right"></i></span>
-                                </span>
-                                <span class="proyecto-mini-title">Traductor</span>
-                            </a>
-                        </div>
-
                     </div>
                 </div>
 
@@ -588,7 +592,7 @@
         </div>
 
         <!-- ========== CTA ========== -->
-        <section id="cta">
+        <section id="cta" class="reveal">
             <div class="container">
                 <p class="cta-saludo">¿Tenés un proyecto en mente?</p>
                 <h2 class="cta-titulo">Hablemos <span>ahora</span></h2>
@@ -608,7 +612,7 @@
         </div>
 
         <!-- ========== CONTACTO ========== -->
-        <section id="contacto">
+        <section id="contacto" class="reveal">
             <div class="container">
                 <div class="row g-5 align-items-stretch">
 
@@ -699,7 +703,7 @@
   GABOWEB - Sección Reseñas Google
  ================================ -->
 
-    <section id="seccion-resenas" aria-label="Reseñas de clientes en Google">
+    <section id="seccion-resenas" aria-label="Reseñas de clientes en Google" class="reveal">
         <div class="container">
 
             <!-- Encabezado -->

@@ -2,6 +2,8 @@
 // GABOWEB - Sección Proyectos
 // ================================
 
+@use 'variables' as *;
+
 #proyectos {
     background-color: $color-bg-primary;
     padding: 60px 0;
@@ -17,19 +19,26 @@
         overflow: hidden;
         border: 1px solid rgba($color-accent, 0.12);
         box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                    box-shadow 0.35s ease,
+                    border-color 0.35s ease;
         height: 100%;
         display: flex;
         flex-direction: column;
         margin-bottom: 6px;
 
         &:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
-            border-color: rgba($color-accent, 0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba($color-accent, 0.12),
+                        0 20px 48px rgba(0, 0, 0, 0.35);
+            border-color: rgba($color-accent, 0.5);
 
             .proyecto-card-media img {
                 transform: scale(1.06);
+            }
+
+            .proyecto-card-media::after {
+                opacity: 0.35;
             }
         }
     }
@@ -39,6 +48,19 @@
         height: 190px;
         overflow: hidden;
         flex-shrink: 0;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+            pointer-events: none;
+            opacity: 0.25;
+            transition: opacity 0.35s ease;
+        }
 
         img {
             width: 100%;
@@ -149,17 +171,13 @@
         text-align: left;
         text-decoration: none;
         opacity: 0;
-        transform: translateY(24px) scale(0.95);
-        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-            opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-            border-color 0.3s ease, box-shadow 0.3s ease;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
+        transform: translateY(18px);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+            opacity 0.5s ease, transform 0.5s ease;
 
         &.is-visible {
             opacity: 1;
-            transform: translateY(0) scale(1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(0);
         }
 
         &:active {
@@ -176,37 +194,6 @@
                 transform: scale(1);
             }
         }
-
-        // Hover + glow pulsante — solo desktop
-        @media (hover: hover) and (pointer: fine) {
-            &:hover {
-                transform: translateY(-4px);
-                border-color: rgba($color-accent, 0.5);
-                box-shadow: 0 8px 24px rgba($color-accent, 0.2);
-                animation: glow-pulse 1.8s ease-in-out infinite;
-
-                .proyecto-mini-media img {
-                    transform: scale(1.06);
-                }
-
-                .proyecto-mini-external {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
-        }
-    }
-
-    // Ripple effect — mobile
-    .proyecto-mini-ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba($color-accent, 0.35);
-        transform: scale(0);
-        animation: ripple-expand 0.6s ease-out forwards;
-        pointer-events: none;
-        z-index: 3;
-        will-change: transform, opacity;
     }
 
     .proyecto-mini-media {
@@ -275,26 +262,66 @@
     font-family: $font-primary;
 }
 
-// ================================
-// KEYFRAMES — Proyectos mobile
-// ================================
+// Variante flagship (BaraShop) - rompe el naranja a propósito
+.proyecto-flagship {
+    border-color: rgba(#059669, 0.25);
+    box-shadow: 0 6px 24px rgba(#059669, 0.15);
 
-@keyframes glow-pulse {
-    0%, 100% {
-        box-shadow: 0 8px 24px rgba($color-accent, 0.2);
-    }
-    50% {
-        box-shadow: 0 8px 32px rgba($color-accent, 0.4), 0 0 0 2px rgba($color-accent, 0.15);
+    &:hover {
+        border-color: rgba(#059669, 0.6);
+        box-shadow: 0 14px 34px rgba(#059669, 0.3);
     }
 }
 
-@keyframes ripple-expand {
-    0% {
-        transform: scale(0);
-        opacity: 0.6;
+.badge-propio {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    background: linear-gradient(135deg, #059669, #047857);
+    color: #fff;
+    font-size: $font-size-sm;
+    font-weight: $font-semibold;
+    padding: 4px 12px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(#059669, 0.4);
+}
+
+.flagship-kicker {
+    color: #059669;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.flagship-tech {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 8px;
+
+    li {
+        border: 1px solid rgba(#059669, 0.4);
+        color: #059669;
+        font-size: 11px;
+        padding: 3px 10px;
+        border-radius: 20px;
     }
-    100% {
-        transform: scale(2.5);
-        opacity: 0;
+}
+
+.btn-proyecto-flagship {
+    border-color: #059669;
+
+    &:hover {
+        background-color: #059669;
+    }
+}
+
+.proyecto-mini-flagship {
+    &:active,
+    &:hover {
+        border-color: rgba(#059669, 0.6) !important;
     }
 }

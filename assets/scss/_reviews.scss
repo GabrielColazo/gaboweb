@@ -126,6 +126,7 @@
   background: $color-bg-card;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 3px solid rgba($color-accent, 0.5);
   padding: 24px;
   transition: background 0.2s, border-color 0.2s, transform 0.2s;
   cursor: default;
@@ -133,6 +134,7 @@
   &:hover {
     background: #2d2d46;
     border-color: rgba(255, 255, 255, 0.13);
+    border-left-color: $color-accent;
     transform: translateY(-3px);
   }
 }

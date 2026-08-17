@@ -261,7 +261,7 @@ document.querySelectorAll('.servicio-card').forEach(card => observer.observe(car
     }
 
     cards.forEach(function (card, i) {
-        card.style.transitionDelay = (i % 2) * 0.12 + 's';
+        card.style.transitionDelay = (i % 2) * 0.08 + 's';
     });
 
     const observer = new IntersectionObserver(function (entries) {
@@ -277,37 +277,23 @@ document.querySelectorAll('.servicio-card').forEach(card => observer.observe(car
 })();
 
 // ================================
-// RIPPLE EFFECT — Tarjetas mobile (touch)
+// SCROLL REVEAL - Secciones generales
 // ================================
 (function () {
-    var cards = document.querySelectorAll('.proyecto-mini');
-    if (!cards.length) return;
+    const reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length || !('IntersectionObserver' in window)) {
+        reveals.forEach(function (el) { el.classList.add('revealed'); });
+        return;
+    }
 
-    cards.forEach(function (card) {
-        card.addEventListener('touchstart', function (e) {
-            var touch = e.touches[0];
-            var rect = card.getBoundingClientRect();
-            var x = touch.clientX - rect.left;
-            var y = touch.clientY - rect.top;
-            var size = Math.max(rect.width, rect.height) * 2;
-
-            var ripple = document.createElement('span');
-            ripple.className = 'proyecto-mini-ripple';
-            ripple.style.width = size + 'px';
-            ripple.style.height = size + 'px';
-            ripple.style.left = (x - size / 2) + 'px';
-            ripple.style.top = (y - size / 2) + 'px';
-
-            var media = card.querySelector('.proyecto-mini-media');
-            if (media) {
-                media.appendChild(ripple);
-            } else {
-                card.appendChild(ripple);
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
             }
-
-            ripple.addEventListener('animationend', function () {
-                ripple.remove();
-            });
         });
-    });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(function (el) { observer.observe(el); });
 })();
