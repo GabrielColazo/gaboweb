@@ -1,327 +1,132 @@
-// ================================
-// GABOWEB - Sección Proyectos
-// ================================
-
 @use 'variables' as *;
 
-#proyectos {
-    background-color: $color-bg-primary;
-    padding: 60px 0;
+.projects-section {
+  .projects-grid {
+    display: grid;
+    // Mobile first: arranca en 280px para que entre perfecto en celulares
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 
-    .section-titulo,
-    .section-subtitulo {
-        text-align: center;
+    @media (min-width: 768px) {
+      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
+  }
 
-    .proyecto-card {
-        background-color: $color-bg-card;
-        border-radius: 14px;
-        overflow: hidden;
-        border: 1px solid rgba($color-accent, 0.12);
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-        transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                    box-shadow 0.35s ease,
-                    border-color 0.35s ease;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 6px;
-
-        &:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 24px rgba($color-accent, 0.12),
-                        0 20px 48px rgba(0, 0, 0, 0.35);
-            border-color: rgba($color-accent, 0.5);
-
-            .proyecto-card-media img {
-                transform: scale(1.06);
-            }
-
-            .proyecto-card-media::after {
-                opacity: 0.35;
-            }
-        }
-    }
-
-    .proyecto-card-media {
-        position: relative;
-        height: 190px;
-        overflow: hidden;
-        flex-shrink: 0;
-
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 60%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
-            pointer-events: none;
-            opacity: 0.25;
-            transition: opacity 0.35s ease;
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-            transition: transform 0.5s ease;
-            display: block;
-        }
-    }
-
-    .proyecto-card-body {
-        padding: 18px 20px 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        flex: 1;
-
-        h3 {
-            color: $color-text-primary;
-            font-size: 18px;
-            margin: 0;
-        }
-
-        p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: $font-size-sm;
-            margin: 0 0 6px;
-            flex: 1;
-        }
-
-        &.text-center {
-            align-items: center;
-
-            .btn-proyecto {
-                align-self: center;
-            }
-        }
-    }
-
-    .btn-proyecto {
-        align-self: flex-start;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        border: 2px solid $color-accent;
-        padding: 8px 18px;
-        border-radius: 6px;
-        color: $color-text-primary;
-        text-decoration: none;
-        font-size: $font-size-sm;
-        font-weight: $font-semibold;
-        transition: 0.3s;
-
-        i {
-            font-size: 13px;
-            transition: transform 0.25s ease;
-        }
-
-        &:hover {
-            background-color: $color-accent;
-            color: $color-text-primary;
-
-            i {
-                transform: translate(2px, -2px);
-            }
-        }
-    }
-
-    // Tarjetas destacadas (Refri-gera, Quines Biker) - solo desktop
-    .proyecto-destacado {
-        width: 100%;
-        max-width: 900px;
-
-        .proyecto-card-media {
-            height: 320px;
-        }
-
-        @media (min-width: 768px) {
-            flex-direction: row;
-
-            .proyecto-card-media {
-                width: 55%;
-                height: auto;
-            }
-
-            .proyecto-card-body {
-                width: 45%;
-                justify-content: center;
-            }
-        }
-    }
-}
-
-// Grilla de miniaturas en mobile (2 columnas, links directos al sitio)
-.proyectos-grid-mobile {
-    padding: 10px 4px 0;
-
-    .proyecto-mini {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        background-color: $color-bg-card;
-        border: 1px solid rgba($color-accent, 0.12);
-        border-radius: 12px;
-        overflow: hidden;
-        text-align: left;
-        text-decoration: none;
-        opacity: 0;
-        transform: translateY(18px);
-        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
-            opacity 0.5s ease, transform 0.5s ease;
-
-        &.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        &:active {
-            transform: scale(0.96);
-            border-color: rgba($color-accent, 0.6);
-            box-shadow: 0 0 0 3px rgba($color-accent, 0.15);
-
-            .proyecto-mini-media img {
-                transform: scale(1.08);
-            }
-
-            .proyecto-mini-external {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-    }
-
-    .proyecto-mini-media {
-        position: relative;
-        display: block;
-        overflow: hidden;
-
-        img {
-            width: 100%;
-            height: 110px;
-            object-fit: cover;
-            object-position: center top;
-            display: block;
-            transition: transform 0.4s ease;
-        }
-    }
-
-    .proyecto-mini-external {
-        position: absolute;
-        bottom: 6px;
-        right: 6px;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background-color: rgba($color-bg-primary, 0.75);
-        color: $color-accent;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 11px;
-        opacity: 0;
-        transform: scale(0.7);
-        transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-
-    .proyecto-mini-title {
-        display: block;
-        color: $color-text-primary;
-        font-size: 13px;
-        font-weight: $font-semibold;
-        padding: 10px 12px;
-        line-height: 1.3;
-    }
-
-    .proyecto-mini-badge {
-        font-size: 10px;
-        padding: 3px 9px;
-        top: 8px;
-        left: 8px;
-    }
-}
-
-.badge-nuevo {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    z-index: 2;
-    background: linear-gradient(135deg, $color-accent, $color-accent-dark);
-    color: $color-text-primary;
-    font-size: $font-size-sm;
-    font-weight: $font-semibold;
-    padding: 4px 12px;
-    border-radius: 20px;
-    letter-spacing: 0.05em;
-    box-shadow: 0 2px 8px rgba($color-accent, 0.4);
-    font-family: $font-primary;
-}
-
-// Variante flagship (BaraShop) - rompe el naranja a propósito
-.proyecto-flagship {
-    border-color: rgba(#059669, 0.25);
-    box-shadow: 0 6px 24px rgba(#059669, 0.15);
-
-    &:hover {
-        border-color: rgba(#059669, 0.6);
-        box-shadow: 0 14px 34px rgba(#059669, 0.3);
-    }
-}
-
-.badge-propio {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    z-index: 2;
-    background: linear-gradient(135deg, #059669, #047857);
-    color: #fff;
-    font-size: $font-size-sm;
-    font-weight: $font-semibold;
-    padding: 4px 12px;
-    border-radius: 20px;
-    box-shadow: 0 2px 8px rgba(#059669, 0.4);
-}
-
-.flagship-kicker {
-    color: #059669;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-}
-
-.flagship-tech {
+  .project-card {
+    background: $bg-card;
+    border: 1px solid $border;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: $transition-smooth;
     display: flex;
-    gap: 8px;
-    list-style: none;
-    padding: 0;
-    margin: 4px 0 8px;
-
-    li {
-        border: 1px solid rgba(#059669, 0.4);
-        color: #059669;
-        font-size: 11px;
-        padding: 3px 10px;
-        border-radius: 20px;
-    }
-}
-
-.btn-proyecto-flagship {
-    border-color: #059669;
+    flex-direction: column;
 
     &:hover {
-        background-color: #059669;
-    }
-}
+      border-color: $border-hover;
+      background: $bg-card-hover;
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 
-.proyecto-mini-flagship {
-    &:active,
-    &:hover {
-        border-color: rgba(#059669, 0.6) !important;
+      .screen-preview .project-img {
+        transform: scale(1.05);
+      }
     }
+
+    .card-screen {
+      aspect-ratio: 16/10;
+      background: #080808;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid $border;
+
+      .project-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .preview-badge {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        z-index: 2;
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        padding: 0.35rem 0.65rem;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 4px;
+        color: $text-main;
+      }
+    }
+
+    .card-meta {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      flex-grow: 1;
+
+      .meta-info {
+        flex-grow: 1;
+      }
+
+      .project-name {
+        font-family: $font-display;
+        font-size: 1.8rem;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.2rem;
+      }
+
+      .project-category {
+        font-size: 0.8rem;
+        color: $text-muted;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+
+        span {
+          font-size: 0.7rem;
+          padding: 0.25rem 0.6rem;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid $border;
+          color: $text-muted;
+          border-radius: 4px;
+        }
+      }
+
+      .card-footer-action {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid $border;
+        padding-top: 1rem;
+        margin-top: auto;
+
+        .action-link {
+          font-size: 0.85rem;
+          color: $accent;
+          font-weight: 500;
+          display: flex;
+          gap: 0.4rem;
+          align-items: center;
+        }
+
+        .project-num {
+          font-size: 0.85rem;
+          color: $text-dim;
+          font-family: $font-display;
+        }
+      }
+    }
+  }
 }

@@ -1,1128 +1,512 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GaboWeb | Diseño de páginas web profesionales en Argentina</title>
+  <meta name="description" content="Diseño web moderno y minimalista. Creo sitios web profesionales, rápidos y adaptados a cualquier dispositivo para potenciar tu presencia online.">
+  
+  <!-- Tipografías (Bebas Neue & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Hoja de Estilos Compilada (Sass) -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Open Graph / WhatsApp / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.gaboweb.com.ar/">
+<meta property="og:title" content="GaboWeb | Creative Developer & Diseño Web de Alto Rendimiento">
+<meta property="og:description" content="Diseño web moderno, minimalista y optimizado para potenciar tu presencia online en toda Argentina.">
+<meta property="og:image" content="https://www.gaboweb.com.ar/img/perfil.webp">
 
-    <!-- SEO básico -->
-    <title>GaboWeb | Diseño de páginas web profesionales en Argentina</title>
-    <meta name="description"
-        content="Diseño y desarrollo de landing pages profesionales para emprendimientos, comercios y profesionales independientes en Argentina. Rápidas, modernas y adaptadas a celular.">
-    <meta name="keywords"
-        content="diseño web argentina, landing page, páginas web profesionales, desarrollo web, diseño web barato">
-    <meta name="author" content="Gabriel Colazo - Gabo Web">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://gaboweb.com.ar/">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GaboWeb | Creative Developer">
+<meta name="twitter:description" content="Diseño web moderno, minimalista y optimizado para negocios y profesionales.">
+<meta name="twitter:image" content="https://www.gaboweb.com.ar/img/perfil.webp">
 
-    <!-- Open Graph (para compartir en redes sociales) -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gaboweb.com.ar/">
-    <meta property="og:title" content="Gabo Web | Diseño de páginas web profesionales en Argentina">
-    <meta property="og:description"
-        content="Diseño y desarrollo de landing pages profesionales para emprendimientos, comercios y profesionales independientes en Argentina.">
-    <meta property="og:image" content="https://gaboweb.com.ar/assets/img/og-image.jpg">
-    <meta property="og:locale" content="es_AR">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gabo Web | Diseño de páginas web profesionales en Argentina">
-    <meta name="twitter:description"
-        content="Diseño y desarrollo de landing pages profesionales para emprendimientos y comercios en Argentina.">
-    <meta name="twitter:image" content="https://gaboweb.com.ar/assets/img/og-image.jpg">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
-    <link rel="apple-touch-icon" href="./assets/img/favicon.png">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.png">
 </head>
-
 <body>
-    <header>
 
-        <!-- ========== PROMO BAR ========== -->
-        <div id="promo-bar">
-            <div class="container">
-                <p><span style="color: #EA580C;">&lt;/&gt;</span> Desde Baradero, Buenos Aires — Desarrollo web para
-                    toda
-                    Argentina <span style="color: #EA580C;">&lt;/&gt;</span></p>
-            </div>
-        </div>
+  <!-- ==========================================
+       HEADER & NAVBAR
+  =========================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      
+      <!-- Logo -->
+      <a href="#hero" class="brand-logo">
+        <span class="logo-bracket">&lt;/</span>GABOWEB<span class="logo-bracket">&gt;</span>
+      </a>
+      
+      <!-- Navegación -->
+      <nav class="main-nav" id="mainNav">
+        <a href="#hero" class="nav-link active"><span>/ 01</span> Inicio</a>
+        <a href="#about" class="nav-link"><span>/ 02</span> Sobre mí</a>
+        <a href="#proyectos" class="nav-link"><span>/ 03</span> Proyectos</a>
+        <a href="#testimonios" class="nav-link"><span>/ 04</span> Opiniones</a>
+        <a href="#contacto" class="nav-link"><span>/ 05</span> Contacto</a>
+      </nav>
 
-        <!-- ========== NAVBAR ========== -->
-        <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
-            <div class="container">
+      <!-- Botón móvil hamburguesa -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+      </button>
 
-                <!-- Logo -->
-                <a class="navbar-brand" href="#hero"
-                   data-html='<span>&lt;</span>GABO<span>WEB/&gt;</span>'>
-                   <span class="typing-cursor">|</span>
-                </a>
-
-                <!-- Botón hamburguesa animada -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar"
-                    aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <div class="hamburger-lines">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </button>
-
-                <!-- Links -->
-                <div class="collapse navbar-collapse" id="menuNavbar">
-
-                    <!-- Header del menú mobile -->
-                    <div class="menu-header">
-                        <span class="menu-logo"><span>&lt;</span>GABO<span>WEB/&gt;</span></span>
-                        <button class="menu-close" id="menuClose" aria-label="Cerrar menú">
-                            <i class="bi bi-x-lg"></i>
-                        </button>
-                    </div>
-
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#servicios"><i class="bi bi-gear-wide-connected"></i> Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#proceso"><i class="bi bi-diagram-3"></i> Proceso</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#proyectos"><i class="bi bi-briefcase"></i> Proyectos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contacto"><i class="bi bi-chat-dots"></i> Contacto</a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </nav>
-
-        <!-- Overlay del menú mobile -->
-        <div class="navbar-overlay" id="navbarOverlay"></div>
-
-    </header>
-
-    <main>
-
-        <!-- ========== HERO ========== -->
-        <section id="hero">
-            <canvas id="matrix"></canvas>
-            <div class="container">
-                <div class="row align-items-center py-5">
-                    <div class="col-12 col-lg-6 text-center text-lg-start mx-auto mx-lg-0">
-                        <p class="hero-saludo">Hola, soy Gabriel <span class="hero-wave">👋</span></p>
-                        <h1 class="hero-titulo">Diseño web <br class="d-none d-lg-block"><span>moderno</span> <span class="hero-titulo-light">y minimalista</span></h1>
-                        <p class="hero-descripcion text-center text-lg-start">Creo sitios web profesionales, rápidos y
-                            adaptados a cualquier dispositivo para potenciar tu presencia online.</p>
-                        <div class="hero-botones d-flex flex-wrap justify-content-center justify-content-lg-start">
-                            <a href="#proyectos" class="btn btn-primary-custom">Ver proyectos</a>
-                            <a href="#contacto" class="btn btn-outline-custom">Contactame</a>
-                            <a href="https://wa.me/5493329574543?text=Hola%20Gabriel%2C%20vi%20tu%20página%20y%20quiero%20consultarte"
-                                class="btn btn-whatsapp" target="_blank">
-                                <i class="bi bi-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6 text-center mt-5 mt-lg-0">
-                        <div class="hero-code">
-                            <div class="hero-code-header">
-                                <span class="hero-code-dot dot-red"></span>
-                                <span class="hero-code-dot dot-yellow"></span>
-                                <span class="hero-code-dot dot-green"></span>
-                            </div>
-                            <pre class="hero-code-body">
-<span class="code-keyword">const</span> <span class="code-var">gaboweb</span> = {
-  nombre:      <span class="code-string">'Gabriel'</span>,
-  rol:         <span class="code-string">'Web Developer'</span>,
-  stack:       <span class="code-array">['HTML', 'CSS', 'JS']</span>,
-  disponible:  <span class="code-bool">true</span>
-}</pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== SEPARADOR ========== -->
-        <div class="separador">
-            <span>Servicios</span>
-        </div>
-
-        <section id="servicios" class="py-5 reveal">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center mb-5">
-
-                        <div class="d-flex align-items-center justify-content-center gap-4 text-nowrap titulo-wrapper">
-
-                            <div class="header-decor d-none d-md-flex align-items-center">
-                                <div class="linea-finita"></div>
-                                <i class="bi bi-code-slash mx-2"></i>
-                            </div>
-
-                            <h2 class="section-titulo m-0">
-                                Impulsá tu <span>presencia digital</span>
-                            </h2>
-
-                            <div class="header-decor d-none d-md-flex align-items-center">
-                                <i class="bi bi-terminal mx-2"></i>
-                                <div class="linea-finita"></div>
-                            </div>
-                        </div>
-
-                        <p class="section-subtitulo mt-4">
-                            Soluciones <strong>directas y profesionales</strong> diseñadas para que tu emprendimiento,
-                            comercio o servicio destaque en internet.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="row g-4 justify-content-center">
-
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <div class="servicio-card h-100 p-4 text-center">
-                            <div class="servicio-icono mb-3">
-                                <i class="bi bi-rocket-takeoff"></i>
-                            </div>
-                            <h3 class="text-white mb-3">Landing Pages</h3>
-                            <p>
-                                ¿Sos profesional independiente o tenés un emprendimiento?
-                                Una landing page es <strong>la forma más efectiva de conseguir clientes</strong>
-                                y mostrar lo que hacés.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <div class="servicio-card h-100 p-4 text-center">
-                            <div class="servicio-icono mb-3">
-                                <i class="bi bi-cpu"></i>
-                            </div>
-                            <h3 class="text-white mb-3">Alto Rendimiento</h3>
-                            <p>
-                                Si tu página tarda en cargar, el cliente se va. Diseño sitios
-                                <strong>rápidos y adaptados a cualquier dispositivo</strong> para que no pierdas
-                                ninguna oportunidad de venta.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <div class="servicio-card h-100 p-4 text-center">
-                            <div class="servicio-icono mb-3">
-                                <i class="bi bi-phone"></i>
-                            </div>
-                            <h3 class="text-white mb-3">Sistema de Turnos</h3>
-                            <p>
-                                Integrá un sistema de reservas directamente en tu landing page.
-                                <strong>Tus clientes eligen día y horario</strong> y vos gestionás todo
-                                desde un panel privado en tiempo real.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <div class="servicio-card h-100 p-4 text-center">
-                            <div class="servicio-icono mb-3">
-                                <i class="bi bi-calendar-check"></i>
-                            </div>
-                            <h3 class="text-white mb-3">Atención personalizada</h3>
-                            <p>
-                                Te acompaño en todo el proceso de creación de tu página.
-                                <strong>Consulta permanente por WhatsApp</strong> <i class="bi bi-whatsapp"></i>
-                            </p>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== SEPARADOR ========== -->
-        <div class="separador">
-            <span>Cómo trabajo</span>
-        </div>
-
-        <!-- ========== PROCESO ========== -->
-        <section id="proceso" class="reveal">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center mb-5">
-                        <div class="d-flex align-items-center justify-content-center gap-4 text-nowrap titulo-wrapper">
-                            <div class="header-decor d-none d-md-flex align-items-center">
-                                <div class="linea-finita"></div>
-                                <i class="bi bi-code-slash mx-2"></i>
-                            </div>
-                            <h2 class="section-titulo m-0">
-                                ¿Cómo <span>trabajo?</span>
-                            </h2>
-                            <div class="header-decor d-none d-md-flex align-items-center">
-                                <i class="bi bi-terminal mx-2"></i>
-                                <div class="linea-finita"></div>
-                            </div>
-                        </div>
-                        <p class="section-subtitulo mt-4">
-                            Un proceso <strong>claro y ordenado</strong> para que sepas exactamente qué esperar en cada
-                            etapa.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-10">
-                        <div class="proceso-steps">
-
-                            <div class="proceso-step">
-                                <div class="proceso-numero">
-                                    <i class="bi bi-chat-dots"></i>
-                                </div>
-                                <div class="proceso-contenido">
-                                    <h3>Consulta inicial</h3>
-                                    <p>Me contás tu idea y lo que necesitás. A partir de ahí
-                                        <strong>te propongo la mejor solución</strong> para tu emprendimiento o negocio.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="proceso-step">
-                                <div class="proceso-numero">
-                                    <i class="bi bi-pencil-square"></i>
-                                </div>
-                                <div class="proceso-contenido">
-                                    <h3>Diseño y desarrollo</h3>
-                                    <p>Creo tu sitio web con un diseño personalizado, moderno y adaptado a cualquier
-                                        dispositivo.</p>
-                                </div>
-                            </div>
-
-                            <div class="proceso-step">
-                                <div class="proceso-numero">
-                                    <i class="bi bi-arrow-repeat"></i>
-                                </div>
-                                <div class="proceso-contenido">
-                                    <h3>Revisión y ajustes</h3>
-                                    <p>Te muestro el avance y recibo tu feedback. Hacemos los ajustes necesarios hasta
-                                        que
-                                        el resultado te convenza al 100%.</p>
-                                </div>
-                            </div>
-
-                            <div class="proceso-step">
-                                <div class="proceso-numero">
-                                    <i class="bi bi-rocket-takeoff"></i>
-                                </div>
-                                <div class="proceso-contenido">
-                                    <h3>Entrega y lanzamiento</h3>
-                                    <p>Tu sitio queda online y listo para recibir clientes.
-                                        <strong>Hosting y dominio .com.ar gratis el primer año</strong>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== SEPARADOR ========== -->
-        <div class="separador">
-            <span>Proyectos</span>
-        </div>
-
-        <section id="proyectos" class="py-5 reveal">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center mb-5">
-
-                        <div class="d-flex align-items-center justify-content-center gap-4 text-nowrap titulo-wrapper">
-
-                            <div class="header-decor d-none d-md-flex align-items-center">
-                                <div class="linea-finita"></div>
-                                <i class="bi bi-code-slash mx-2"></i>
-                            </div>
-
-                            <h2 class="section-titulo m-0">
-                                Mis <span>Proyectos</span>
-                            </h2>
-
-                            <div class="header-decor d-none d-md-flex align-items-center">
-                                <i class="bi bi-terminal mx-2"></i>
-                                <div class="linea-finita"></div>
-                            </div>
-                        </div>
-
-                        <p class="section-subtitulo mt-4">
-                            Algunos trabajos que reflejan <strong>mi estilo y enfoque</strong>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="row g-4 d-none d-md-flex justify-content-center">
-                    <!-- TARJETA FLAGSHIP - Proyecto propio -->
-<div class="col-12 d-flex justify-content-center mb-4">
-    <div class="proyecto-card proyecto-destacado proyecto-flagship">
-        <div class="proyecto-card-media">
-
-            <img src="assets/img/barashop.webp" alt="BaraShop">
-        </div>
-        <div class="proyecto-card-body">
-            <span class="flagship-kicker">Aplicación web · activa</span>
-            <h3>BaraShop</h3>
-            <p>Clasificados hiperlocal de Baradero. Diseñado y desarrollado por mí, de la base de datos al frontend.</p>
-            <ul class="flagship-tech">
-                <li>PostgreSQL</li>
-                <li>PWA</li>
-                <li>Vanilla JS</li>
-            </ul>
-            <a href="https://barashop.com.ar" class="btn-proyecto btn-proyecto-flagship" target="_blank" rel="noopener noreferrer">Ver proyecto <i class="bi bi-arrow-up-right"></i></a>
-        </div>
     </div>
-</div>
-                    <!-- TARJETA DESTACADA 1 -->
-                    <div class="col-12 d-flex justify-content-center mb-3">
-                        <div class="proyecto-card proyecto-destacado">
-                            <div class="proyecto-card-media">
-                                <img src="assets/img/proyecto7.webp" alt="Servicio Técnico Aire Acondicionado">
-                            </div>
-                            <div class="proyecto-card-body">
-                                <h3>Refri-gera</h3>
-                                <p>Servicio técnico especializado en aire acondicionado.</p>
-                                <a href="https://refri-gera.com.ar" class="btn-proyecto" target="_blank"
-                                    rel="noopener noreferrer">Ver proyecto <i class="bi bi-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+  </header>
 
-                    <!-- TARJETA DESTACADA 2 -->
-                    <div class="col-12 d-flex justify-content-center mb-4">
-                        <div class="proyecto-card proyecto-destacado">
-                            <div class="proyecto-card-media">
-                                <img src="assets/img/quinesbikerweb.webp" alt="Quines Biker">
-                            </div>
-                            <div class="proyecto-card-body">
-                                <h3>Quines Biker</h3>
-                                <p>Escuela de ciclismo con planificación de entrenamientos.</p>
-                                <a href="https://quinesbiker.com.ar" class="btn-proyecto" target="_blank"
-                                    rel="noopener noreferrer">Ver proyecto <i class="bi bi-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="proyecto-card">
-                            <div class="proyecto-card-media">
-                                <img src="assets/img/proyecto1.webp" alt="IRQcomputación">
-                            </div>
-                            <div class="proyecto-card-body">
-                                <h3>IRQ computación</h3>
-                                <p>Servicio técnico informático profesional.</p>
-                                <a href="https://irqcomputacion.vercel.app" class="btn-proyecto" target="_blank"
-                                    rel="noopener noreferrer">Ver proyecto <i class="bi bi-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="proyecto-card">
-                            <div class="proyecto-card-media">
-                                <img src="assets/img/proyecto2.webp" alt="My House">
-                            </div>
-                            <div class="proyecto-card-body">
-                                <h3>My House - Inmobiliaria</h3>
-                                <p>Servicios inmobiliarios profesionales.</p>
-                                <a href="https://myhouse-sigma.vercel.app" class="btn-proyecto" target="_blank"
-                                    rel="noopener noreferrer">Ver proyecto <i class="bi bi-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="proyecto-card">
-                            <div class="proyecto-card-media">
-                                <img src="assets/img/proyecto3.webp" alt="Estudio Jurídico">
-                            </div>
-                            <div class="proyecto-card-body">
-                                <h3>Estudio Jurídico</h3>
-                                <p>Asesoría legal y representación.</p>
-                                <a href="https://webabogado.vercel.app" class="btn-proyecto" target="_blank"
-                                    rel="noopener noreferrer">Ver proyecto <i class="bi bi-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="proyecto-card">
-                            <div class="proyecto-card-media">
-                                <img src="assets/img/proyecto4.webp" alt="Café Aroma">
-                            </div>
-                            <div class="proyecto-card-body">
-                                <h3>Café Aroma</h3>
-                                <p>Cafetería artesanal de especialidad.</p>
-                                <a href="https://aromacafe-six.vercel.app" class="btn-proyecto" target="_blank"
-                                    rel="noopener noreferrer">Ver proyecto <i class="bi bi-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="proyecto-card">
-                            <div class="proyecto-card-media">
-                                <img src="assets/img/proyecto5.webp" alt="Pulse Gym">
-                            </div>
-                            <div class="proyecto-card-body">
-                                <h3>Pulse Gym</h3>
-                                <p>Centro de entrenamiento y rendimiento físico.</p>
-                                <a href="https://pulsegymweb.vercel.app" class="btn-proyecto" target="_blank"
-                                    rel="noopener noreferrer">Ver proyecto <i class="bi bi-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="proyectos-grid-mobile d-block d-md-none">
-                    <div class="row g-3">
-
-                        <div class="col-6">
-    <a href="https://barashop.com.ar" target="_blank" rel="noopener noreferrer"
-        class="proyecto-mini proyecto-mini-flagship">
-
-        <span class="proyecto-mini-media">
-            <img src="assets/img/barashop.webp" alt="BaraShop">
-            <span class="proyecto-mini-external"><i class="bi bi-box-arrow-up-right"></i></span>
-        </span>
-        <span class="proyecto-mini-title">BaraShop</span>
-    </a>
-</div>
-
-                        <div class="col-6">
-                            <a href="https://refri-gera.com.ar" target="_blank" rel="noopener noreferrer"
-                                class="proyecto-mini">
-                                <span class="proyecto-mini-media">
-                                    <img src="assets/img/proyecto7.webp" alt="Refri-gera">
-                                    <span class="proyecto-mini-external"><i class="bi bi-box-arrow-up-right"></i></span>
-                                </span>
-                                <span class="proyecto-mini-title">Refri-gera</span>
-                            </a>
-                        </div>
-
-                        <div class="col-6">
-                            <a href="https://quinesbiker.com.ar" target="_blank" rel="noopener noreferrer"
-                                class="proyecto-mini">
-                                <span class="proyecto-mini-media">
-                                    <img src="assets/img/quinesbikerweb.webp" alt="Quines Biker">
-                                    <span class="proyecto-mini-external"><i class="bi bi-box-arrow-up-right"></i></span>
-                                </span>
-                                <span class="proyecto-mini-title">Quines Biker</span>
-                            </a>
-                        </div>
-
-                        <div class="col-6">
-                            <a href="https://irqcomputacion.vercel.app" target="_blank" rel="noopener noreferrer"
-                                class="proyecto-mini">
-                                <span class="proyecto-mini-media">
-                                    <img src="assets/img/proyecto1.webp" alt="IRQcomputación">
-                                    <span class="proyecto-mini-external"><i class="bi bi-box-arrow-up-right"></i></span>
-                                </span>
-                                <span class="proyecto-mini-title">IRQcomputación</span>
-                            </a>
-                        </div>
-
-                        <div class="col-6">
-                            <a href="https://myhouse-sigma.vercel.app" target="_blank" rel="noopener noreferrer"
-                                class="proyecto-mini">
-                                <span class="proyecto-mini-media">
-                                    <img src="assets/img/proyecto2.webp" alt="My House">
-                                    <span class="proyecto-mini-external"><i class="bi bi-box-arrow-up-right"></i></span>
-                                </span>
-                                <span class="proyecto-mini-title">My House</span>
-                            </a>
-                        </div>
-
-                        <div class="col-6">
-                            <a href="https://webabogado.vercel.app" target="_blank" rel="noopener noreferrer"
-                                class="proyecto-mini">
-                                <span class="proyecto-mini-media">
-                                    <img src="assets/img/proyecto3.webp" alt="Estudio Jurídico">
-                                    <span class="proyecto-mini-external"><i class="bi bi-box-arrow-up-right"></i></span>
-                                </span>
-                                <span class="proyecto-mini-title">Estudio Jurídico</span>
-                            </a>
-                        </div>
-
-                        <div class="col-6">
-                            <a href="https://aromacafe-six.vercel.app" target="_blank" rel="noopener noreferrer"
-                                class="proyecto-mini">
-                                <span class="proyecto-mini-media">
-                                    <img src="assets/img/proyecto4.webp" alt="Café Aroma">
-                                    <span class="proyecto-mini-external"><i class="bi bi-box-arrow-up-right"></i></span>
-                                </span>
-                                <span class="proyecto-mini-title">Café Aroma</span>
-                            </a>
-                        </div>
-
-                        <div class="col-6">
-                            <a href="https://pulsegymweb.vercel.app" target="_blank" rel="noopener noreferrer"
-                                class="proyecto-mini">
-                                <span class="proyecto-mini-media">
-                                    <img src="assets/img/proyecto5.webp" alt="Pulse Gym">
-                                    <span class="proyecto-mini-external"><i class="bi bi-box-arrow-up-right"></i></span>
-                                </span>
-                                <span class="proyecto-mini-title">Pulse Gym</span>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ========== SEPARADOR ========== -->
-        <div class="separador">
-            <span>Hablemos</span>
+  <main>
+    <!-- ==========================================
+         01. HERO SECTION
+    =========================================== -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        
+        <div class="hero-meta-top">
+          <span class="editorial-badge">📍 Baradero · Cobertura en toda Argentina</span>
+          <span class="hero-subtitle">Desarrollo Web de Alto Rendimiento</span>
         </div>
 
-        <!-- ========== CTA ========== -->
-        <section id="cta" class="reveal">
-            <div class="container">
-                <p class="cta-saludo">¿Tenés un proyecto en mente?</p>
-                <h2 class="cta-titulo">Hablemos <span>ahora</span></h2>
-                <p class="cta-subtitulo">Escribime por WhatsApp y en menos de 24hs te respondo con una propuesta.</p>
-
-                <a href="https://wa.me/5493329574543?text=Hola%20Gabriel%2C%20vi%20tu%20página%20y%20quiero%20consultarte"
-                    class="cta-btn" target="_blank">
-                    <i class="bi bi-whatsapp"></i> Escribime por WhatsApp
-                </a>
-
-            </div>
-        </section>
-
-        <!-- ========== SEPARADOR ========== -->
-        <div class="separador">
-            <span>Contacto</span>
+        <div class="hero-display">
+          <h1 class="hero-title">
+            <span class="code-bracket">&lt;/</span>
+            <span>GABO</span>
+            <span class="hero-star">✻</span>
+            <span>WEB</span>
+            <span class="code-bracket">&gt;</span>
+          </h1>
         </div>
 
-        <!-- ========== CONTACTO ========== -->
-        <section id="contacto" class="reveal">
-            <div class="container">
-                <div class="row g-5 align-items-stretch">
+        <div class="hero-meta-bottom">
+          <div class="hero-caption">
+            <p class="tagline">Creative Developer</p>
+            <p class="sub-tagline">Diseño Editorial & Experiencias Digitales</p>
+          </div>
 
-                    <!-- IZQUIERDA: Sobre mí -->
-                    <div class="col-12 col-lg-5">
-                        <div class="text-center mb-4">
-                            <div class="sobremi-img-wrapper">
-                                <img src="assets/img/perfil.webp" alt="Gabriel - GABOWEB" class="sobremi-img">
-                            </div>
-                        </div>
-                        <div class="sobremi-card">
-                            <h2 class="sobremi-titulo">Hola, soy <span>Gabriel</span></h2>
-                            <p class="sobremi-texto">Soy de Baradero y trabajo de forma remota para toda Argentina. Me
-                                especializo en crear sitios web modernos, rápidos y adaptados a cualquier dispositivo.
-                            </p>
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary">Cotizar proyecto</a>
+            <a href="#proyectos" class="btn btn-ghost">Ver portfolio</a>
+          </div>
 
-                            <div class="sobremi-cert mt-3">
-                                <i class="bi-mortarboard-fill"></i>
-                                <span>Certificado en Diseño Web — CoderHouse</span>
-                            </div>
-
-                            <div class="sobremi-disponible mt-3">
-                                <div class="d-flex gap-3 mb-2">
-                                    <img src="assets/img/ilustracion.svg" alt="Programador" class="sobremi-ilustracion">
-                                    <img src="assets/img/ilustracion2.svg" alt="Programador 2"
-                                        class="sobremi-ilustracion">
-                                    <img src="assets/img/ilustracion3.svg" alt="Programador 3"
-                                        class="sobremi-ilustracion">
-                                </div>
-                                <div class="footer-disponible mt-2">
-                                    <span class="footer-disponible-punto"></span>
-                                    Disponible para nuevos proyectos
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- DERECHA: Formulario -->
-                    <div class="col-12 col-lg-7">
-                        <div class="contacto-card">
-                            <p class="contacto-saludo">¿Tenés un proyecto en mente?</p>
-                            <h2 class="contacto-titulo">Hablemos <span>hoy</span></h2>
-                            <p class="contacto-texto">Completá el formulario y te respondo a la brevedad.</p>
-
-                            <form name="contacto" method="POST" action="https://api.web3forms.com/submit">
-                                <input type="hidden" name="access_key" value="c16b4dec-6455-4665-b56c-af1a7eeffd32">
-                                <input type="hidden" name="redirect" value="https://gaboweb.com.ar/gracias.html">
-                                <input type="hidden" name="subject" value="Nuevo mensaje desde gaboweb.com.ar">
-                                <div class="row g-3">
-                                    <div class="col-12 col-md-6">
-                                        <label class="form-label" for="nombre">Nombre</label>
-                                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Tu nombre"
-                                            required autocomplete="name">
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <label class="form-label" for="email">Email</label>
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="tu@email.com"
-                                            required autocomplete="email">
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label" for="asunto">Asunto</label>
-                                        <select class="form-select" name="asunto" id="asunto" required>
-                                            <option value="" disabled selected>Seleccioná una opción</option>
-                                            <option value="presupuesto">Solicitar presupuesto</option>
-                                            <option value="consulta">Consulta general</option>
-                                            <option value="otro">Otro</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label" for="mensaje">Mensaje</label>
-                                        <textarea class="form-control" name="mensaje" id="mensaje" rows="3"
-                                            placeholder="Contame sobre tu proyecto..." required autocomplete="off"></textarea>
-                                    </div>
-                                    <div class="col-12 d-flex justify-content-center">
-                                        <button type="submit" class="btn-enviar">Enviar mensaje</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
+          <div class="hero-scroll-indicator">
+            <div class="scroll-mouse">
+              <div class="mouse-wheel"></div>
             </div>
-        </section>
-
-    </main>
-    <!-- ================================
-  GABOWEB - Sección Reseñas Google
- ================================ -->
-
-    <section id="seccion-resenas" aria-label="Reseñas de clientes en Google" class="reveal">
-        <div class="container">
-
-            <!-- Encabezado -->
-            <div class="gr-header">
-                <div class="gr-badge">
-                    <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill="#4285F4"
-                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                        <path fill="#34A853"
-                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                        <path fill="#FBBC05"
-                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" />
-                        <path fill="#EA4335"
-                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
-                    </svg>
-                    Google Reviews
-                </div>
-                <h2>Lo que dicen mis <span>clientes</span></h2>
-                <p>Opiniones reales de quienes ya confiaron en mí</p>
-
-                <!-- Rating general -->
-                <div class="gr-summary">
-                    <div class="gr-rating-num">5.0</div>
-                    <div class="gr-rating-details">
-                        <div class="gr-stars">
-                            <span class="gr-star">★</span>
-                            <span class="gr-star">★</span>
-                            <span class="gr-star">★</span>
-                            <span class="gr-star">★</span>
-                            <span class="gr-star">★</span>
-                        </div>
-                        <p class="gr-total">Basado en 15 reseñas en Google</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carousel -->
-            <div class="gr-track-wrapper">
-                <div class="gr-track" id="gr-track">
-
-                    <!-- ================================
-          RESEÑAS — para agregar una nueva:
-          copiá un bloque .gr-card y editá
-          nombre, inicial, tiempo y texto
-        ================================ -->
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#EA580C22;color:#EA580C;border:1px solid #EA580C44">GL</div>
-                            <div>
-                                <p class="gr-reviewer-name">Gustavo Laserna</p>
-                                <p class="gr-review-date">Hace 14 horas</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">Excelente servicio, buena atención!!!!</p>
-                    </div>
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44">GA</div>
-                            <div>
-                                <p class="gr-reviewer-name">Gonzalo Aguero</p>
-                                <p class="gr-review-date">Hace 2 días</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">Super recomendado !!! Excelente trabajo.</p>
-                    </div>
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#f4b40022;color:#f4b400;border:1px solid #f4b40044">PO</div>
-                            <div>
-                                <p class="gr-reviewer-name">Pablo Olivo</p>
-                                <p class="gr-review-date">Hace 2 días</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">Me realizó un excelente trabajo, super recomendable, es muy rápido.
-                        </p>
-                    </div>
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44">MA</div>
-                            <div>
-                                <p class="gr-reviewer-name">Marcos Almiron</p>
-                                <p class="gr-review-date">Hace 2 días</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">Muy agradecido con su excelente trabajo, ayudó mucho a despegar mi
-                            emprendimiento.</p>
-                    </div>
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#34d39922;color:#34d399;border:1px solid #34d39944">FA</div>
-                            <div>
-                                <p class="gr-reviewer-name">FranciscoJavier Ampoli</p>
-                                <p class="gr-review-date">Hace 2 días</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">Muy buen servicio.</p>
-                    </div>
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#fb923c22;color:#fb923c;border:1px solid #fb923c44">JD</div>
-                            <div>
-                                <p class="gr-reviewer-name">Julieta Dantur</p>
-                                <p class="gr-review-date">Hace 2 días</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">Recomiendo, muy comprometido con lograr lo que estábamos buscando.</p>
-                    </div>
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#e879f922;color:#e879f9;border:1px solid #e879f944">MC</div>
-                            <div>
-                                <p class="gr-reviewer-name">Marta Costilla</p>
-                                <p class="gr-review-date">Hace 2 días</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">Muchas gracias por el servicio brindado. ¡Muy recomendable!</p>
-                    </div>
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#EA580C22;color:#EA580C;border:1px solid #EA580C44">FB</div>
-                            <div>
-                                <p class="gr-reviewer-name">Florencia Bartolomé</p>
-                                <p class="gr-review-date">Hace 2 días</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">¡Muy buena atención!</p>
-                    </div>
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44">BC</div>
-                            <div>
-                                <p class="gr-reviewer-name">Brian Chamorro</p>
-                                <p class="gr-review-date">Hace 2 días</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">¡Excelente!</p>
-                    </div>
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#f4b40022;color:#f4b400;border:1px solid #f4b40044">AC</div>
-                            <div>
-                                <p class="gr-reviewer-name">Alejandro Colazo</p>
-                                <p class="gr-review-date">Hace 2 días</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">Muy buen servicio, respuesta a todas las dudas, el sitio 10 puntos.
-                            Recomendable para quien quiere dar un paso más allá de las redes sociales, que tienen su
-                            límite.</p>
-                    </div>
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#34d39922;color:#34d399;border:1px solid #34d39944">GP</div>
-                            <div>
-                                <p class="gr-reviewer-name">Gabriela Pascuali</p>
-                                <p class="gr-review-date">Hace 2 días</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">Excelente, ¡muy recomendable!</p>
-                    </div>
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#a78bfa22;color:#a78bfa;border:1px solid #a78bfa44">GG</div>
-                            <div>
-                                <p class="gr-reviewer-name">Guillermo Ghione</p>
-                                <p class="gr-review-date">Hace 3 días</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">Excelente servicio. Muy recomendable.</p>
-                    </div>
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#fb923c22;color:#fb923c;border:1px solid #fb923c44">VO</div>
-                            <div>
-                                <p class="gr-reviewer-name">Vanesa Otarola</p>
-                                <p class="gr-review-date">Hace 6 días</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">Excelente servicio y atención. Comunicación constante. Super
-                            recomendable.</p>
-                    </div>
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#e879f922;color:#e879f9;border:1px solid #e879f944">GO</div>
-                            <div>
-                                <p class="gr-reviewer-name">Gerardo Oviedo</p>
-                                <p class="gr-review-date">Hace 6 días</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">La verdad muy buen diseñador web, todo perfecto, lo recomiendo.</p>
-                    </div>
-
-                    <div class="gr-card">
-                        <div class="gr-card-head">
-                            <div class="gr-avatar-initials"
-                                style="background:#60a5fa22;color:#60a5fa;border:1px solid #60a5fa44">EA</div>
-                            <div>
-                                <p class="gr-reviewer-name">Ezequiel Arrastia</p>
-                                <p class="gr-review-date">Hace 2 días</p>
-                            </div>
-                        </div>
-                        <div class="gr-card-stars">
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                            <span class="gr-star" style="font-size:14px">★</span>
-                        </div>
-                        <p class="gr-review-text">⭐⭐⭐⭐⭐</p>
-                    </div>
-
-                </div><!-- fin gr-track -->
-            </div><!-- fin gr-track-wrapper -->
-
-            <!-- Controles carousel -->
-            <div class="gr-controls">
-                <button class="gr-btn" id="gr-prev" aria-label="Anterior" disabled>&#8592;</button>
-                <div class="gr-dots" id="gr-dots"></div>
-                <button class="gr-btn" id="gr-next" aria-label="Siguiente">&#8594;</button>
-            </div>
-
-            <!-- CTA -->
-            <div class="gr-cta">
-                <a href="https://www.google.com/maps/place/GaboWeb/@-36.4523286,-84.9333524,4708699m/data=!3m1!1e3!4m16!1m9!3m8!1s0x8030715023120bdd:0x4d6f767100ba3b4d!2sGaboWeb!8m2!3d-38.45155!4d-63.5989957!9m1!1b1!16s%2Fg%2F11nhkl_4ql!3m5!1s0x8030715023120bdd:0x4d6f767100ba3b4d!8m2!3d-38.45155!4d-63.5989957!16s%2Fg%2F11nhkl_4ql?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D"
-                    target="_blank" rel="noopener" class="gr-btn-review">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        aria-hidden="true">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-                        <polyline points="15 3 21 3 21 9" />
-                        <line x1="10" y1="14" x2="21" y2="3" />
-                    </svg>
-                    Ver todas las reseñas en Google
-                </a>
-            </div>
-
+            <span class="scroll-label">SCROLL</span>
+          </div>
         </div>
+
+      </div>
     </section>
 
-    <!--FOOTER-->
-    <footer id="footer">
-        <div class="container">
-
-            <div class="row justify-content-center align-items-center g-4">
-
-                <!-- Baradero -->
-                <div class="col-12 text-center footer-identidad">
-                    <div class="d-flex align-items-center justify-content-center gap-4">
-                        <div class="footer-line d-none d-md-block"></div>
-                        <div class="location-box">
-                            <span class="location-tag">Desde</span>
-                            <h2 class="location-title">BARA<span>DERO</span></h2>
-                            <span class="location-province">PROV. DE BS. AS.</span>
-                        </div>
-                        <div class="footer-line d-none d-md-block"></div>
-                    </div>
-                </div>
-
-                <!-- Copyright -->
-                <div class="col-12 footer-bottom">
-                    <div class="footer-bottom-line"></div>
-                    <div class="footer-bottom-content">
-                        <p class="footer-copy footer-copy-brand">© 2026
-                            <span class="footer-logo-mark"><span class="footer-logo-accent">&lt;</span>Gabo<span
-                                    class="footer-logo-accent">Web/&gt;</span></span>
-                            — Todos los derechos
-                            reservados.</p>
-                        <div class="footer-bottom-links">
-                            <a href="https://www.gaboweb.com.ar" class="footer-link" target="_blank"
-                                rel="noopener noreferrer">
-                                <i class="bi bi-globe2"></i> www.gaboweb.com.ar
-                            </a>
-                            <span class="footer-dot">•</span>
-                            <a href="mailto:contacto@gaboweb.com.ar" class="footer-link">
-                                <i class="bi bi-envelope"></i> contacto@gaboweb.com.ar
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <!-- ==========================================
+         02. SOBRE MÍ
+    =========================================== -->
+    <section id="about" class="section about-section">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <span class="section-idx">/ 02</span>
+          <h2 class="section-title">Sobre mí</h2>
         </div>
-    </footer>
-    <!-- ========== WHATSAPP FLOTANTE ========== -->
-    <a href="https://wa.me/5493329574543?text=Hola%20Gabriel%2C%20vi%20tu%20página%20y%20quiero%20consultarte"
-        class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
-        <i class="bi bi-whatsapp"></i>
-    </a>
 
+        <div class="about-grid">
+          
+          <div class="about-content">
+            <p class="lead-text">Hola, soy Gabriel 👋<br>Creo sitios web <strong>profesionales, rápidos y adaptados</strong> a cualquier dispositivo.</p>
+            <p class="body-text">Trabajo enfocándome en el diseño web moderno y minimalista, asegurando que tu proyecto no solo se vea impecable, sino que convierta visitas en clientes con tiempos de carga optimizados.</p>
+            
+            <div class="about-credentials">
+              <div class="cred-item"><div class="cred-dot"></div> Desarrollo Nativo sin frameworks pesados</div>
+              <div class="cred-item"><div class="cred-dot"></div> Diseño "Mobile First" garantizado</div>
+              <div class="cred-item"><div class="cred-dot"></div> Certificado en Diseño Web — CoderHouse</div>
+            </div>
+          </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+          <div class="about-visual">
+            <div class="portrait-wrapper">
+              <!-- Fondo con patrón diagonal -->
+              <div class="portrait-backdrop" aria-hidden="true"></div>
+              
+              <!-- Marco principal -->
+              <div class="portrait-frame">
+                <img src="assets/img/perfil.webp" alt="Gabriel - GaboWeb Creative Developer" class="portrait-img" width="260" height="325" loading="lazy">
+                
+                <!-- Badge inferior centrado -->
+                <div class="status-badge">
+                  <span class="status-pulse"></span>
+                  <span>Disponible</span>
+                </div>
+              </div>
+
+              <!-- Etiqueta decorativa flotante -->
+              <div class="floating-badge">
+                <span>✦ CREATIVE DEV</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         03. PROYECTOS (Optimizado SEO + Performance)
+    =========================================== -->
+    <section id="proyectos" class="section projects-section">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <span class="section-idx">/ 03</span>
+          <h2 class="section-title">Mis Proyectos</h2>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- Proyecto 01: BaraShop -->
+          <a href="https://barashop.com.ar/" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="card-screen">
+              <img src="assets/img/barashop.webp" alt="BaraShop - Clasificados" class="project-img" width="600" height="400" loading="lazy">
+              <span class="preview-badge">APP WEB ACTIVA</span>
+            </div>
+            <div class="card-meta">
+              <div class="meta-info">
+                <h3 class="project-name">BaraShop</h3>
+                <span class="project-category">E-commerce / PWA Hiperlocal</span>
+              </div>
+              <div class="project-tags">
+                <span>PostgreSQL</span>
+                <span>PWA</span>
+                <span>Vanilla JS</span>
+              </div>
+              <div class="card-footer-action">
+                <span class="action-link">Ver proyecto <i>→</i></span>
+                <span class="project-num">01</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Proyecto 02: Quines Biker -->
+          <a href="https://quinesbiker.com.ar/" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="card-screen">
+              <img src="assets/img/quinesbikerweb.webp" alt="Quines Biker" class="project-img" width="600" height="400" loading="lazy">
+              <span class="preview-badge">INSTITUCIONAL</span>
+            </div>
+            <div class="card-meta">
+              <div class="meta-info">
+                <h3 class="project-name">Quines Biker</h3>
+                <span class="project-category">Web de servicios / Ciclismo</span>
+              </div>
+              <div class="project-tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+              </div>
+              <div class="card-footer-action">
+                <span class="action-link">Ver proyecto <i>→</i></span>
+                <span class="project-num">02</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Proyecto 03: Refri-gera -->
+          <a href="https://refri-gera.com.ar/" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="card-screen">
+              <img src="assets/img/refrigera.webp" alt="Refri-Gera Servicio Técnico" class="project-img" width="600" height="400" loading="lazy">
+              <span class="preview-badge">LANDING PAGE</span>
+            </div>
+            <div class="card-meta">
+              <div class="meta-info">
+                <h3 class="project-name">Refri-gera</h3>
+                <span class="project-category">Servicio técnico de aire acondicionado</span>
+              </div>
+              <div class="project-tags">
+                <span>Diseño UI</span>
+                <span>Optimizado SEO</span>
+              </div>
+              <div class="card-footer-action">
+                <span class="action-link">Ver proyecto <i>→</i></span>
+                <span class="project-num">03</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Proyecto 04: IRQ Computación -->
+          <a href="https://irqcomputacion.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="card-screen">
+              <img src="assets/img/irq.webp" alt="IRQ Computación" class="project-img" width="600" height="400" loading="lazy">
+              <span class="preview-badge">LANDING PAGE</span>
+            </div>
+            <div class="card-meta">
+              <div class="meta-info">
+                <h3 class="project-name">IRQ computación</h3>
+                <span class="project-category">Servicio técnico informático profesional</span>
+              </div>
+              <div class="card-footer-action">
+                <span class="action-link">Ver proyecto <i>→</i></span>
+                <span class="project-num">04</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Proyecto 05: My House -->
+          <a href="https://myhouse-sigma.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="card-screen">
+              <img src="assets/img/myhoyse.webp" alt="My House Inmobiliaria" class="project-img" width="600" height="400" loading="lazy">
+              <span class="preview-badge">INSTITUCIONAL</span>
+            </div>
+            <div class="card-meta">
+              <div class="meta-info">
+                <h3 class="project-name">My House</h3>
+                <span class="project-category">Servicios inmobiliarios profesionales</span>
+              </div>
+              <div class="card-footer-action">
+                <span class="action-link">Ver proyecto <i>→</i></span>
+                <span class="project-num">05</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Proyecto 06: Estudio Jurídico -->
+          <a href="https://webabogado.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="card-screen">
+              <img src="assets/img/estudiojuridico.webp" alt="Estudio Jurídico" class="project-img" width="600" height="400" loading="lazy">
+              <span class="preview-badge">SERVICIOS</span>
+            </div>
+            <div class="card-meta">
+              <div class="meta-info">
+                <h3 class="project-name">Estudio Jurídico</h3>
+                <span class="project-category">Asesoría legal y representación</span>
+              </div>
+              <div class="card-footer-action">
+                <span class="action-link">Ver proyecto <i>→</i></span>
+                <span class="project-num">06</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Proyecto 07: Café Aroma -->
+          <a href="https://aromacafe-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="card-screen">
+              <img src="assets/img/cafearoma.webp" alt="Café Aroma" class="project-img" width="600" height="400" loading="lazy">
+              <span class="preview-badge">LANDING PAGE</span>
+            </div>
+            <div class="card-meta">
+              <div class="meta-info">
+                <h3 class="project-name">Café Aroma</h3>
+                <span class="project-category">Cafetería artesanal de especialidad</span>
+              </div>
+              <div class="card-footer-action">
+                <span class="action-link">Ver proyecto <i>→</i></span>
+                <span class="project-num">07</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Proyecto 08: Pulse Gym -->
+          <a href="https://pulsegymweb.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="card-screen">
+              <img src="assets/img/pulsegym.webp" alt="Pulse Gym" class="project-img" width="600" height="400" loading="lazy">
+              <span class="preview-badge">INSTITUCIONAL</span>
+            </div>
+            <div class="card-meta">
+              <div class="meta-info">
+                <h3 class="project-name">Pulse Gym</h3>
+                <span class="project-category">Centro de entrenamiento y rendimiento físico</span>
+              </div>
+              <div class="card-footer-action">
+                <span class="action-link">Ver proyecto <i>→</i></span>
+                <span class="project-num">08</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         04. OPINIONES / REVIEWS
+    =========================================== -->
+    <section id="testimonios" class="section reviews-section">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <span class="section-idx">/ 04</span>
+          <h2 class="section-title">Lo que dicen mis clientes</h2>
+        </div>
+
+        <div class="reviews-rating-bar">
+          <div class="rating-badge">
+            <span class="score">5.0</span>
+            <div class="stars-container">
+              <div class="stars">★★★★★</div>
+              <span class="count">Basado en 15 reseñas en Google</span>
+            </div>
+          </div>
+          <a href="https://www.google.com/maps/place/GaboWeb" target="_blank" rel="noopener" class="btn btn-ghost">Ver todas en Google</a>
+        </div>
+
+        <div class="reviews-slider">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Excelente servicio, muy buena atención y comunicación constante. Ayudó mucho a despegar mi emprendimiento."</p>
+            <div class="review-author">
+              <div class="author-avatar">MA</div>
+              <span class="author-name">Marcos Almiron</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Me realizó un excelente trabajo, super recomendable, es muy rápido y comprometido con lograr lo que buscábamos."</p>
+            <div class="review-author">
+              <div class="author-avatar">PO</div>
+              <span class="author-name">Pablo Olivo</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Muy buen servicio, el sitio 10 puntos. Recomendable para quien quiere dar un paso más allá de las redes sociales."</p>
+            <div class="review-author">
+              <div class="author-avatar">AC</div>
+              <span class="author-name">Alejandro Colazo</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         05. CONTACTO
+    =========================================== -->
+    <section id="contacto" class="section contact-section">
+      <div class="section-container">
+        
+        <div class="contact-grid">
+          
+          <div class="contact-info">
+            <h2 class="giant-heading">Hablemos<span class="slash">/</span></h2>
+            <p class="contact-lead">¿Tenés un proyecto en mente? Escribime y en menos de 24hs te respondo con una propuesta a medida.</p>
+            
+            <div class="direct-channels">
+              <div class="contact-email">
+                <span class="label">MAIL DIRECTO</span>
+                <a href="mailto:contacto@gaboweb.com.ar" class="email-link">contacto@gaboweb.com.ar</a>
+              </div>
+              <div class="contact-email">
+                <span class="label">WHATSAPP</span>
+                <a href="https://wa.me/5493329574543?text=Hola%20Gabriel" target="_blank" rel="noopener" class="email-link">+54 9 3329 574543</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-box">
+            
+            <!-- FORMULARIO WEB3FORMS -->
+            <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+              
+              <!-- ACCESS KEY DE WEB3FORMS (Reemplazar value con tu clave) -->
+              <input type="hidden" name="access_key" value="c16b4dec-6455-4665-b56c-af1a7eeffd32">
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Tipo de proyecto</label>
+                <select id="subject" name="subject">
+                  <option value="Landing Page">Landing Page Profesional</option>
+                  <option value="Sitio Institucional">Sitio Web Institucional</option>
+                  <option value="E-Commerce / Catalogo">E-Commerce o Catálogo</option>
+                  <option value="Otro">Otra consulta</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="4" placeholder="Contame sobre tu idea o negocio..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">Enviar mensaje <span>→</span></button>
+              <p class="form-status" id="formStatus"></p>
+              
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER EDITORIAL
+  =========================================== -->
+  <footer class="site-footer">
+    <div class="footer-giant-text" aria-hidden="true">GABOWEB</div>
+    
+    <div class="footer-container">
+      
+      <div class="footer-col">
+        <span class="footer-logo"><span class="logo-bracket">&lt;/</span>GABOWEB<span class="logo-bracket">&gt;</span></span>
+        <p class="footer-desc">Creative Developer &<br>Diseño Web de Alto Rendimiento.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Locación</h4>
+        <p>📍 Baradero, Buenos Aires</p>
+        <p>Cobertura en toda Argentina</p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Contacto</h4>
+        <a href="mailto:contacto@gaboweb.com.ar" class="footer-link">contacto@gaboweb.com.ar</a>
+        <a href="https://wa.me/5493329574543?text=Hola%20Gabriel" target="_blank" rel="noopener" class="footer-link">WhatsApp: +54 9 3329 574543</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 GaboWeb. Todos los derechos reservados.</span>
+      <a href="#hero" class="back-to-top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       SCRIPTS (GSAP + Lógica Principal)
+  =========================================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Botón Flotante de WhatsApp -->
+  <a href="https://wa.me/5493329574543?text=Hola%20Gabriel%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20consultarte" 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Contactar por WhatsApp">
+    <div class="whatsapp-pulse"></div>
+    <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.486-8.413z" fill="currentColor"/>
+    </svg>
+    <span class="whatsapp-tooltip">¿Hablamos?</span>
+  </a>
 
 </body>
-
 </html>

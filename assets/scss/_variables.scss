@@ -1,26 +1,22 @@
-// ================================
-// GABOWEB - Variables
-// ================================
+// Paleta Oficial
+$bg: #000000;
+$bg-card: #0d0d0d;
+$bg-card-hover: #141414;
+$border: rgba(255, 255, 255, 0.08);
+$border-hover: rgba(255, 106, 0, 0.4);
 
-// Tipografía
-$font-primary:    'Inter', sans-serif;
-$font-light:      300;
-$font-regular:    400;
-$font-semibold:   600;
-$font-bold:       700;
+// Acentos
+$accent: #FF6A00;
+$accent-glow: rgba(255, 106, 0, 0.2);
 
-// Tamaños
-$font-size-base:  16px;
-$font-size-sm:    14px;
-$font-size-lg:    18px;
-$font-size-xl:    24px;
-$font-size-xxl:   48px;
+// Tipografía y textos
+$text-main: #FFFFFF;
+$text-muted: #888888;
+$text-dim: #555555;
 
-// Colores — versión más clara
-$color-bg-primary:    #12121C;   // antes #0A0A0F
-$color-bg-secondary:  #1A1A28;   // antes #111118
-$color-bg-card:       #252538;   // antes #1E1E2E
-$color-accent:        #EA580C;
-$color-text-primary:  #FFFFFF;
-$color-text-muted:    #B8B8CC;   // antes #A0A0B0 — un poco más visible
-$color-accent-dark:   #C05621;
+$font-display: 'Bebas Neue', sans-serif;
+$font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Layout & Transiciones
+$container-max: 1280px;
+$transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);

@@ -1,102 +1,189 @@
 @use 'variables' as *;
 
-// ================================
-// GABOWEB - Sobre mí
-// ================================
+.about-section {
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
 
-#sobremi {
-    background-color: $color-bg-secondary;
+    @media (min-width: 992px) {
+      // Le damos más espacio al texto (1.4fr) y menos a la imagen (0.9fr)
+      grid-template-columns: 1.4fr 0.9fr; 
+      gap: 5rem;
+    }
+  }
 
-    .sobremi-saludo {
-        font-size: $font-size-sm;
-        color: $color-accent;
-        font-weight: $font-semibold;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        margin-bottom: 12px;
+  .lead-text {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+
+    strong {
+      font-weight: 600;
+      color: $accent;
+    }
+  }
+
+  .body-text {
+    font-size: 0.95rem;
+    color: $text-muted;
+    margin-bottom: 2rem;
+  }
+
+  .about-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid $accent;
+
+    .cred-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: $text-muted;
+
+      .cred-dot {
+        width: 6px;
+        height: 6px;
+        background: $accent;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .about-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  // CONTENEDOR DE LA IMAGEN REDISEÑADO
+  .about-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
+  .portrait-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 260px; // IMAGEN NOTABLEMENTE MÁS CHICA
+    margin: 0 auto;
+
+    // Fondo desfasado con patrón diagonal
+    .portrait-backdrop {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: -15px;
+      bottom: -15px;
+      border: 1px solid rgba(255, 106, 0, 0.3);
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 106, 0, 0.04),
+        rgba(255, 106, 0, 0.04) 1px,
+        transparent 1px,
+        transparent 10px
+      );
+      border-radius: 4px;
+      z-index: 1;
+      transition: $transition-smooth;
     }
 
-    .sobremi-titulo {
-        font-size: $font-size-xl;
-        font-weight: $font-bold;
-        color: $color-text-primary;
-        margin-bottom: 24px;
+    .portrait-frame {
+      position: relative;
+      z-index: 2;
+      aspect-ratio: 4/5;
+      background: $bg-card;
+      border: 1px solid $border;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
 
-        span { color: $color-accent; }
-    }
-
-    .sobremi-texto {
-        font-size: $font-size-base;
-        color: $color-text-muted;
-        margin-bottom: 16px;
-        line-height: 1.8;
-    }
-
-    .sobremi-stack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 24px;
-
-        span {
-            background-color: $color-bg-card;
-            color: $color-accent;
-            font-size: $font-size-sm;
-            font-weight: $font-semibold;
-            padding: 6px 16px;
-            border-radius: 20px;
-            border: 1px solid $color-accent;
-            transition: all 0.3s ease;
-
-            &:hover {
-                background-color: $color-accent;
-                color: $color-text-primary;
-            }
-        }
-    }
-
-    .sobremi-img-wrapper {
-        position: relative;
-        display: inline-block;
-
-        &:hover .sobremi-img { transform: scale(1.02); }
-    }
-
-    .sobremi-img {
+      .portrait-img {
         width: 100%;
-        max-width: 220px;
-        border-radius: 12px;
-        border: 2px solid $color-accent;
-        position: relative;
-        z-index: 1;
-        transition: transform 0.3s ease;
-        animation: latido 2.5s ease-in-out infinite;
-         filter: grayscale(100%);
-    transition: transform 0.3s ease, filter 0.3s ease;
-    }
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%) contrast(115%);
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+      }
 
-    .sobremi-card {
-        background-color: $color-bg-card;
-        border-radius: 12px;
-        padding: 36px;
-        border-left: 3px solid $color-accent;
-        transition: box-shadow 0.3s ease;
+      // Etiqueta de estado centrada abajo
+      .status-badge {
+        position: absolute;
+        bottom: 0.3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
 
-        &:hover {
-            box-shadow: 0 8px 32px rgba($color-accent, 0.15);
-            transform: scale(1.02);
-        filter: grayscale(0%);
+        .status-pulse {
+          width: 8px;
+          height: 8px;
+          background-color: #10B981;
+          border-radius: 50%;
+          box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+          animation: pulseGreen 2s infinite;
         }
+      }
     }
+
+    // Etiqueta superior rota
+    .floating-badge {
+      position: absolute;
+      top: -15px;
+      right: -20px;
+      z-index: 3;
+      background: $accent;
+      color: #000;
+      font-weight: 700;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      padding: 0.4rem 0.8rem;
+      border-radius: 2px;
+      box-shadow: 0 4px 15px rgba(255, 106, 0, 0.25);
+      transform: rotate(4deg);
+      transition: $transition-smooth;
+    }
+
+    // Efecto Hover 
+    &:hover {
+      .portrait-backdrop {
+        transform: translate(-8px, -8px);
+        border-color: rgba(255, 106, 0, 0.6);
+      }
+      
+      .floating-badge {
+        transform: translateY(-5px) rotate(0deg);
+      }
+      
+      .portrait-frame .portrait-img {
+        filter: grayscale(0%) contrast(100%);
+        transform: scale(1.04);
+      }
+    }
+  }
 }
 
-@keyframes latido {
-    0%   { box-shadow: 0 0 0 0 rgba($color-accent, 0.6); }
-    50%  { box-shadow: 0 0 0 20px rgba($color-accent, 0); }
-    100% { box-shadow: 0 0 0 0 rgba($color-accent, 0); }
-}
-
-@keyframes colorear {
-    0%   { filter: grayscale(100%); }
-    100% { filter: grayscale(0%); }
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }

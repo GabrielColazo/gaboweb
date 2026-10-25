@@ -1,22 +1,17 @@
-// ================================
-// GABOWEB - Main SCSS
-// ================================
+// ==========================================
+// GABOWEB - Main SCSS (Concepto Editorial)
+// ==========================================
 
-// Variables
-@use 'variables';
-
-// Base
+// 1. Tokens y Base
+@use 'variables' as *;
 @use 'base';
 
-// Componentes
+// 2. Componentes y Secciones
 @use 'navbar';
 @use 'hero';
-@use 'global';
-@use 'servicios';
-@use 'proceso';
+@use 'sobremi';
 @use 'proyectos';
-@use 'cta';
-@use 'contacto';
 @use 'reviews';
+@use 'contacto';
 @use 'footer';
 @use 'whatsapp';
