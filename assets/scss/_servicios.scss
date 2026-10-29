@@ -1,0 +1,116 @@
+@use 'variables' as *;
+
+.services-section {
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: $container-max;
+    
+    @media (min-width: 992px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  .service-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    border-top: 1px solid $border;
+    padding-top: 1.75rem;
+    transition: $transition-smooth;
+
+    &:hover {
+      border-top-color: $accent;
+
+      .service-media {
+        border-color: rgba(255, 106, 0, 0.4);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+
+        .service-img {
+          transform: scale(1.04);
+          filter: grayscale(0%) contrast(105%);
+        }
+
+        .service-badge {
+          border-color: $accent;
+          color: #fff;
+          background: rgba(255, 106, 0, 0.25);
+        }
+      }
+    }
+
+    .service-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      .service-title {
+        font-family: $font-display;
+        font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+        letter-spacing: 0.05em;
+        line-height: 1;
+        color: $text-main;
+      }
+
+      .service-desc {
+        font-size: 0.92rem;
+        color: $text-muted;
+        line-height: 1.6;
+      }
+    }
+
+    // Contenedor de imagen con tamaño controlado en PC/Notebooks
+    .service-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: $bg-card;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: $transition-smooth;
+
+      // En notebooks y pantallas grandes limitamos la altura máxima
+      @media (min-width: 992px) {
+        max-height: 240px;      // Tope para que no invada la pantalla
+        aspect-ratio: 16 / 9;   // Formato más apaisado y compacto
+      }
+
+      @media (min-width: 1400px) {
+        max-height: 260px;
+      }
+
+      .service-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(40%) contrast(110%);
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+      }
+
+      .service-badge {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        z-index: 2;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $accent;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
+        padding: 0.3rem 0.65rem;
+        border-radius: 3px;
+        border: 1px solid rgba(255, 106, 0, 0.35);
+        transition: $transition-smooth;
+        user-select: none;
+      }
+    }
+  }
+}

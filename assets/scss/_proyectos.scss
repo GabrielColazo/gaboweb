@@ -26,7 +26,7 @@
     &:hover {
       border-color: $border-hover;
       background: $bg-card-hover;
-      transform: translateY(-6px);
+      /* Se eliminó el transform: translateY(-6px) para permitir el Tilt 3D por JS */
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 
       .screen-preview .project-img {

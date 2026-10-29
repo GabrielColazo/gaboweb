@@ -10,8 +10,9 @@
 @use 'navbar';
 @use 'hero';
 @use 'sobremi';
-@use 'proyectos';
+@use "servicios"; 
+@use "proyectos";
 @use 'reviews';
 @use 'contacto';
-@use 'footer';
 @use 'whatsapp';
+@use 'footer';

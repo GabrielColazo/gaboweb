@@ -18,6 +18,7 @@
     width: 100%;
   }
 
+  // Barra superior del Hero
   .hero-meta-top {
     display: flex;
     flex-direction: column;
@@ -59,6 +60,7 @@
     }
   }
 
+  // Título colosal </ GABO ✻ WEB >
   .hero-display {
     padding: 1rem 0;
     text-align: center;
@@ -66,7 +68,7 @@
 
     .hero-title {
       font-family: $font-display;
-      // Escala fluida optimizada desde 3.2rem en pantallas pequeñas hasta 13.5rem en escritorio
+      // Escala fluida desde 3.2rem en celulares hasta 13.5rem en pantallas anchas
       font-size: clamp(3.2rem, 13vw, 13.5rem);
       line-height: 0.9;
       letter-spacing: 0.02em;
@@ -94,38 +96,113 @@
     }
   }
 
+  // Barra inferior simétrica: [Desarrollo Web] [Botones] [Servicio Técnico IT]
   .hero-meta-bottom {
     display: flex;
     flex-direction: column;
     gap: 1.75rem;
-    text-align: center;
+    align-items: center;
     border-top: 1px solid $border;
     padding-top: 1.5rem;
     margin-top: 1.5rem;
 
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      text-align: left;
       padding-top: 2rem;
       margin-top: 2rem;
     }
 
-    .hero-caption {
-      .tagline {
-        font-size: 1rem;
-        font-weight: 600;
-        color: $text-main;
-        @media (min-width: 768px) { font-size: 1.1rem; }
+    // Laterales Izquierdo y Derecho
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+
+      &-left {
+        text-align: center;
+        align-items: center;
+
+        @media (min-width: 992px) {
+          text-align: left;
+          align-items: flex-start;
+        }
       }
-      .sub-tagline {
-        font-size: 0.85rem;
-        color: $accent;
-        @media (min-width: 768px) { font-size: 0.9rem; }
+
+      &-right {
+        text-align: center;
+        align-items: center;
+
+        @media (min-width: 992px) {
+          text-align: right;
+          align-items: flex-end;
+        }
+      }
+
+      .hero-service-feature {
+        flex-direction: row;
+
+        .service-highlight {
+          font-family: $font-display;
+          font-size: clamp(1.4rem, 2.2vw, 2rem);
+          letter-spacing: 0.06em;
+          color: $text-main;
+          line-height: 1;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $accent;
+          }
+        }
+
+        // Animación de pulso/radar (lado izquierdo)
+        .service-ping {
+          position: relative;
+          display: inline-flex;
+          width: 10px;
+          height: 10px;
+
+          .ping-circle {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: $accent;
+            opacity: 0.75;
+            animation: pingPulse 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+          }
+
+          .ping-dot {
+            position: relative;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $accent;
+          }
+        }
+
+        // Chip decorativo de soporte (lado derecho)
+        .service-chip {
+          font-size: 0.7rem;
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: $accent;
+          border: 1px solid rgba(255, 106, 0, 0.35);
+          padding: 0.15rem 0.5rem;
+          border-radius: 2px;
+          background: rgba(255, 106, 0, 0.06);
+        }
+      }
+
+      .service-sub {
+        font-size: 0.8rem;
+        color: $text-muted;
+        letter-spacing: 0.02em;
       }
     }
 
+    // Botones de acción centrales
     .hero-actions {
       display: flex;
       gap: 0.75rem;
@@ -133,55 +210,21 @@
       flex-wrap: wrap;
 
       .btn {
-        flex: 1 1 140px;
-        justify-content: center;
-        padding: 0.8rem 1.25rem;
-      }
-    }
-
-    .hero-scroll-indicator {
-      display: none;
-
-      @media (min-width: 768px) {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 0.5rem;
-
-        .scroll-mouse {
-          width: 20px;
-          height: 32px;
-          border: 2px solid $text-dim;
-          border-radius: 12px;
-          display: flex;
-          justify-content: center;
-          padding-top: 4px;
-
-          .mouse-wheel {
-            width: 2px;
-            height: 6px;
-            background: $accent;
-            border-radius: 2px;
-            animation: scrollWheel 2s ease infinite;
-          }
-        }
-
-        .scroll-label {
-          font-size: 0.7rem;
-          letter-spacing: 0.2em;
-          color: $text-dim;
-        }
+        padding: 0.85rem 1.6rem;
       }
     }
   }
 }
 
+// Animaciones
 @keyframes spinStar {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-@keyframes scrollWheel {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(12px); opacity: 0; }
+@keyframes pingPulse {
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
 }

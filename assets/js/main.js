@@ -50,6 +50,34 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
+  // 4.5. Efecto Tilt 3D magnético para tarjetas de proyectos
+  const projectCards = document.querySelectorAll('.project-card');
+
+  projectCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Inclinación máxima de 6 grados
+      const rotateX = ((y - centerY) / centerY) * -6;
+      const rotateY = ((x - centerX) / centerX) * 6;
+
+      // Aplicar perspectiva, rotación y zoom sutil
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+      card.style.transition = 'none'; // Movimiento instantáneo siguiendo el mouse
+    });
+
+    card.addEventListener('mouseleave', () => {
+      // Restaurar estado original con transición suave
+      card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+      card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+    });
+  });
+
   // 5. Funcionalidad del Menú Móvil
   const mobileToggle = document.getElementById('mobileToggle');
   const mainNav = document.getElementById('mainNav');
@@ -69,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-
   
   // 7. Funcionalidad del Formulario (Web3Forms con Fetch API en JSON)
   const contactForm = document.getElementById('contactForm');
@@ -109,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
           formStatus.style.color = "#10B981"; // Verde
           contactForm.reset(); // Limpiar campos
         } else {
-          // Error de Web3Forms (ej. Access Key incorrecta)
+          // Error de Web3Forms
           console.log(data);
           formStatus.textContent = data.message || "Hubo un error. Por favor, intentá de nuevo.";
           formStatus.style.color = "#ef4444"; // Rojo
